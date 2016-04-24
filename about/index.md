@@ -5,10 +5,12 @@ tags: [about, libeclipse, eclipse, bio]
 date: 2016-04-23
 ---
 
+## Tag of life
 Love Mathematics - then the subsequent science falls like a glove upon that passion. All knowledge is valid, but IT is the merger that captivates me more. 
 
-Manoel M. Vilela Neto, is student in Computer Engineering since 2014 by the Federal University of Pará (UFPA) - Tucuruí, Pará, Brazil. It has interests in the area of computational intelligence and robotics. Currently, in addition graduation, he is participating in a project involving Core Routines on Operating System Unix-like with the advisor Alexandre Beletti.
+## Actual life
 
+Manoel M. Vilela Neto, is student in Computer Engineering since 2014 by the Federal University of Pará (UFPA) - Tucuruí, Pará, Brazil. It has interests in the area of computational intelligence and robotics. Currently, in addition graduation, he is participating in a project involving Core Routines on Operating System Unix-like with the advisor Alexandre Beletti.
 
 ## Why Ryukinix?
 
