@@ -7,7 +7,7 @@ words_per_minute:   200
 logo:               'assets/img/avatar.jpg'
 background:         'assets/img/placeholder-big.jpg'
 locale:             pt_BR
-url:                https://ryukinix.github.io
+url:                http://manoel.tk
 
 # Jekyll
 permalink:          /:title/
