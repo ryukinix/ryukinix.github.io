@@ -17,7 +17,7 @@ comments: true
 
 ## The life
 
-I'm really tired.
+I'm really tired. So tired that I really could sleep for a month and nothing would change.
 
 ![the-life](http://www.animeclick.it/images/serie/WelcometotheNHK/WelcometotheNHK22.jpg)
 
@@ -52,13 +52,13 @@ The biggest afinity was when Satou said that sequence of phrases:
 Always when Satou had a psychotic break he blamed that is a conspiracy behind of your life fucking all.
 
 
-So I'll say now: `IT'S ALL A CONSPIRACY!`.
+    So I'll say now: `IT'S ALL A CONSPIRACY!`.
 
-However...
-
-![yamazaki-tells-the-truth](https://i.kinja-img.com/gawker-media/image/upload/n05q8bb3csnrgs7uibxo.gif)
+[conspiracy-of-all](https://33.media.tumblr.com/a70bf766b25520b79b017065b08e8a0b/tumblr_nvzttiFzDK1sgq8s0o1_500.gif)
 
 
 ## The end
 
+
+    The biggest question whose comes to us sometimesom in a long sequence of conspiracy
 ![the-question-of-the-life-and-death](http://medias.gifboom.com/medias/t_b3cbceb06b9c01328ba0723c91561e03.jpg)
