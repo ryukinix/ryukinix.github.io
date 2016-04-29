@@ -54,11 +54,12 @@ Always when Satou had a psychotic break he blamed that is a conspiracy behind of
 
     So I'll say now: `IT'S ALL A CONSPIRACY!`.
 
-[conspiracy-of-all](https://33.media.tumblr.com/a70bf766b25520b79b017065b08e8a0b/tumblr_nvzttiFzDK1sgq8s0o1_500.gif)
+![conspiracy-of-all](https://33.media.tumblr.com/a70bf766b25520b79b017065b08e8a0b/tumblr_nvzttiFzDK1sgq8s0o1_500.gif)
 
 
 ## The end
 
 
-    The biggest question whose comes to us sometimesom in a long sequence of conspiracy
+    The biggest question whose comes to us sometime in a long sequence of conspiracy
+
 ![the-question-of-the-life-and-death](http://medias.gifboom.com/medias/t_b3cbceb06b9c01328ba0723c91561e03.jpg)
