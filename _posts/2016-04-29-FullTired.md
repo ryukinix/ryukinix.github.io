@@ -17,23 +17,23 @@ comments: true
 
 ## The life
 
-I'm really tired. So tired that I really could sleep for a month and nothing would change.
+I'm really tired. So tired that I really could sleep for a month and nothing would change. Wake up. Code | Suffering. Sleep.
 
 ![the-life](http://www.animeclick.it/images/serie/WelcometotheNHK/WelcometotheNHK22.jpg)
 
-    The life passing so fast, but sometimes, so slow. All the days is the same.
+    The life passing so fast, but sometimes, so slow. All the days is the same thing.
 
 ![loop-infinite](http://45.media.tumblr.com/d5a7e8ff619286fd89ab267cd198dc00/tumblr_o6bin5NXAw1rlw4yco1_500.gif)
 
-In the last two days, I have been watching a anime called [`Welcome to the NHK`](http://myanimelist.net/anime/1210/NHK_ni_Youkoso). It tell a history about a schizophrenic guy with 22 years old (my actual age) with extremely social anxiety and your ~~mis~~ adventures with the life. **Why all sucks so hard?** Because the society rejection and the depression of itself , Satou (the main character) after your first period at Tokyo University he turned a Hikikomori  — a person whose live isolated in your room and recuse with all efforts to go out of your home — and he are living that way for the last three years.
+In the last two days, I have been watching an anime called [`Welcome to the NHK`](http://myanimelist.net/anime/1210/NHK_ni_Youkoso). It tell a history about a schizophrenic guy with 22 years old (my actual age) with extremely social anxiety and your ~~mis~~ adventures with the life. **Why all sucks so hard?** Because the society rejection and the depression of itself , Satou (the main character) after your first period at Tokyo University he turned a Hikikomori  — a person whose live isolated in your room and recuse with all efforts to go out of your home — and he are living that way for the last three years.
 
-The anime talks about themes like social isolation, hikikomori, otaku, depression, suicide, drugs, games and programming (in some moment). Is a heavy mixture of reality, [**sadness**](https://www.youtube.com/watch?v=_Ei2izPLpHc) and [**comedy**](https://www.youtube.com/watch?v=bkz6504BKng). Is a really a wonderful adventure and the anime is really funny in general. However, if you have a similar life of Satou, can be really painful sometimes. Or can be your savior too. Anyway, is really worthwhile watching `Welcome to NHK`.
+The anime talk about themes like social isolation, hikikomori, otaku, depression, suicide, drugs, games and programming (in some moment). Is a heavy mixture of reality, [**sadness**](https://www.youtube.com/watch?v=_Ei2izPLpHc) and [**comedy**](https://www.youtube.com/watch?v=bkz6504BKng). Actually, is a really a wonderful adventure and the anime is really funny in general. However, if you have a similar life of Satou, can be really painful sometimes. Or can be your savior too. Anyway, worthwhile watching `Welcome to NHK`.
 
 ## Afinities with Welcome to the NHK
 
-But... In determined moment during the adventure of watching this... I really did have feels that Satou, actually, is a mirror of myself. The similarities keep did go until the end — in the most part of your adventures. I really had a deep comprehension of Satou's feelings. And this is really bad.
+But... In determined moment during the adventure of watching this... I really have it feel it that Satou, actually, is a mirror of myself.The similarities did keep since the first episode until the end. I really had a deep comprehension of Satou's feelings. And this is really bad.
 
-During the debugging of my jobs or my other painfull software activities, I have a deep feel to break all. Really this, with a hammet. But I cannot.
+During the debugging of my jobs or my other painfull software activities, I have a deep feel to break all. Really this, with a hammer. But I cannot.
 I'm living yet because of my computer.
 
 ![satou-breaking-all](http://stream1.gifsoup.com/view4/3641092/welcome-to-the-nhk-o.gif)
