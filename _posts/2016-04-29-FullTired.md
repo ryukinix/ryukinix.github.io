@@ -17,7 +17,7 @@ comments: true
 
 ## The life
 
-I'm really tired. So tired that I really could sleep for a month and nothing would change. Wake up. Code | Suffering. Sleep.
+I'm really tired. So tired that I really could sleep for a month and nothing would change. Wake up. ~Suffering~ Code something. Sleep.
 
 ![the-life](http://www.animeclick.it/images/serie/WelcometotheNHK/WelcometotheNHK22.jpg)
 
