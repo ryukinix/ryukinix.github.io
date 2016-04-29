@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "I'm so tired... it's all a conspiracy.''"
-project: false
+post: true
 date:   2016-04-29
 excerpt: "It's dangerous create a description for this."
 tag:
@@ -28,6 +28,8 @@ I'm really tired.
 In the last two days, I have been watching a anime called [`Welcome to the NHK`](http://myanimelist.net/anime/1210/NHK_ni_Youkoso). It tell a history about a schizophrenic guy with 22 years old (my actual age) with extremely social anxiety and your ~~mis~~ adventures with the life. **Why all sucks so hard?** Because the society rejection and the depression of itself , Satou (the main character) after your first period at Tokyo University he turned a Hikikomori  — a person whose live isolated in your room and recuse with all efforts to go out of your home — and he are living that way for the last three years.
 
 The anime talks about themes like social isolation, hikikomori, otaku, depression, suicide, drugs, games and programming (in some moment). Is a heavy mixture of reality, [**sadness**](https://www.youtube.com/watch?v=_Ei2izPLpHc) and [**comedy**](https://www.youtube.com/watch?v=bkz6504BKng). Is a really a wonderful adventure and the anime is really funny in general. However, if you have a similar life of Satou, can be really painful sometimes. Or can be your savior too. Anyway, is really worthwhile watching `Welcome to NHK`.
+
+## Afinities with Welcome to the NHK
 
 But... In determined moment during the adventure of watching this... I really did have feels that Satou, actually, is a mirror of myself. The similarities keep did go until the end — in the most part of your adventures. I really had a deep comprehension of Satou's feelings. And this is really bad.
 
