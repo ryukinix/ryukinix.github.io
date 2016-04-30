@@ -19,3 +19,14 @@ Manoel M. Vilela Neto, is student in Computer Engineering since 2014 by the Fede
 ## Why Ryukinix?
 
 It's come from 2009: my char's name of the game Ragnarok, private server *Odin-br*. Was my archer char. I thinking a original name... And that random name comes to my mind. By the way, good time.
+
+
+## Status of the last month
+
+### Coding Activity
+
+<figure><embed src="https://wakatime.com/@ryukinix/a07183b2-d287-4ae8-86da-51d8d6a83d53.svg"></embed></figure>
+
+### Languages Used
+
+<figure><embed src="https://wakatime.com/@ryukinix/4c77736c-8200-4cf3-aeb2-f3367eca7497.svg"></embed></figure>
