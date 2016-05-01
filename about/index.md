@@ -25,7 +25,7 @@ It's come from 2009: my char's name of the game Ragnarok, private server *Odin-b
 
 ### Coding Activity
 
-![coding activity](https://wakatime.com/@ryukinix/a07183b2-d287-4ae8-86da-51d8d6a83d53.svg)
+![coding activity](https://wakatime.com/@ryukinix/f92531fc-bb7d-469a-9ab1-8c8d68001b77.svg)
 
 ### Languages Used
 
