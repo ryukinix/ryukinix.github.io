@@ -3,7 +3,7 @@ title:              Manoel Vilela
 bio:                "Programmer and AI enthusiast."
 description:        "This is my site where I have my projects and blog."
 reading_time:       true
-words_per_minute:   200
+words_per_minute:   100
 logo:               'assets/img/avatar.jpg'
 background:         'assets/img/placeholder-big.jpg'
 locale:             pt_BR
