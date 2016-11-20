@@ -30,3 +30,7 @@ It's come from 2009: my char's name of the game Ragnarok, private server *Odin-b
 ### Languages Used
 
 ![languages used](https://wakatime.com/@ryukinix/4c77736c-8200-4cf3-aeb2-f3367eca7497.svg)
+
+### Editors Used
+
+![editors used](https://wakatime.com/share/@ryukinix/3dc27d9a-47d4-438f-8677-03534182540a.svg)
