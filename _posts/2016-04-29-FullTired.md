@@ -14,14 +14,14 @@ tag:
 comments: true
 ---
 
-![the-life](http://www.animeclick.it/images/serie/WelcometotheNHK/WelcometotheNHK22.jpg)
+![the-life](https://68.media.tumblr.com/tumblr_m3e46kxM6H1qlcutao1_500.gif)
 
 ## The life for now
 
 
     The life passing so fast, but sometimes, so slow. All the days is the same thing.
 
-![loop-infinite](http://45.media.tumblr.com/d5a7e8ff619286fd89ab267cd198dc00/tumblr_o6bin5NXAw1rlw4yco1_500.gif)
+![loop-infinite](https://68.media.tumblr.com/d5a7e8ff619286fd89ab267cd198dc00/tumblr_n4no77cKRl1qby49yo1_500.gif)
 
 I'm really tired. So tired that I really could sleep for a month and nothing would change. Wake up. ~~Suffering~~ Code something. Sleep.
 
@@ -41,7 +41,7 @@ I'm living yet because of my computer.
 
 The biggest afinity was when Satou said that sequence of phrases:
 
-![satou-give-up](https://45.media.tumblr.com/180dc2dca4e93d28880b9d587a67f2c6/tumblr_n9x20t5NPP1skducxo1_500.gif)
+![satou-give-up](http://pa1.narvii.com/5879/e31f7967b63740c1a4a590c3475f03c545d11be2_hq.gif)
 
 - I don't want to meet anyone
 - I don't want to answer my cell phone (mainly it)
