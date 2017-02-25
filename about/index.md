@@ -12,7 +12,7 @@ Love Mathematics - then the subsequent science falls like a glove upon that pass
 
 In general I like programming mostly in Python, Go and C. Sometimes I try to code in Common Lisp or other languages.
 
-## Actual life
+## Current life
 
 Manoel Vilela Machado Neto is a student of Computer Engineering since 2014. Started on the Federal University of Pará (UFPA) and migrated to Federal University of Ceará (UFC) in 2016, which currently studies. It has interests in the area of computational intelligence and robotics.
 
