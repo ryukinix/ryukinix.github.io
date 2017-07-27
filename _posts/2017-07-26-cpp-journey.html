@@ -13,6 +13,7 @@ categories:
 - programming
 - hackerrank
 comments: true
+html_head: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
 ---
 <style>
   pre.src {
@@ -125,8 +126,8 @@ por via das dúvidas, que todos arquivos estão no padrão <code>C++14</code>.<b
 <div class="outline-text-4" id="text-3-0-1">
 <p>
 Diferentemente de C, C++ implementa um tipo string não somente como uma cadeia<br  />
-de caracteres, mas como um objeto. Possui métodos associados, como length.<br  />
-É bem útil.<br  />
+de caracteres, mas como um objeto. Possui métodos associados, como `string::length`.<br  />
+É bem útil e menos difícil de tratar que <i>strings</i> em C, que são apenas vetores de caracteres.<br  />
 </p>
 
 
@@ -171,8 +172,8 @@ O primeiro exercício do HackerRank:<br  />
 
 
 <p>
-Lidando com tamanho, concatenação e substituição de characteres<br  />
-em strings.<br  />
+Lidando com tamanho, concatenação e substituição de caracteres<br  />
+em <code>strings</code>.<br  />
 </p>
 </div>
 </div>
@@ -181,16 +182,16 @@ em strings.<br  />
 <h4 id="sec-3-0-2">Streams</h4>
 <div class="outline-text-4" id="text-3-0-2">
 <p>
-Esse tópico refere-se ao gerenciamento de stream usando strings<br  />
+Esse tópico refere-se ao gerenciamento de <i>stream</i> usando <i>strings</i><br  />
 para C++. Muito interessante. O operador &lt;&lt; insere informação,<br  />
 por outro lado, o operador &gt;&gt; extrai informação.<br  />
 </p>
 
 
 <p>
-O método de inicialização da stringstream cria uma stream. O cabeçalho é <code>&lt;sstream&gt;</code>.<br  />
+O método de inicialização da <code>stringstream</code> cria uma <i>stream</i>. O cabeçalho é <code>&lt;sstream&gt;</code>.<br  />
 <a href="https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-2.cpp">HackerRank-Problem-String</a><br  />
-O método sstream::eof verifica se a stream está no fim. EOF = End Of File.<br  />
+O método <code>sstream::eof</code> verifica se a <i>stream</i> está no fim. <code>EOF</code> = End Of File.<br  />
 </p>
 </div>
 </div>
@@ -199,8 +200,8 @@ O método sstream::eof verifica se a stream está no fim. EOF = End Of File.<br 
 <h4 id="sec-3-0-3">Attribute Parser</h4>
 <div class="outline-text-4" id="text-3-0-3">
 <p>
-Nessa atividade, a última de strings, vou precisar fazer um parser de atributos<br  />
-em Cancer++. Um pouco da descrição do site é dada no block de código abaixo.<br  />
+Nessa atividade, a última de <i>strings</i>, vou precisar fazer um <i>parser</i> de atributos<br  />
+em CancerPlusPlus (aka C++). Um pouco da descrição do site é dada no <i>block</i> de código abaixo.<br  />
 </p>
 
 <div class="org-src-container">
@@ -239,7 +240,7 @@ A atividade está sendo desenvolvida no arquivo:<br  />
 Já estou há várias horas resolvendo esse problema. Sinceramente é um pouco<br  />
 trabalhoso. Agora é <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 qui 01:50&gt;</span></span>. Já se passou mais de 8 horas&#x2026;<br  />
 que inferno! Mas eu dormi um pouco antes também. Cassete! terminei agora depois<br  />
-de 14 horas! Uma completa desgraça! KKK<br  />
+de 14 horas! Uma completa desgraça!<br  />
 </p>
 
 <p>
@@ -273,22 +274,24 @@ linguagem e só ficava de tretinha básica.<br  />
 </p>
 
 <p>
-OO em C++ parece ser divertido, apesar de ainda ter uma impressão cancerígina.<br  />
-Não é pra menos&#x2026; keywords, friend, public, private e protected?<br  />
+OO em C++ parece ser divertido, apesar de ainda ter uma impressão <i>cancerígina</i>.<br  />
+Não é pra menos&#x2026; <i>keywords</i>, <code>friend</code>, <code>public</code>, <code>private</code> e <code>protected</code>?<br  />
 Mas, enfim, acho que vou conseguir me acostumar. Quero terminar hoje ainda a<br  />
 introdução, estou na última parte envolvendo OO, herança e variáveis estáticas.<br  />
 </p>
 
 <p>
 Método virtuais em C++ são usados para fazer polimorfismo dinâmicos em heranças.<br  />
-Protected são membros acessíveis apenas pelas subclasses. Private são<br  />
-acessíveis apenas pelos métodos da classe. Public são publicos para todos.<br  />
+<i>Protected</i> são membros acessíveis apenas pelas subclasses. <i>Private</i> são<br  />
+acessíveis apenas pelos métodos da classe. <i>Public</i> são publicos para todos.<br  />
 </p>
 
 <p>
-Por padrão, membros são privados em classes. É possível usar a keyword friend<br  />
-para acessar atributos privados de outra classe. Provavelmente eu não deveria<br  />
-estar falando desses tópicos avançados de OO na introdução (HAHAH!). Mas<br  />
+Por padrão, membros e métodos são privados em classes. Para fazer um membro ou<br  />
+método público você deve o fazer explicitamente com a keyword <code>public</code> e o uso<br  />
+de dois pontos <code>:</code>. É possível usar a <i>keyword</i> <code>friend</code> para acessar atributos<br  />
+privados de outra classe. Provavelmente eu não deveria<br  />
+estar falando desses tópicos avançados de OO na introdução (HAHA!). Mas<br  />
 é bom que dá o gostinho de desgraça que C++ tem tanto de especial.<br  />
 </p>
 <div class="org-src-container">
@@ -397,9 +400,9 @@ criar estrutura de dados mais complexas.<br  />
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 Por padrão classes tem seus métodos e atributos privados, sendo reservado as<br  />
-keywords para controle de acesso: protected, private e public.<br  />
-Uma prática comum em C++ é deixar todos os atributos privados ou protecteds<br  />
-(case for uma classe base de herança), então criar getters e setters públicos.<br  />
+keywords para controle de acesso: <code>protected</code>, <code>private</code> e <code>public</code>.<br  />
+Uma prática comum em C++ é deixar todos os atributos privados ou protegidos<br  />
+(case for uma classe base de herança), então criar <i>getters</i> e <i>setters</i> públicos.<br  />
 </p>
 
 <p>
@@ -442,12 +445,13 @@ Construtores são chamados na inicialização de uma classe. Podem possuir um ou
 com diferentes assinaturas.<br  />
 Os tipos de construtores são três:<br  />
 </p>
+
 <ol class="org-ol">
 <li>Construtor padrão<br  />
 </li>
 <li>Construtor parametrizado<br  />
 </li>
-<li>Construtor de Cópia<br  />
+<li>Construtor de cópia<br  />
 </li>
 </ol>
 
@@ -557,7 +561,7 @@ Depois de um dia tentando ter um progresso com essa atividade, já consegui<br  
 implementar a funcionalidade básica do <code>Cache</code>. No entanto, os testes com maiores<br  />
 entradas estão com problemas. De acordo com a execução do HackerRank, está<br  />
 ocorrendo <code>segfault</code>. Acredito que possa ser devido o não tratamento direto<br  />
-da desalocação dos objetos Nó durante a chamada de void pop_node(); que<br  />
+da desalocação dos objetos Nó durante a chamada de void <code>pop_node();</code> que<br  />
 desaloca a cauda da lista. Contínuo essa atividade mais tarde.<br  />
 </p>
 
@@ -570,7 +574,7 @@ alocações.<br  />
 </p>
 
 <p>
-Como eu suspeitava, a função `LRUCache::pop_node()` que estava vazando memória.<br  />
+Como eu suspeitava, a função <code>LRUCache::pop_node()</code> que estava vazando memória.<br  />
 Após a adição das instruções pra desalocar tanto a cauda como também a entrada<br  />
 desse nó no <code>HashMap mp</code>, os testes do HackerRank passaram. Mas demorei demais pra<br  />
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão<br  />
@@ -599,8 +603,8 @@ solução das questões.<br  />
 <h4 id="sec-3-2-1">Inheritance Introduction</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
-Nessa atividade é pedido pra construir um método de descrição de uma subclasse<br  />
-de Triangle chamada Isosceles. A construção é bem direta e não é necessário<br  />
+Nessa atividade é pedido pra construir um método de descrição de uma sub-classe<br  />
+de <code>Triangle</code> chamada <code>Isosceles</code>. A construção é bem direta e não é necessário<br  />
 muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.<br  />
 Mas vamos lá&#x2026; <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/TriangleInheritance.cpp">TriangleInheritance.cpp</a><br  />
 </p>
@@ -614,9 +618,9 @@ Mas vamos lá&#x2026; <a href="https://github.com/ryukinix/cpp-journey/tree/mast
 Nesta atividade será feito um exercício para cálculo<br  />
 da área de um retângulo usando os conceitos de herança. Durante<br  />
 a construção da solução foi possível perceber que era possível<br  />
-chamar métodos da classe base com mesmo nome, no caso ambos possuiam<br  />
-o método void display, mas a instância do objeto era RectangleArea.<br  />
-Para acessar então, display de Rectangle, foi necessário a seguinte<br  />
+chamar métodos da classe base com mesmo nome, no caso ambos possuíam<br  />
+o método <code>void display</code>, mas a instância do objeto era <code>RectangleArea</code>.<br  />
+Para acessar então, <code>display</code> de <code>Rectangle</code>, foi necessário a seguinte<br  />
 sintaxe:<br  />
 </p>
 
@@ -639,10 +643,10 @@ A solução completa pode ser encontrada aqui:<br  />
 <div class="outline-text-4" id="text-3-2-3">
 <p>
      É possível fazer herança em mais de um nível. Um exemplo é dado<br  />
-no exercício para a construção de uma classe Equilateral, que deriva<br  />
-de Isosceles, que é derivado de Triangle. Isso demonstra a interdependência<br  />
-das propriedades que uma instância de Equilateral tem entre Isosceles<br  />
-e Triangle. O que é realmente verdade, já que um triângulo Equilátero<br  />
+no exercício para a construção de uma classe <code>Equilateral</code>, que deriva<br  />
+de <code>Isosceles</code>, que é derivado de <code>Triangle</code>. Isso demonstra a interdependência<br  />
+das propriedades que uma instância de <code>Equilateral</code> tem entre <code>Isosceles</code><br  />
+e <code>Triangle</code>. O que é realmente verdade, já que um triângulo Equilátero<br  />
 é obviamente também um Triângulo e é Isósceles.<br  />
 </p>
 
@@ -657,7 +661,7 @@ A atividade foi direta de ser completa e está descrita a seguir:<br  />
 <h4 id="sec-3-2-4">Accessing Inherited Functions</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
-     Como comentada na questão Rectangle Area, é possível acessar<br  />
+     Como comentada na questão <i>Rectangle Area</i>, é possível acessar<br  />
 funções/métodos da classe base que foi herdada. Nessa atividade<br  />
 irei descrever brevemente a implementação do exercício proposto no<br  />
 HackerRank.<br  />
@@ -679,7 +683,7 @@ de base A, B e C.<br  />
 <p>
 Lá vem questão <b>HARD</b> de novo diretamente do inferno no HackerRank. Essa questão<br  />
 envolve o uso de herança e <code>dynamic_cast</code>, que é basicamente o que tentei fazer<br  />
-uma vez em C e só me fudi (uma variável de tipo dinâmico, acabei terminando com um <code>union</code> e <code>enum</code>).<br  />
+uma vez em C e só me fudi &#x2013; implementar uma variável de tipo dinâmico, acabei terminando com um <code>union</code> e <code>enum</code>.<br  />
 Parece que C++ implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.<br  />
 </p>
 
@@ -688,7 +692,7 @@ Nesse caso <code>dynamic_cast</code> é usado para modelar uma instância compat
 ou classe. Se um <code>nullptr</code> é retornado, significa que os tipos não são compatíveis.<br  />
 Nessa questão isso é usado para saber que tipo de que classe derivada de <code>Spell</code><br  />
 foi instanciada. A sintaxe é dada por <code>dynamic_cast&lt;Type*&gt;(instance*)</code>. Muito<br  />
-semelhante ao cast estático de C.<br  />
+semelhante ao <i>cast</i> estático de C, embora há também <code>static_cast&lt;Type&gt;(instance)</code>.<br  />
 </p>
 
 <p>
@@ -700,8 +704,8 @@ e a do catálogo, devo retornar o tamanho da substring maior.<br  />
 </p>
 
 <p>
-Ou seja, é dado o exemplo que para AquaVitae e AruTaVae a maior substring é<br  />
-AuaVae. Não tenho tanta certeza se isso está correto, mas achei um código exemplo<br  />
+Ou seja, é dado o exemplo que para <code>AquaVitae</code> e <code>AruTaVae</code> a maior substring é<br  />
+<code>AuaVae</code>. Não tenho tanta certeza se isso está correto, mas achei um código exemplo<br  />
 em C++ pra testar. Está linkado em <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/LongestCommonSubstring.cpp">LongestCommonSubstring.cpp</a><br  />
 </p>
 
@@ -778,7 +782,7 @@ aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse t
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 A Standard Library de C++ vem com muitos bultins. Um dos métodos<br  />
-da biblioteca é std::sort(vector::begin, vector::end).<br  />
+da biblioteca é <code>std::sort(vector::begin, vector::end)</code>.<br  />
 </p>
 
 <div class="org-src-container">
@@ -813,9 +817,9 @@ da biblioteca é std::sort(vector::begin, vector::end).<br  />
 <h4 id="sec-3-3-2">Vector-Erase</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
-A STL definida em &lt;algorithm&gt; e &lt;vector&gt; define alguns métodos<br  />
-úteis, como por exemplo o método vector::erase para remover elementos<br  />
-seja de apenas 1 localização, ou um intervalo.<br  />
+A STL definida em <code>&lt;algorithm&gt;</code> e <code>&lt;vector&gt;</code> define alguns métodos<br  />
+úteis, como por exemplo o método <code>vector::erase</code> para remover elementos<br  />
+seja de apenas uma localização ou um intervalo.<br  />
 </p>
 
 <p>
@@ -859,15 +863,15 @@ O seguinte código foi feito para o exercício proposto do hackerrank:<br  />
 Ou seja, há duas definições para vector::erase.<br  />
 </p>
 <ul class="org-ul">
-<li>vector::erase(const iterator n);<br  />
+<li><code>vector::erase(const iterator n);</code><br  />
 </li>
-<li>vector::erase(const iterator n, const iterator m);<br  />
+<li><code>vector::erase(const iterator n, const iterator m);</code><br  />
 </li>
 </ul>
 
 <p>
 O const iterator pode ser obtido a partido dos métodos:<br  />
-vector::begin e vector::end.<br  />
+<code>vector::begin</code> e <code>vector::end</code>.<br  />
 </p>
 </div>
 </div>
@@ -877,16 +881,16 @@ vector::begin e vector::end.<br  />
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 Em C++ a STL provém funções úteis para iterações e comparações.<br  />
-Um delas são os métodos std::lower_bound e std::upper_bound.<br  />
+Um delas são os métodos <code>std::lower_bound</code> e <code>std::upper_bound</code>.<br  />
 Ambas funções recebem três parâmetros, os dois primeiros sendo<br  />
-o iterador inicial então o iterador final (vector::begin &amp; vector::end).<br  />
+o iterador inicial então o iterador final (<code>vector::begin</code> &amp; <code>vector::end</code>).<br  />
 O terceiro elemento é um objeto de comparação que implementa operator&lt;<br  />
-para std::lower_bound e std::upper_bound.<br  />
+para <code>std::lower_bound</code> e <code>std::upper_bound</code>.<br  />
 </p>
 
 <p>
-O método std::lower_bound retorna o número menor que a comparação que esteja<br  />
-mais próximo desse número esquerda. std::upper_bound retorna o maior número que esteja<br  />
+O método <code>std::lower_bound</code> retorna o número menor que a comparação que esteja<br  />
+mais próximo desse número esquerda. <code>std::upper_bound</code> retorna o maior número que esteja<br  />
 mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.<br  />
 </p>
 
@@ -907,20 +911,20 @@ o tipo set, são:<br  />
 </p>
 
 <ul class="org-ul">
-<li>std::set&lt;int&gt; s;<br  />
+<li><code>std::set&lt;int&gt; s</code>;<br  />
 </li>
-<li>s.length(); // tamanho do conjunto<br  />
+<li><code>s.length()</code>; (tamanho do conjunto)<br  />
 </li>
-<li>s.erase(int n); // apagar um elemento<br  />
+<li><code>s.erase(int n)</code>; (apagar um elemento)<br  />
 </li>
-<li>s.insert(int n); // inserir um elemento<br  />
+<li><code>s.insert(int n)</code>; (inserir um elemento)<br  />
 </li>
-<li>set&lt;int&gt;::iterator it = s.find(int n); // procura um elemento, devolve um iterator<br  />
+<li><code>set&lt;int&gt;::iterator it = s.find(int n);</code> (procura um elemento, devolve um iterator)<br  />
 </li>
 </ul>
 
 <p>
-Se o elemento não é encontrado it == s.end();<br  />
+Se o elemento não é encontrado <code>it == s.end();</code><br  />
 </p>
 
 <p>
@@ -934,14 +938,21 @@ onde uma solução pode ser encontrada aqui: <a href="https://github.com/ryukini
 <h4 id="sec-3-3-5">Maps</h4>
 <div class="outline-text-4" id="text-3-3-5">
 <p>
-HashMaps são implementados em C++ pela STL, Standard Library. Também conhecidos<br  />
+HashMaps e Maps são implementados em C++ pela STL, Standard Library. Também conhecidos<br  />
 em outras linguagens como dicionários (python), HashMaps armazenam unidades de<br  />
-de pares &lt;chave, valor&gt; na qual a existência para uma dada chave é única.<br  />
+de pares <code>&lt;chave, valor&gt;</code> na qual a existência para uma dada chave é única.<br  />
 </p>
 
 <p>
-Existem alguns métodos úteis implementados para HashMaps. O tipo é definido<br  />
-em <code>#include &lt;map&gt;</code> e segue que:<br  />
+Vale ressaltar, explicitamente, que HashMaps em C++ são conhecidos como <code>unordered_map</code><br  />
+e Maps são implementados com <code>red black trees</code>, árvores de busca do tipo balanceada.<br  />
+A principal diferença é que <code>unordered_map</code> possui acesso/inserção com complexidade<br  />
+O(1) se não houver colisão (se houver, no pior caso é O(n)). E <code>map</code> é <b>SEMPRE</b> O(log(n)).<br  />
+</p>
+
+<p>
+Existem alguns métodos úteis implementados para HashMaps e Maps. O tipo <code>map</code> é definido<br  />
+em <code>&lt;map&gt;</code> e segue que:<br  />
 </p>
 
 <div class="org-src-container">
@@ -961,6 +972,10 @@ m[1]; <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">"ban
 <p>
 Um problema é proposto no HackerRank para explorar essas operações.<br  />
 A implementação está feita no arquivo <a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/HashMap.cpp">HashMap.cpp</a>.<br  />
+</p>
+
+<p>
+Edit: Pensei inicialmente que <code>map</code> de C++ eram HashMaps, por isso algumas trocas aqui.<br  />
 </p>
 </div>
 </div>
