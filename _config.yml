@@ -38,7 +38,7 @@ google:
 email:              manoel_vilela@engineer.com
 #facebook:
 github:             ryukinix
-stackoverflow:      3749971/lerax 
+stackoverflow:      3749971/lerax
 linkedin:           lerax
 #xing:              username
 #instagram:          username
@@ -55,7 +55,7 @@ linkedin:           lerax
 #codepen:           username
 
 # Gems
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
