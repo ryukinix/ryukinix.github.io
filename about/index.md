@@ -6,11 +6,13 @@ date: 2016-04-23
 ---
 
 ## Tag of life
-Love Mathematics - then the subsequent science falls like a glove upon that passion. All knowledge is valid, but IT is the merger that captivates me more.
+I love Mathematics - then the subsequent science falls like a glove upon that passion. All knowledge is valid, but IT is the merger that captivates me more.
 
 ## Programming Languages
 
-In general I like programming mostly in Python, Go and C. Sometimes I try to code in Common Lisp or other languages.
+In general I like programming mostly in Python, Lisp and C. Sometimes I try to code in other languages like Haskell, Go and F#.
+Although I know a little about C++, Java and C# I not use these languages
+everyday.
 
 ## Current life
 
@@ -19,7 +21,6 @@ Manoel Vilela Machado Neto is a student of Computer Engineering since 2014. Star
 ## Why Ryukinix?
 
 It's come from 2009: my char's name of the game Ragnarok, private server *Odin-br*. Was my archer char. I was thinking a good original name... And that random name comes to my mind. No especial reason. By the way, good time.
-
 
 ## Status of the last month
 
