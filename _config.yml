@@ -7,7 +7,7 @@ words_per_minute:   100
 logo:               'assets/img/avatar.jpg'
 background:         'assets/img/placeholder-big.jpg'
 locale:             pt_BR
-url:                https://lerax.me
+url:                http://lerax.me
 
 # Jekyll
 permalink:          /:title/
