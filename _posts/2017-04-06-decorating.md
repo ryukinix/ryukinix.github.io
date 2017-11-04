@@ -4,6 +4,7 @@ title:  "decorating: Literally decorating your terminal with decorators"
 project: true
 date:   2017-04-06
 excerpt: "A Meta Repo To Decorators"
+lang: en
 tag:
 - programming
 - python

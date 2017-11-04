@@ -4,6 +4,7 @@ title:  "DestructHub and ProjectEuler"
 project: true
 date:   2016-04-25
 excerpt: "Computational challenges/problems, mathematicians, mystery and hacking."
+lang: en
 tag:
 - programming
 - contest
