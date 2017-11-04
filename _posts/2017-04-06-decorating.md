@@ -6,9 +6,7 @@ date:   2017-04-06
 excerpt: "A Meta Repo To Decorators"
 tag:
 - programming
-- decorators
 - python
-- animation
 comments: true
 ---
 
@@ -25,7 +23,7 @@ comments: true
 
 
 
-## Showcase 
+## Showcase
 
 ![animated-simple](../assets/posts/decorating/animated-simple.gif)
 
@@ -135,7 +133,7 @@ for i in range(10):
 
 ### **decorating.count_time**
 
-Calculate the time a function leaves to return a value after called. 
+Calculate the time a function leaves to return a value after called.
 
 ```python
 import decorating
@@ -161,7 +159,7 @@ import time
 
 with decorating.animated:
 	time.sleep(3)
-	
+
 # animation is running ~ until the context managers exists
 ```
 
@@ -183,5 +181,3 @@ with decorating.writing:
 `pip install decorating` # stable
 
 `pip install git+https://github.com/ryukinix/decorating` # new features
-
-

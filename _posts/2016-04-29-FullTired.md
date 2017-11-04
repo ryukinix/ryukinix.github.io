@@ -5,12 +5,8 @@ post: true
 date:   2016-04-29
 excerpt: "It's dangerous create a description for this."
 tag:
-- tired
 - anime
-- life
-- nhk
-- conspiracy
-- sad
+- personal
 comments: true
 ---
 

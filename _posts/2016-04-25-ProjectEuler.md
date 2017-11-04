@@ -7,8 +7,6 @@ excerpt: "Computational challenges/problems, mathematicians, mystery and hacking
 tag:
 - programming
 - contest
-- projecteuler
-- challenge
 comments: false
 ---
 
