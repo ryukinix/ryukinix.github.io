@@ -24,6 +24,9 @@ sass:
   sass_dir:         _sass
   style:            compressed
 
+# Google Analytics
+google_analytic: UA-87737894-1
+
 # Comments
 disqus_shortname:   ryukinix
 
@@ -31,7 +34,6 @@ disqus_shortname:   ryukinix
 # if you don't have any of social below, comment the line.
 google:
   plus:            ManoelVilelaNeto
-  verify:          UA-87737894-1
   #ad-client:
   #ad-slot:
 #bing-verify:
