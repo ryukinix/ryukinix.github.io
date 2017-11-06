@@ -1,0 +1,40 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:nil toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2017-11-06 Mon 03:38
+#+TITLE: The Eternal Phoenix
+#+DESCRIPTION: A conceptual album about my mind
+#+TAGS: music,personal
+#+LANG: en
+#+CATEGORIES: personal
+#+COMMENTS: true
+
+#+BEGIN_HTML html
+  <p align="center">
+  <iframe style="border: 0; width: 350px; height: 786px;"
+          src="https://bandcamp.com/EmbeddedPlayer/album=512666029/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless>
+    <a href="http://chaoticlambdas.bandcamp.com/album/the-eternal-phoenix">The Eternal Phoenix by Manoel Vilela @ Lerax</a>
+  </iframe>
+  </p>
+#+END_HTML
+
+* Description
+
+This is a lot of introspection about all my life: in the nested deaths
+and ressurections. Mainly about the depressing eras and fighting with
+it. How is the sound of a mind like that? The album covers a random
+composing music on these days. How can I say... it's just about me.
+
+For me, was always (and always will be) like a eternal phoenix cycle: death inside, reborn. *Repeat*.
+
+Thanks to /Boa/ and /Vivaldi/ creating so much nice good music, the
+/Mindblowing/ and /Lost/ tracks was covers of the respective musics
+authors: Vivalid Tribute and Duvet.
+
+As extra track, I added later of publish date a old cover that I
+recorded of Cello Suit I Prelude in G of John Sebastian Bach, but
+incomplete.
+
+All credits © for Manoel Vilela (me?), released in June 11, 2016.
