@@ -25,7 +25,7 @@ sass:
   style:            compressed
 
 # Google Analytics
-google_analytic: UA-87737894-1
+google_analytics: UA-87737894-1
 
 # Comments
 disqus_shortname:   ryukinix
