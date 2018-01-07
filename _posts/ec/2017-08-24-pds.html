@@ -1,0 +1,845 @@
+---
+date: 2017-08-24
+tags:
+- ec
+- pds
+- engenharia
+- matemática
+author: Manoel Vilela
+title: Processamento Digital de Sinais @@latex:\\@@
+latex_class: article
+latex_header: \usepackage{mathtools}
+layout: post
+excerpt: Sistemas e Sinais Discretos no Tempo
+lang: pt
+categories:
+- ec
+comments: true
+---
+<div class="ABSTRACT">
+<p>
+Essas notas se concentram toda a revisão, resumo e exercícios para o
+Cápitulo II do livro Discrete-Time Digital Processing do <i>Oppenheim</i>:
+Sinais e Sistemas Lineares Invariantes no Tempo.  Esse material
+refere-se a disciplina de Processamento Digital de Sinais.
+</p>
+
+</div>
+
+<div id="outline-container-orgaad542e" class="outline-2">
+<h2 id="orgaad542e">Descrição</h2>
+<div class="outline-text-2" id="text-orgaad542e">
+<p>
+As últimas aulas de PDS foram dadas a respeito sobre as definições
+básicas de sinal e sistema. Outras propriedades foram faladas também
+como:
+</p>
+
+<ul class="org-ul">
+<li>Memoria</li>
+<li>Linearidade</li>
+<li>Sistemas Lineares Invariantes no Tempo</li>
+<li>Causalidade</li>
+<li>Estabilidade</li>
+</ul>
+
+
+<p>
+Também foi comentado sobre entidades como <code>media móvel</code>, delta de
+Dirac (contínuo) e delta de Kronecker (discreto).
+</p>
+
+
+<p>
+Existem três tipos de sistemas: contínuo, discretos no tempo e
+digitais.
+</p>
+
+
+<p>
+Sistemas computacionais são digitais, no entanto na teoria de PDS será
+estudado sistemas discretos no tempo. A diferença entre eles é que os
+valores que um sinal pode assumir é contínuo, embora os valores do
+tempo (abscissas) são discretos.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org1850adc" class="outline-2">
+<h2 id="org1850adc">Conceitos</h2>
+<div class="outline-text-2" id="text-org1850adc">
+<p>
+Os conceitos principais para a disciplina de Processamento Digitais de
+Sinais (PDS), envolve os conceitos já definidos na disciplina de
+Sistemas Lineares (que não fiz completamente). Os conceitos
+elementares envolvem Sinais e Sistemas de Sinais, dos quais derivam-se
+os domínios: contínuo, discreto no tempo e digital.
+</p>
+
+<p>
+Sinais contínuos tem seu domínio e contra-domínio contínuo,
+referenciado muitas vezes como sinais analógicos. Sinais discretos no
+tempo possui o tempo discreto, mas a amplitude contínua. Sinais
+digitais são ambos discretos em tempo e amplitude.
+</p>
+
+<p>
+As transformações sucessivas entre esses tipos de sinais são chamados
+de amostragem e quantização. A transformação de um sinal em outro é
+chamado de sistema.
+</p>
+</div>
+
+<div id="outline-container-org0677068" class="outline-3">
+<h3 id="org0677068">Sinais</h3>
+<div class="outline-text-3" id="text-org0677068">
+<p>
+Sinal é nada mais que uma função com uma interpretação física: uma
+entidade mensurável.  No domínio discreto no tempo recebe uma notação
+especial \(f[n]\) enquanto no contínuo geralmente é \(f(t)\). Sinais
+discretos podem ser interpretados também com uma sequência numérica,
+com seus valores associados em \(n \in \mathbb{N}\).
+</p>
+
+<p>
+Um sinal muito importante é o impulso unitário, definido como o delta
+de kronecker para o caso discreto. \(\delta[n = 0] = 1\) e \(\delta[n
+\neq 0]=0 \).
+</p>
+
+<p>
+Como será visto na discussão de sistemas lineares, uma dos mais
+importantes aspectos de uma sequência de impulsos é que um sequência
+arbitrária pode ser descrita como uma soma ponderada de impulsos
+atrasados.
+</p>
+
+<p>
+Além disso, um sinal discreto pode ser representando como um sinal
+contínuo com uma amostragem matemática definida como:
+</p>
+
+<div class="LATEX" id="sinais:amostragem">
+\begin{equation}
+x[n] = x_a(nT)
+\end{equation}
+
+</div>
+
+<p>
+Representa a \(n\)-ésima componente do sinal contínuo \(x_c(t)\)
+obtida de um processo de amostragem periódica.
+</p>
+
+<p>
+Sendo \(T\) o período de amostragem, tal que \(T \in \mathbb{R} \) e
+\(n \in \mathbb{N} \).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0407b22" class="outline-3">
+<h3 id="org0407b22">Sistemas</h3>
+<div class="outline-text-3" id="text-org0407b22">
+<p>
+Sistema tem como entrada um sinal e resposta um novo sinal. De forma
+um tanto detalhada, é dita que: `Fenômeno físico que exerce transformações sobre os sinais, modificando
+o conteúdo de informação nele contida.'
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c438bc" class="outline-3">
+<h3 id="org1c438bc">Sinal unitário</h3>
+<div class="outline-text-3" id="text-org1c438bc">
+<p>
+Sinal unitário é definido como delta de kronecker para o domínio
+discreto.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org383e58c" class="outline-3">
+<h3 id="org383e58c">Delta de Kronecker</h3>
+<div class="outline-text-3" id="text-org383e58c">
+<p>
+O delta de kronecker é definido como \(\delta[0]=1\) e para todos
+outros igual a 0.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1352b7c" class="outline-3">
+<h3 id="org1352b7c">Sinal degrau</h3>
+<div class="outline-text-3" id="text-org1352b7c">
+<p>
+O sinal degrau é \(u[n \geq 0] = 1\) e zero para todo o resto. Há
+algumas implicações do sinal degrau com o sinal unitário, como de fato
+no exemplo no sistema acumulador, recebendo o sinal unitário de
+entrada, vamos criar o sinal degrau.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30c92c1" class="outline-2">
+<h2 id="org30c92c1">Propriedades de sistemas</h2>
+<div class="outline-text-2" id="text-org30c92c1">
+</div>
+
+<div id="outline-container-orgfb5c47c" class="outline-3">
+<h3 id="orgfb5c47c">Memória</h3>
+<div class="outline-text-3" id="text-orgfb5c47c">
+<p>
+Um sistema pode ser definido com memória ou sem memória. Sistemas
+ideais sem memória não dependem de entradas passadas. Por exemplo o
+sistema média móvel é um sistema com memória pois deve armazenar \(n\)
+entradas para calcular a cada ponto. Um amplificador pode ser
+implementado sem memória, no entanto amplificadores reais geralmente
+são implementados com memória por alguma razão obscura que ainda não
+sei <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org14ac5b4" class="outline-3">
+<h3 id="org14ac5b4">Linearidade</h3>
+<div class="outline-text-3" id="text-org14ac5b4">
+<p>
+Se provado as condições de superposição, é dito que o sistema é
+linear. Vale lembrar que as condições de superposição são os axiomas
+da aditividade (Eq. <a href="#orgd3942af">1</a>) e homogeneidade
+(Eq. <a href="#orga64ef36">1</a>) .
+</p>
+
+<div class="LATEX" id="linearidade:aditividade">
+\begin{equation} \label{linearidade:aditividade}
+T\{x_1[n] + x_2[n]\} = T\{x_1[n]\} + T\{x_2[n]\} = y_1[n] + y_2[n]
+\end{equation}
+
+</div>
+
+<div class="LATEX" id="linearidade:homogeneidade">
+\begin{equation} \label{linearidade:homogeneidade}
+T\{ax[n]\} = aT\{x[n]\} = ay[n]
+\end{equation}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4686177" class="outline-3">
+<h3 id="org4686177">Invariância no Tempo</h3>
+<div class="outline-text-3" id="text-org4686177">
+<p>
+Sistemas invariantes no tempo são aqueles quando o sinal atrasado na
+entrada ou atrasado na saida, gera o mesmo sistema. Para provar se é
+SLIV, é necessário provar para todos os possíveis atrasos.  Para
+refutar, é necessário apenas um contra-exemplo.
+</p>
+
+<p>
+Matematicamente descrito como:
+</p>
+
+<div class="LATEX" id="sliv:teorema">
+\begin{equation} \label{sliv:teorema}
+x_1[n -n_0] \Rightarrow y_1[n - n_o], \forall n_0
+\end{equation}
+
+</div>
+
+<p>
+Por exemplo, o sistema acumulador é invariante no tempo.
+</p>
+
+<div class="LATEX" id="examplo:acumulador">
+\begin{equation} \label{exemplo:acumulador}
+y[n] = \sum_{i=-\infty}^n x[k]
+\end{equation}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb686192" class="outline-3">
+<h3 id="orgb686192">Causalidade</h3>
+<div class="outline-text-3" id="text-orgb686192">
+<p>
+A causalidade define que um sistema causal é aquele que não depende de
+entradas futuras.  Isto é, um sistema é causal se, para todo \(n_0\),
+o valor da saída em \(n=n_0\), depende somente dos valores da entrada
+en \(n \leq n_0\).
+</p>
+
+<div class="LATEX" id="causalidade:teorema">
+\begin{equation} \label{causalidade:teorema}
+x_1[n] = x_2[n], n \leq n_0 \Rightarrow y_1[n] = y_2[n], n \leq n_0
+\end{equation}
+
+</div>
+
+<p>
+O acumulador, por exemplo, é causal pois depende apenas das entradas
+anteriores para calcular os próximos sinais.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdcf9c0c" class="outline-3">
+<h3 id="orgdcf9c0c">Estabilidade</h3>
+<div class="outline-text-3" id="text-orgdcf9c0c">
+<p>
+Para um sistema ser estável ele precisa ter uma saída e entrada
+limitada <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+</p>
+
+<div class="LATEX" id="estabilidade:teorema">
+\begin{equation} \label{estabilidade:teorema}
+| x[n] | \leq B_x < \infty \quad \forall n \Rightarrow | y[n] | \leq B_y |
+< \infty \quad \forall n
+\end{equation}
+
+</div>
+
+<p>
+Na qual \(B_x, B_y > 0\) são números positivos finitos.
+</p>
+
+<ul class="org-ul">
+<li>O conceito de estabilidade de um sistema não dependente do tipo de entrada.</li>
+<li>Um dado sistema pode produzir uma saída limitada apenas para um número restrito
+de entradas limiitadas. Nesse caso, o sistema <b>não é estável</b>.</li>
+<li>Sistemas estáveis produzem saídas limitadas para <b>todo</b> tipo de entrada
+limitada.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9984bae" class="outline-2">
+<h2 id="org9984bae">Convolução de Sinais Discreto no Tempo</h2>
+<div class="outline-text-2" id="text-org9984bae">
+<p>
+Sistemas convolucionais. Uma convolução é realizada entre dois sinais
+e gera um novo sinal. Uma das interpretações intuitivas é que ao
+transladar uma das funções em relação a outra, é calculado a média
+móvel em relação a área de intersecção desses dois sinais.  Para
+calcular a convolução de sinais é necessário realizar algumas
+operações primárias, sendo que de fato a convolução é uma soma
+infinita de impulsos ponderados deslocados no tempo.
+</p>
+
+<p>
+Primeiramente devemos entender que sistemas lineares invariantes no
+tempo podem ser caracterizados completamente por sua resposta ao
+impulso. Através de alguns artifícios matemáticos, obtem-se:
+</p>
+
+<div class="LATEX" id="convolucao:eq1">
+\begin{equation} \label{convolucao:eq1}
+\begin{aligned}
+y[n] = T\{x[n]\} = T\{\sum_{k=-\infty}^\infty x[k]\delta[n - k]\} \\
+y[n] = \sum_{k=-\infty}^\infty x[k]T\{\delta[n - k]\} \\ y[n] =
+\sum_{k=-\infty}^\infty x[k]h[n - k] = x[n] * h[n]
+&& \text{(soma de convolução)} \\
+\end{aligned}
+\end{equation}
+
+</div>
+
+<p>
+Dado que pela invariância no tempo: \(T\{\delta[n]\}=h[n] \Rightarrow
+T\{\delta[n-k]\}=h[n-k]\).
+</p>
+
+<p>
+Os passos para calcular a operação de convolução são:
+</p>
+
+<ol class="org-ol">
+<li>Refletir \(h[k]\) em torno da origem para obter \(h[-k]\)</li>
+<li>Obter \(h[n-k]\) deslocando a sequência refletida até \(k=n\)</li>
+<li>Multiplicar \(h[n-k]\) por \(x[k]\)</li>
+</ol>
+
+<p>
+As propriedades definidas para a convolução são:
+</p>
+
+<ul class="org-ul">
+<li>Comutatividade: \((f * g)[n] = (g * f)[n]\)</li>
+<li>Distributividade sobre a adição)</li>
+<li>Associação em série (a própria convolução)</li>
+<li>Associação em paralelo (som a de sinais)</li>
+</ul>
+
+
+<div id="org5243bd9" class="figure">
+<p><img src="res/convolucao.png" alt="convolucao.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Exemplo de convolução contínua no tempo entre uma função exponencial descrescente e a função degrau.</p>
+</div>
+
+<p>
+No final geralmente temos um PG para se calcular. Onde pode ser uma PG
+infinita convergente, ou uma PG simples finita. Para as duas as
+fórmulas são conhecidas.
+</p>
+</div>
+
+
+<div id="outline-container-orge85c9e4" class="outline-3">
+<h3 id="orge85c9e4">Exercício sobre convolução</h3>
+<div class="outline-text-3" id="text-orge85c9e4">
+<p>
+Exercício 2.3: Encontre a resposta ao degrau dado a resposta ao
+impulso a seguir:
+</p>
+
+<div class="LATEX">
+<p>
+\[h[n] = a^{-n}u[-n] \quad 0 < a < 1 \]
+</p>
+
+</div>
+
+<p>
+Resposta: De acordo com a definição de soma de convolução na
+(Eq. <a href="#org74c9d8f">1</a>), é importante lembrar também que a operação de
+convolução é um operador que suporta comutatividade. O que será
+importante nessa análise.
+</p>
+
+<p>
+Podemos inicialmente analisar essa soma da seguinte maneira:
+</p>
+
+<div class="LATEX">
+\begin{equation*}
+\begin{aligned}
+x[n] &= u[n] \\ h[-k] &= a^{k}u[k] \\ h[n -k] &= a^{k -n}u[k -n] \\
+y[n] &= x[n] * h[n] = \sum_{k=-\infty}^\infty u[k]a^{k -n}u[k -n] \\
+\end{aligned}
+\end{equation*}
+
+</div>
+
+<p>
+Se \(n < 0\) então, \(u[n -k] = 1\) para \(k \geq 0\).  Não interessa
+para \(k < 0\) pois \(u[k] = 0\). Logo, reescrevendo a expressão temos
+que para \(n < 0\):
+</p>
+
+<div class="LATEX">
+\begin{equation*}
+\begin{aligned}
+y[n] &= \sum_{k=-\infty}^{-1} u[k]a^{k -n}u[k -n] + \sum_{k=0}^\infty
+u[k]a^{k -n}u[k -n] \\
+     &= 0 + \sum_{k=0}^\infty a^{k -n} \\ &= \sum_{k=0}^\infty
+     a^{-n}a^k \\ &= a^{-n}\sum_{k=0}^\infty a^k \\ &=
+     a^{-n}\sum_{k=0}^\infty a^k
+\end{aligned}
+\end{equation*}
+
+</div>
+
+<p>
+Onde \(\sum_{k=0}^\infty a^k\) é a progressão geométrica infinita, tal
+como \(0 < a < 1\), equivalente a \(\dfrac{1}{(1 - a)}\). Portanto,
+através do desenvolvimento anterior temos que para \(n < 0\):
+</p>
+
+<div class="LATEX" id="convolucao:exemplo23-solucao1">
+\begin{equation} \label{convolucao:exemplo23-solucao1}
+y[n] = \dfrac{a^{-n}}{1 - a}
+\end{equation}
+
+</div>
+
+<p>
+Não podemos usar a mesma convolução acima definida entre \((x *
+h)[n]\) para \(n \geq 0\) devido ao fato que o resultante disso seria
+uma progressão geométrica condicionada da existência de seus termos
+somente para \(k \geq n\), do contrário o termo é nulo por conta da
+função degrau \(u[k -n]\).  Nesse caso, é um grande problema pois
+\(\forall n \in \mathbb{Z}\) a sequência está definida e não incluindo
+todos os elementos na soma isto não será propriamente uma soma de
+progressão geométrica.
+</p>
+
+<p>
+No entanto ao aplicar a propriedade da comutatividade da convolução
+podemos contornar este problema.  Ao aplicar a propriedade de
+comutatividade, temos que para \(n \geq 0\):
+</p>
+
+<div class="LATEX" id="convolucao:exemplo23-solucao2">
+\begin{equation} \label{convolucao:exemplo23-solucao2}
+\begin{aligned}
+y[n] &= x[n] * h[n] = h[n] * x[n] \\
+     &= \sum_{k=-\infty}^\infty h[k]x[n - k] \\ &=
+     \sum_{k=-\infty}^\infty a^{-k}u[-k]u[n -k] \qquad \text (k > 0
+     \Rightarrow u[-k] = 0) \\ &= \sum_{k=-\infty}^0 a^{-k}u[n -k]
+     \qquad \text (k \leq 0 \land n \geq 0 \Rightarrow u[n -k] = 1)
+     \\ &= \sum_{k=-\infty}^0 a^{-k} \\ &= \dfrac{1}{1-a} \\
+\end{aligned}
+\end{equation}
+
+</div>
+
+<p>
+Como \(k \leq 0 \Rightarrow -k \geq 0\), portanto a mesma relação de
+PG vale no último passo.  Dessa maneira, finalmente temos que através
+de (Eq. <a href="#orgc8eac15">1</a>) e
+(Eq. <a href="#orgfa6d1fb">1</a>) a convolução desses dois sinais é
+dado como:
+</p>
+
+<div class="LATEX" id="convolucao:exemplo23-solucao-final">
+\begin{equation}
+y[n] =
+\begin{cases}
+\dfrac{1}{1 -a} \quad \text{se} \ n \geq 0 \\ \dfrac{a^{-n}}{1-a}
+\quad \text{se} \ n < 0 \\
+\end{cases}
+\end{equation}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8c37f2d" class="outline-3">
+<h3 id="org8c37f2d">Relação: Transformada de Laplace e Convolução</h3>
+<div class="outline-text-3" id="text-org8c37f2d">
+<p>
+A convolução e a transformada de Laplace possuí algumas propriedades
+interessantes, entre elas, durante a transformada de Laplace, a
+convolução se torna apenas uma multiplicação das transformadas de
+Laplace das funções individuais. No nosso contexto de PDS, sinais.
+</p>
+
+<p>
+A Transformada de Laplace transforma um sinal dependente do tempo para
+o domínio da frequência. Como é um assunto muito extenso, com muitas
+propriedades e implicações, irei deixar isso de lado por enquanto.
+Talvez no livro eu ache mais algum contexto relevante para aplicação
+em PDS.
+</p>
+
+<p>
+Dado que a Transformada de Laplace no tempo contínuo é dada como:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+F(s) = \mathcal{L}\{f\}(s) =\int_0^\infty e^{-st} f(t)\,dt.
+\end{equation}
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5a82907" class="outline-2">
+<h2 id="org5a82907">Equações de Diferenças</h2>
+<div class="outline-text-2" id="text-org5a82907">
+<p>
+Equações de diferenças podem ser usadas para implementar sistemas que
+podem ter duração infinita ao impulso infinita ou simplesmente para o
+fazê-los de maneira mais eficiente.
+</p>
+
+<p>
+Tendo o citado acima m mente, é importante comentar que existem dois
+tipos de sistemas LTI:
+</p>
+
+<ul class="org-ul">
+<li>FIR (<i>finite-duration impulse response</i>) \(\Rightarrow\) RI de duração finita;</li>
+<li>IIR (<i>infinte-duration impulse response</i>) \(\Rightarrow\) RI de duração infinita.</li>
+</ul>
+
+<p>
+Sistemas FIR são sempre estáveis (RI tem sempre soma das magnitudes
+finita).
+</p>
+
+<p>
+Nem todo sistema IIR é estável, \(|h[n]|\) deve ser absolutamente
+somável.
+</p>
+
+<p>
+Um bom exemplo de IIR estável é a resposta impulso do último exemplo
+sobre convolução feito em <a href="#orge85c9e4">Exercício sobre convolução</a>.
+</p>
+</div>
+
+<div id="outline-container-org866b587" class="outline-3">
+<h3 id="org866b587">A equação de recorrência</h3>
+<div class="outline-text-3" id="text-org866b587">
+<p>
+Uma implementação de sistema por equações de diferenças, tem sua
+representação numa equação de recorrência (recursiva). Um bom exemplo
+é uma implementação mais eficiente do acumulador, dado como: \(y[n] =
+x[n] + y[n-1]\).
+</p>
+
+<p>
+Analogamente, é possível definir também a média móvel através de uma
+equação de recorrência:
+</p>
+
+<div class="LATEX">
+<p>
+\[h[n] = \dfrac{1}{M_2 + 1} (u[n] - u[n - M_2 -1])\]
+</p>
+
+</div>
+
+<p>
+Um problema tanto relevante é que como uma recorrência é definida em
+termo de valores já calculados, logo é necessário sabermos todos os
+valores para \(n' < n\) e então ser possível calcular a
+sequência. Logo uma equação de recorrência é sempre um sistema com
+memória (posso afirmar isso?).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf11d83c" class="outline-3">
+<h3 id="orgf11d83c">Relação com equações diferenciais (caso contínuo)</h3>
+<div class="outline-text-3" id="text-orgf11d83c">
+<p>
+As equações de diferenças são definidas no tempo discreto. O que
+conhecemos de equações diferenciais isto está definido no contexto do
+domínio contínuo. Mas as ideias entre ambas operações são muito
+semelhantes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org372ac59" class="outline-3">
+<h3 id="org372ac59">Solução homogênea(natural) e particular (forçada)</h3>
+<div class="outline-text-3" id="text-org372ac59">
+<p>
+A solução homogênea, embora não necessária nesse curso, refere-se ao
+contexto de que um sistema possui uma condição inicial. A solução
+homogênea não depende da entrada, pois a entrada é zero. Isso é um
+ponto negativo em LTI, pois isso o torna um sistema variante no tempo
+e também não é linear. O que de fato não queremos.
+</p>
+
+<p>
+Num contexto de circuítos elétricos, uma solução homogênea lembra
+problemas como exemplo o comportamento de um circuito RC (Resistor -
+Capacitor) em que sua energia inicial é não-nula.
+</p>
+
+<p>
+A resposta forçada e particular é justamente a que temos interesse, na
+qual é 'forçado' um sinal em relação a resposta. Nesse caso a resposta
+particular é linear e invariante no tempo.
+</p>
+
+<p>
+A solução geral da saída do sistema é descrita como:
+</p>
+<div class="LATEX" id="equacoes-diferencas:solucao-geral">
+<p>
+\[ y[n] = y_h[n] + y_p[n] \]
+</p>
+
+</div>
+<p>
+Sendo que a equação para solução homogênea é a solução de:
+</p>
+
+<div class="LATEX">
+<p>
+\[ \sum_{k=0}^N a_k y[n-k] = 0 \]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge3fa049" class="outline-2">
+<h2 id="orge3fa049">Representação no domínio da frequência</h2>
+<div class="outline-text-2" id="text-orge3fa049">
+<p>
+Um sistema pode ser caracterizado por sua frequência, um exemplo é
+aplicar a entrada de \(x[n] = e^{jwn}\) para \(n \in (-\infty,
+\infty)\).
+</p>
+
+<p>
+A resposta ao impulso para a entrada dada é:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+\begin{aligned}
+y[n] &= \sum_{k=-\infty}^{\infty} h[k] \cdot e^{jw(n -k)} \\
+     &= e^{-jwn}(\sum_{k=-\infty}^{\infty} h[k] \cdot e^{-jwk})
+\end{aligned}
+\end{equation}
+
+</div>
+
+<p>
+É observável que o somatório entre parenteses nada mais é que uma
+constante.  Pois não depende da entrada \(n\), ou seja não depende do
+tempo! No entanto, ela varia em torno da frequência, essa entidade é
+conhecida como <b>resposta em frequência</b>.
+</p>
+
+<p>
+Essa propriedade ocorre pois a exponencial complexa é uma autofunção,
+sendo a autofunção a exponencial complexa que está fora do
+somatório e o próprio somatório no final o autovalor.
+</p>
+
+<p>
+Uma propriedade importante é que durante a aplicação de um sistema em
+domínio da frequência, a frequência não muda, apenas a fase e a
+amplitude desse sinal. O que é uma propriedade muito desejada em
+projeto de filtros.
+</p>
+</div>
+
+<div id="outline-container-orgdc1986d" class="outline-3">
+<h3 id="orgdc1986d">Resposta em frequência</h3>
+<div class="outline-text-3" id="text-orgdc1986d">
+<p>
+Definição de resposta em frequência, como descrito na seção anterior,
+tem-se que:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+H(e^{j\omega}) = \sum_{k=-\infty}^{\infty} h[k] \cdot e^{-jwk}
+\end{equation}
+
+</div>
+
+<p>
+Logo o sinal se torna:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+y[n] = e^{j\omega n} \cdot H(e^{j\omega})
+\end{equation}
+
+</div>
+
+<p>
+Onde \(H(e^{j\omega})\) é o autovalor. Esta operação é periódica com
+período \(2\pi\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org665a8df" class="outline-3">
+<h3 id="org665a8df">Transformada de Fourier (TF)</h3>
+<div class="outline-text-3" id="text-org665a8df">
+<p>
+A transforma de Fourier no contexto de processamento digital de sinais
+é usada para representar um sistema de domínio do tempo para domínio
+da frequência. Uma propriedade interessante é que a exponencial
+complexa é uma autofunção. Isso quer dizer que se um sinal de entrada
+é uma exponencial complexa, a saída do sistema será também uma
+exponencial complexa multiplicada por uma constante.
+</p>
+
+<p>
+Isso simplifica todo o trabalho muito complicado de lidar com
+diferentes tipos de convolução de sinais discreto no tempo. Pois, ao
+transformar um sinal para o domínio da frequência usando a
+Transformada de Fourier, nosso sinal fica em função da frequência em
+relação a exponenciais complexas. Sendo assim, para aplicar um sistema
+temos apenas que lidar com operações simples de multiplicações de
+exponenciais complexas.
+</p>
+
+<p>
+A transformada de Fourier de um sinal qualquer é dada para um sinal
+\(x[n]\):
+</p>
+
+<div class="LATEX">
+\begin{equation}
+X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n}
+\end{equation}
+
+</div>
+
+<p>
+Também conhecida como uma operação de análise.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd6a640b" class="outline-3">
+<h3 id="orgd6a640b">Transformada de Fourier Inversa (TFI)</h3>
+<div class="outline-text-3" id="text-orgd6a640b">
+<p>
+A operação de reconstrução do sinal, voltando ao domínio real e
+discreto é feito através de uma integral complexa. A
+transformada de Fourier é definida como \(\mathcal{F}:
+\mathbb{R} \rightarrow \mathbb{C}\) e \(\mathcal{F}^{-1}: \mathbb{C}
+\rightarrow \mathbb{R}\).
+</p>
+
+<p>
+Sendo que a fórmula para síntese, reconstrução do sinal da a
+transformada de Fourier, é equivalente a:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+x[n] = \dfrac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j \omega})e^{j \omega
+n}d \omega
+\end{equation}
+
+</div>
+
+<p>
+Sendo que para nosso caso a entrada da transformação \(\mathcal{F}\) é
+<b>discreta</b> mas após a transformação é <b>contínua</b> e <b>complexa</b>!
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org76b60b1" class="outline-2">
+<h2 id="org76b60b1">Referências</h2>
+<div class="outline-text-2" id="text-org76b60b1">
+<ul class="org-ul">
+<li>OPPENHEIM; ALAN, 1999, Discrete-Time Signal Processing 2nd Edition</li>
+<li>DINIZ; PAULO, 2010, Digital Signal Processing System Analysis and Design 2nd Edition</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Sim, não pesquisei ainda sobre isso. O professor apenas comentou em aula sobre isso
+após eu ter perguntado. Se você souber me diz.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+não pode crescer indefinitivamente.
+</p></div></div>
+
+
+</div>
+</div>
