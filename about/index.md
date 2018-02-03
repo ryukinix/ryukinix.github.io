@@ -19,17 +19,20 @@ everyday. In general my knowledge about programming languages ranked
 in five stars scale as maximum confidence and interest as well knowledge are
 sorted as:
 
-* Python     ★ ★ ★ ★ ★
-* C          ★ ★ ★ ★ ★
-* Lisp       ★ ★ ★ ★ ★
-* Rust       ★ ★ ★ ★
-* Go         ★ ★ ★ ★
-* Haskell    ★ ★ ★ ★
-* F#         ★ ★ ★
-* C++        ★ ★ ★
-* Java       ★ ★
-* C#         ★ ★
-* JavaScript ★ ★
+``` markdown
+Python     ★ ★ ★ ★ ★
+C          ★ ★ ★ ★ ★
+Lisp       ★ ★ ★ ★ ★
+Rust       ★ ★ ★ ★
+Go         ★ ★ ★ ★
+Haskell    ★ ★ ★ ★
+F#         ★ ★ ★
+C++        ★ ★ ★
+Java       ★ ★
+C#         ★ ★
+JavaScript ★ ★
+```
+
 
 ## Current life
 
@@ -56,7 +59,7 @@ the way, good time.
 
 Lerax it's come from 2013: a random name that I choose for the
 character of my WarFace account, a FPS game written on top of the
-CryEngine.
+qCryEngine.
 
 Since these days, I've using the both nicknames on different situations.
 
