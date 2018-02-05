@@ -59,7 +59,7 @@ the way, good time.
 
 Lerax it's come from 2013: a random name that I choose for the
 character of my WarFace account, a FPS game written on top of the
-qCryEngine.
+CryEngine.
 
 Since these days, I've using the both nicknames on different situations.
 
