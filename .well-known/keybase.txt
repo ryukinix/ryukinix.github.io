@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/lerax
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://lerax.me
+  * I am lerax (https://keybase.io/lerax) on keybase.
+  * I have a public key with fingerprint FE71 E643 E21B 1A2D 05B8  311F B0D0 EC75 0061 E91C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010125e2d33256f38f8937dd830918b98946476a35a0a1a906f54d821b25f2cbafaa0a",
+      "fingerprint": "fe71e643e21b1a2d05b8311fb0d0ec750061e91c",
+      "host": "keybase.io",
+      "key_id": "b0d0ec750061e91c",
+      "kid": "010125e2d33256f38f8937dd830918b98946476a35a0a1a906f54d821b25f2cbafaa0a",
+      "uid": "dc6956858b603e780f887fe55fec7d19",
+      "username": "lerax"
+    },
+    "service": {
+      "hostname": "lerax.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1519933963,
+  "expire_in": 157680000,
+  "prev": "d00e2853c611441665d2c709b6b4df9a10b7ad1b6c433c2fb33b5089f1b4c7c7",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIhAnicrVJdSBRRFN7VCt3SxB4CiYrpoR9XvXfu3PlZJVjEtyQyKBBhmztzZ53c
+3dlmZtW0DYqKCKOsjAiNrHCJLMyKwKQyKkwhI8WioOhBSIl+CKJ60O5IQQ89dl/u
+ved8P+cczsO8bF/A3/fsQ8qnTq/wjw61p3y1Z2oXt3LE0ndzoVaugc5fNKZTx400
+mDoX4gAEkMeU1xHisWgg2ZAVJOm6jIACZaLIiiAKkqgirAIVqgoQDSzoMg8Jjw1e
+I6qhsgQX5AwzEaV20jYTLpM1qASpKCDKgFDldYCJjCA0CNAB1SQMgAipAjVGrLcc
+j8GKI6pDS02LxdgnMl/eP/D/ue7UvJyuiQoWZSwTESAqycCQZcmgGBvMXYeKB3So
+nVDjlKFj1FabuXSQY6FGU6PeVL02/k6XsmeQS9qWa2lWjEXrXTfphDyWuzvpwZoo
+ifwWiBAzobMBMkYjtR3TSnAhyJCaa3qKEENFQUgRUZCjzUnTphHTQ2BJlAE7ng9t
+9NoAgPIyRpoIoSBAUcQ6r0lAISIRdENRISCSqkMiagJCGm8QhAgGsmJAImiSJnFe
+S7sSFtNmVq4aZZqOGU2obsqmXPrB/boFPn/At2hhlrdZvkBuwZ996ziX47veNHzy
+Xuzg2HrdeX9g87GKkp7Cfe2VQ4FQOf00caICdL4I1xyVZuZQfKC3bdXb/c8Hl0wf
+7zt940h3y6YNY9HsslNna152Fl/quHwoOlIbjf58kv+1/2zZytw3JZWzU937qsee
+P/y2devN2EzFqlR62+HJ8I5YW3R89PPGXReu9K7ZXl7dXXfqUc75ZS13ilc/nc7c
+fiVPcePCxS+Z7HDBisG5voGe5KWJPiHr2JM14R8jWxre7Vke+44uHOmYVrvye4PX
+UKDqLi5asuij2Z+ZTD+tKT+3M762uLB4aVHGvlW7Qapu/1ywIG/t3tfD6666j2fz
+/EJVV+Hg1Pv8vKq2uZ74L+LSOpM=
+=+IBx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lerax
+
+==================================================================
