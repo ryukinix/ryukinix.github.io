@@ -1,0 +1,599 @@
+---
+date: 2017-08-20
+tags:
+- programming
+author: Manoel Vilela
+title: Aprendendo F#
+excerpt: Um breve relato de aventura entre Mono e .NET Core
+categories:
+- programming
+layout: post
+comments: true
+lang: pt
+---
+
+<style>
+  pre.src {
+    background-color: #303030;
+    color: #e5e5e5;
+    padding: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+</style>
+
+<div id="outline-container-org4fbb063" class="outline-2">
+<h2 id="org4fbb063">Descrição</h2>
+<div class="outline-text-2" id="text-org4fbb063">
+<p>
+Este arquivo contém notas pessoais sobre aprendizado do ecossistema de F#.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga92e31d" class="outline-2">
+<h2 id="orga92e31d">Setup</h2>
+<div class="outline-text-2" id="text-orga92e31d">
+</div>
+<div id="outline-container-orge80141c" class="outline-3">
+<h3 id="orge80141c">Pacotes instalados no Manjaro</h3>
+<div class="outline-text-3" id="text-orge80141c">
+<p>
+Atualmente tenho instalados o mono junto com trocentas coisas. Aliás, embora<br />
+isso não tenha nada a ver, é somente com o monodevelop que estou conseguindo<br />
+definitivamente usar F# [1]. Não dei jeito ainda no meu emacs. Vou verificar depois<br />
+se consigo usar.<br />
+</p>
+
+<p>
+Mas para instalar o .NET Core precisei dos seguintes pacotes que estão no AUR:<br />
+</p>
+
+<ul class="org-ul">
+<li>dotnet-sdk-2.0<br /></li>
+<li>dotnet-host<br /></li>
+<li>dotnet-runtime-1.1<br /></li>
+<li>dotnet-sdk-1.1<br /></li>
+</ul>
+
+<p>
+Já instalei tanta coisa que nem sei mais o que é realmente necessário. Mas, bem,<br />
+na verdade o setup mais estável que consegui foi instalando os seguintes pacotes<br />
+do AUR:<br />
+</p>
+
+<ul class="org-ul">
+<li>dotnet-host (cli dotnet, cross-sdk manager)<br /></li>
+<li>dotnet-runtime-1.1<br /></li>
+<li>dotnet-sdk-1.1 (actually 1.0.4)<br /></li>
+</ul>
+
+
+<p>
+De resto estou conseguindo me virar.<br />
+</p>
+
+<p>
+[1]: Na verdade estou conseguindo usar o Emacs e VS code também. Só tenho<br />
+problemas com o MonoDevelop na hora de usar .NET Core quando faz referências<br />
+a pacotes do paket. O Emacs estou tendo problemas apenas com os templates usados<br />
+pelo .NET Core SDK 1.0.4. VS Code está supostamente funcionando tudo, tirando a parte<br />
+que ele me dá kernel panic.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd7717fa" class="outline-3">
+<h3 id="orgd7717fa">Mudar entre múltiplas versões do SDK de .NET Core</h3>
+<div class="outline-text-3" id="text-orgd7717fa">
+<p>
+É possível definir a versão por projeto do .NET Core, criando um arquivo<br />
+<code>global.json</code> na raíz do projeto:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  "projects": [ "src", "test" ],
+  "sdk": {
+    "version": "1.0.4"
+  }
+}
+</pre>
+</div>
+
+<p>
+Inclusive é a que estou usando atualmente pra mexer com Fable. Pois simplesmente<br />
+a versão 2.0 preview está com muitos problemas e não é recomendada pelo pessoal<br />
+do fable. Na verdade, eles até falam que é possível fazer desenvolvimento do projeto,<br />
+embora recomendem usar o SDK 1.0.4, no entanto simplesmente os templates não funcionam.<br />
+Queria apenas um template que funcionasse&#x2026;<br />
+</p>
+
+<p>
+EDIT <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-16 Wed 06:55&gt;</span></span>:<br />
+Isso na verdade gera um outro problema, que é do cache ficar sendo repopulado toda<br />
+vez que é chamado. Não sei se corrigiu recentemente, mas estava tendo sérios problemas com isso!<br />
+Se eu precisar novamente fazer isso e vê que não funciona setar o <code>global.json</code>, venho comentar isso aqui.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org00d76b9" class="outline-3">
+<h3 id="org00d76b9">Issues com .NET Core</h3>
+<div class="outline-text-3" id="text-org00d76b9">
+</div>
+<div id="outline-container-org9df6de7" class="outline-4">
+<h4 id="org9df6de7">Bugs com múltiplos SDKs instalados</h4>
+<div class="outline-text-4" id="text-org9df6de7">
+<p>
+Usar ao mesmo tempo sdk 2.0 e 1.0.4 dá merda. Embora haja a opção pra<br />
+a definir a versão por projeto, simplesmente toda vez que chamo o<br />
+comando <code>dotnet new</code> é populado o diretório cache de pacotes do nuget<br />
+e outras coisas SEMPRE. E isso é beeeem demorado. Leva quase 2 minutos.<br />
+Executar um comando recorrente que leva 2 minutos é simplesmente<br />
+inviável.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d9966e" class="outline-4">
+<h4 id="org1d9966e">Inviabilidade de usar SDK 1.0.4 em alguns casos</h4>
+<div class="outline-text-4" id="text-org1d9966e">
+<p>
+Outro ponto infeliz é que simplesmente os templates para F# PRATICAMENTE<br />
+de todos que testei estão cagados na versão SDK 1.0.4. Simplesmente os arquivos<br />
+.fsproj são legacy, não funcionam na hora de dar build nem com os comandos<br />
+do .NET core. O xbuild também não funciona pela linha de comando nem pelo<br />
+emacs. Por outro lado, como última alternativa, o comando `msbuild` funciona.<br />
+Mas não o do .NET Core (dotnet msbuild), somente o do mono [1].<br />
+</p>
+
+<p>
+EDIT <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-06 Sun 06:10&gt;</span></span>: parece que esse problema específico já foi<br />
+reportado, e para minha alegria está com a tag wont-fix, QUE MARAVILHA.<br />
+Isto foi corrigido no SDK 2.0, mas o fable não deixa eu usar o sdk 2.0&#x2026;<br />
+De qualquer maneira, aqui está: <a href="https://github.com/dotnet/netcorecli-fsc/issues/91">dotnet/netcorecli-fsc/issues/91</a>.<br />
+</p>
+
+<p>
+Além do mais eu também criei minha própria issue no dotnet/cli.<br />
+Aqui está: <a href="https://github.com/dotnet/cli/issues/7378">dotnet/cli/issues/7378</a><br />
+</p>
+
+<p>
+Eles falaram que Fsharp.Net.SDK foi deprecated e é também a causa desse problema.<br />
+</p>
+
+<p>
+[1]: NOTA às <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-16 Wed 06:52&gt;</span></span>:<br />
+esse comando não vem por padrão no mono! só pude usar na minha máquina<br />
+porque tenho o MonoDevelop instalado e por dependência ele instala o pacote do AUR<br />
+<code>msbuild-15-bin</code><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd43cc31" class="outline-4">
+<h4 id="orgd43cc31">Fable Template só funciona com a versão 1.0.4: conflito com sdk 2.0</h4>
+<div class="outline-text-4" id="text-orgd43cc31">
+<p>
+Pra minha felicidade o fable template só tá funcionando com justamente a versão<br />
+do SDK 1.0.4, que embora seja a estável, simplesmente tá com os templates bem cagados<br />
+de F#.<br />
+</p>
+
+<p>
+Aparentemente eles mudaram recentemente a estrutura do projeto e talvez isso<br />
+tenha tido algum efeito colateral. Esta <a href="https://github.com/fable-compiler/Fable/issues/1042">issue</a> descreve o que estou comentando.<br />
+</p>
+
+<p>
+EDIT <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-06 Sun 07:09&gt;</span></span>: fazendo uma pergunta diretamente pra issue anterior,<br />
+recebi uma resposta que removendo a referencencia de Fsharp.Net.SDK dos arquivos<br />
+de .fsproj e references resolve esse problema. Estou ainda re-instalando os arquivos<br />
+para saber se isso irá mesmo corrigir. Isso está relacionado com<br />
+Inviabilidade de usar 1.0.4 em alguns casos.<br />
+</p>
+
+<p>
+EDIT2 <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-06 Sun 09:17&gt;</span></span>: infelizmente a dica do carinha não funcionou e<br />
+ainda não consigo rodar o projeto com o SDK 2.0 preview 2. :(<br />
+Sinceramente estou pensando em dropar plenamente o SDK 2.0 e fazer uns<br />
+alias pros comandos que não funcionarem apontando para o certo. Como<br />
+`alias dotnet build` =&gt; msbuild do mono kkk<br />
+Mas isso não vai dar muito certo&#x2026;<br />
+</p>
+
+<p>
+EDIT3 <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-16 Wed 06:44&gt;</span></span>: finalmente foi lançado na <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-14 Mon&gt;</span></span><br />
+.NET Core 2.0 e ainda tive problemas relatado com esse <i>heading</i>. Na verdade<br />
+o problema é mais profundo e está relacionado a shared frameworks. Quando tenho<br />
+shared framework de SDK 1.0.4 e 2.0.0, com runtimes 1.1.2 e 2.0.0, Fable<br />
+aponta para a versão 1.0.4 DO RUNTIME que não existe. Embora instalando o runtime<br />
+1.0.4 também não funcione e a razão está descrita <a href="https://github.com/dotnet/cli/issues/6390">dotnet/cli/issues/6390</a>.<br />
+No entanto, um workaround possível é fazer um link simbólico do runtime 1.1.2 para<br />
+o 1.0.4 (e claro removendo esse runtime). Em geral apenas fazendo isso corrige:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script"><span style="color: #C57BDB;">cd</span> /opt/dotnet/shared/Microsoft.NETCore.App
+sudo ln -s 1.1.2 1.0.4
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb78454d" class="outline-4">
+<h4 id="orgb78454d">MonoDevelop e Fable</h4>
+<div class="outline-text-4" id="text-orgb78454d">
+<p>
+Uma alternativa pra criar projetos de console seria usar o MonoDevelop + Mono.<br />
+Mas, o MonoDevelop também NÃO ESTÁ FUNCIONANDO com o Fable porque simplesmente<br />
+não consegue reconhecer as dependências setadas pelo paket.<br />
+</p>
+
+<p>
+Configurei o paket pra rodar no MonoDevelop como um addin, mas também não está<br />
+funcionando. Simplesmente ele congela ao tentar fazer <code>fetch</code> das dependências.<br />
+Além disso, a entrada `clitool dotnet-fable` não é reconhecida pelo parser.<br />
+Sendo que isto está definido em paket.dependencies e é crucial para fazer<br />
+build do projeto.<br />
+</p>
+
+<p>
+Se faço <code>dotnet restore</code> pela linha de comando, mesmo funcionando pela linha de<br />
+comando o build do projeto com <code>dotnet fable yarn-start</code>, SIMPLESMENTE o<br />
+MonoDevelop não reconhece todas as referências, explicitamente as que estão<br />
+setadas pelo paket.references. Desse modo além de não dar pra fazer build no<br />
+MonoDevelop, não tenho também autocomplete.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7925989" class="outline-4">
+<h4 id="org7925989">Emacs e F#</h4>
+<div class="outline-text-4" id="text-org7925989">
+<p>
+O autocomplete no emacs simplesmente só funciona quando quer. Não entendo<br />
+mais nada. Mas com o Fable nunca funcionou. Quando funciona é somente com<br />
+os projetos gerados pelo MonoDevelop (não pelos templates do .NET Core e<br />
+dotnet new). EDIT <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-06 Sun 05:29&gt;</span></span>: por alguma razão ele começou a funcionar! D:<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdf6fa7f" class="outline-2">
+<h2 id="orgdf6fa7f">Syntax</h2>
+<div class="outline-text-2" id="text-orgdf6fa7f">
+</div>
+<div id="outline-container-orgbaa345e" class="outline-3">
+<h3 id="orgbaa345e">Funções, tuplas e pattern matching</h3>
+<div class="outline-text-3" id="text-orgbaa345e">
+<p>
+A maioria dos métodos de F# que fazem wrapping na API da .NET<br />
+não são funções com múltiplos argumentos, mas sim tuplas. Isso<br />
+pode ser confuso no começo, mas é assim que funciona no ecossistema<br />
+de F#. O tipo <code>int * int</code> denota uma tupla de inteiros (int, int).<br />
+Enquanto na notação de tipos <code>int -&gt; int</code> é uma função curry que recebe<br />
+uma parâmetro int e retorna int.<br />
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-fsharp"><span style="color: #51afef;">open</span> <span style="color: #FCCE7B;">System.Net</span>
+
+<span style="color: #62686E;">// </span><span style="color: #62686E;">usando tuplas como argumento (url, file) e definindo uma fun&#231;&#227;o curry</span>
+<span style="color: #62686E;">// </span><span style="color: #62686E;">do tipo: string -&gt; string -&gt; unit</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">download</span> (<span style="color: #DFDFDF;">url</span>:<span style="color: #FCCE7B;">string</span>) (<span style="color: #DFDFDF;">file</span>:<span style="color: #FCCE7B;">string</span>) = <span style="color: #51afef;">new</span> WebClient().DownloadFile(url, file<span style="color: #ff665c; background-color: #1c1f24; font-weight: bold;">)</span>
+
+download <span style="color: #7bc275;">"www.google.com"</span> <span style="color: #7bc275;">"google.html"</span> <span style="color: #62686E;">// </span><span style="color: #62686E;">faz download de um arquivo</span>
+
+</pre>
+</div>
+
+<p>
+Curried functions são muito úteis por causa da possibilidade de fazer<br />
+partial application. Onde você passa apenas alguns dos primeiros parâmetros<br />
+e então uma nova função é definida. Um exemplo simples é dado a seguir:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fsharp"><span style="color: #51afef;">open</span> <span style="color: #FCCE7B;">System</span>
+
+<span style="color: #C57BDB; font-weight: bold;">[&lt;EntryPoint&gt;]</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">main</span> <span style="color: #DFDFDF;">argv</span> =
+  <span style="color: #51afef;">let</span> <span style="color: #DFDFDF;">print</span> = printfn <span style="color: #7bc275;">"%d"</span> <span style="color: #62686E;">// </span><span style="color: #62686E;">canonical print</span>
+  [1..10] <span style="color: #87cefa;">|&gt;</span> List.map print <span style="color: #87cefa;">|&gt;</span> ignore
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e8bfeb" class="outline-3">
+<h3 id="org0e8bfeb">Funções recursivas</h3>
+<div class="outline-text-3" id="text-org0e8bfeb">
+<p>
+Uma função recursiva recebe a keyword <code>rec</code> antes da definição.<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fsharp"><span style="color: #51afef;">let</span> <span style="color: #51afef;">rec</span> <span style="color: #5cEfFF;">fat</span> <span style="color: #DFDFDF;">n</span> =
+    <span style="color: #51afef;">match</span> n <span style="color: #51afef;">with</span>
+    <span style="color: #87cefa;">|</span> 1 <span style="color: #87cefa;">|</span> 0 -&gt; 1
+    <span style="color: #87cefa;">|</span> _ -&gt; n * fat (n - 1)
+</pre>
+</div>
+
+<p>
+A precisão de entrada e saída, por padrão é Int32.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93ab437" class="outline-3">
+<h3 id="org93ab437">Sequências, Listas e Arrays</h3>
+<div class="outline-text-3" id="text-org93ab437">
+<p>
+Em F# há três tipos de coleções usadas:<br />
+</p>
+
+<ul class="org-ul">
+<li>Seq<br /></li>
+<li>List<br /></li>
+<li>Array<br /></li>
+</ul>
+
+<p>
+List e Array possuem a diferença em que Arrays possuem tamanho<br />
+fixo, mas acesso constante. Listas possuem tamanhos arbitrários, mas por outro lado<br />
+o acesso é O(n).<br />
+</p>
+
+<p>
+Sequências são definidas como lazy lists, onde os elementos são avaliados<br />
+de forma preguiçosa. Um bom exemplo é um algoritmo para cálculo de números<br />
+primos de forma assíncrona:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fsharp"><span style="color: #62686E;">/// </span><span style="color: #62686E;">A simple prime number detector</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">isPrime</span> (<span style="color: #DFDFDF;">n</span>:<span style="color: #FCCE7B;">int</span>) =
+   <span style="color: #51afef;">let</span> <span style="color: #DFDFDF;">bound</span> = int (sqrt (float n))
+   seq {2 .. bound} <span style="color: #87cefa;">|&gt;</span> Seq.forall (<span style="color: #51afef;">fun</span> <span style="color: #DFDFDF;">x</span> -&gt; n % x &lt;&gt; 0)
+
+<span style="color: #62686E;">// </span><span style="color: #62686E;">We are using async workflows</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">primeAsync</span> <span style="color: #DFDFDF;">n</span> =
+    <span style="color: #51afef;">async</span> { <span style="color: #51afef;">return</span> (n, isPrime n) }
+
+<span style="color: #62686E;">/// </span><span style="color: #62686E;">Return primes between m and n using multiple threads</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">primes</span> <span style="color: #DFDFDF;">m</span> <span style="color: #DFDFDF;">n</span> =
+    seq {m .. n}
+        <span style="color: #87cefa;">|&gt;</span> Seq.map primeAsync
+        <span style="color: #87cefa;">|&gt;</span> Async.Parallel
+        <span style="color: #87cefa;">|&gt;</span> Async.RunSynchronously
+        <span style="color: #87cefa;">|&gt;</span> Array.filter snd
+        <span style="color: #87cefa;">|&gt;</span> Array.map fst
+
+<span style="color: #62686E;">// </span><span style="color: #62686E;">Run a test</span>
+primes 1000000 1002000
+    <span style="color: #87cefa;">|&gt;</span> Array.iter (printfn <span style="color: #7bc275;">"%d"</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1832e1" class="outline-2">
+<h2 id="orgd1832e1">Ecosystem</h2>
+<div class="outline-text-2" id="text-orgd1832e1">
+</div>
+<div id="outline-container-orgbb72073" class="outline-3">
+<h3 id="orgbb72073">Web Development</h3>
+<div class="outline-text-3" id="text-orgbb72073">
+<ul class="org-ul">
+<li>Giraffe é um webframework funcional para F#<br /></li>
+<li>Fable é usado para fazer transpiler de JS<br /></li>
+</ul>
+
+<p>
+Ou seja, Giraffe é recomendado para fazer backend em F#<br />
+e Fable frontend.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ee375d" class="outline-3">
+<h3 id="org1ee375d">API .NET Core</h3>
+<div class="outline-text-3" id="text-org1ee375d">
+<p>
+Algumas coisas úteis que encontrei na API do .NET core:<br />
+</p>
+
+<ul class="org-ul">
+<li><code>System.IO.GetTempPath</code> retorna <code>/tmp</code><br /></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org73b5bce" class="outline-2">
+<h2 id="org73b5bce">Tooling</h2>
+<div class="outline-text-2" id="text-org73b5bce">
+</div>
+<div id="outline-container-org3edfa52" class="outline-3">
+<h3 id="org3edfa52">Forge</h3>
+<div class="outline-text-3" id="text-org3edfa52">
+<p>
+Quem está me salvando ultimamente para criação de projetos na linha de comando<br />
+é o <code>Forge</code>. Um sistema de gerenciamento de projetos/soluções criado para<br />
+atuar em conjunto com o FAKE(build system de F#) e Paket, o gerenciador<br />
+de dependências.<br />
+</p>
+
+<p>
+Em geral você cria uma solução, então cria um projeto anexado a essa solução.<br />
+Quero ainda ver se é possível criar um projeto sem precisar criar uma solução,<br />
+mas não tenho certeza ainda se é possível.<br />
+</p>
+</div>
+
+<div id="outline-container-org2328670" class="outline-4">
+<h4 id="org2328670">Forge add reference não funciona com o Nuget</h4>
+<div class="outline-text-4" id="text-org2328670">
+<p>
+Algo que me deixou um pouco confuso foi o comando <code>forge add reference</code> que<br />
+só pode ser usado para referências locais, como <code>System.Drawing</code>.<br />
+Se for uma dependência externa, geralmente gerenciada pelo paket, deve ser adicionada<br />
+da seguinte maneira: forge paket <code>add -i Nuget Some.Dependency</code><br />
+</p>
+
+<p>
+Não há pretensão de isso ser incluido como uma feature por quebra de design, já<br />
+que é algo que o paket faz. Esta <a href="https://github.com/fsharp-editing/Forge/issues/33">issue</a> descreve exatamente este problema.<br />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb0fcf06" class="outline-4">
+<h4 id="orgb0fcf06">Adicionar um asset não compilável para fsproj</h4>
+<div class="outline-text-4" id="text-orgb0fcf06">
+<p>
+É necessário adicionar uma entrada semelhante a essa ao .fsproj<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-xml">&lt;<span style="color: #5cEfFF;">Content</span> <span style="color: #DFDFDF;">Include</span>=<span style="color: #7bc275;">"Template.json"</span>&gt;
+    &lt;<span style="color: #5cEfFF;">CopyToOutputDirectory</span>&gt;PreserveNewest&lt;/<span style="color: #5cEfFF;">CopyToOutputDirectory</span>&gt;
+&lt;/<span style="color: #5cEfFF;">Content</span>&gt;
+</pre>
+</div>
+
+<p>
+Fiz uma issue perguntando se é possível fazer isso diretamente usar o forge.<br />
+Resta esperar uma resposta.<br />
+</p>
+
+<p>
+EDIT: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-09 Wed 11:20&gt;</span></span><br />
+Ainda não é possível fazer isso. <a href="https://github.com/fsharp-editing/Forge/issues/75">https://github.com/fsharp-editing/Forge/issues/75</a><br />
+Embora seja possível fazer algo semelhante com a flag:<br />
+<code>--build-action Content</code> na qual a tag criada será &lt;Content&gt; invés de &lt;Compile&gt;.<br />
+Mas ainda não adicionará a tag &lt;CopyToOutputDirectory&gt; para copiar na compilação.<br />
+De toda maneira, vou ter que editar esses arquivos nojentos de projeto da Microsoft.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgefe9712" class="outline-3">
+<h3 id="orgefe9712">Dotnet Self-Contained Apps</h3>
+<div class="outline-text-3" id="text-orgefe9712">
+<p>
+Então, environment .NET Core é simplesmente infernal, como fazer<br />
+com que o seu <i>target host</i> não sofra o mesmo? Microsoft pensou nisso<br />
+considerando a dor descomunal que é ter uma instalação do .NET. Então<br />
+provê um meio de disponibilizar aplicações que contém o próprio<br />
+runtime.<br />
+</p>
+
+<p>
+Para exemplo desse tópico estarei criando um aplicação hello-world de<br />
+exemplo baseado no template console pra F#. Estou assumindo aqui que<br />
+esteja sendo usado .NET Core SDK 2.0 e o runtime também. Legacy is<br />
+dead.<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">dotnet new console -lang <span style="color: #7bc275;">'f#'</span> -n test
+</pre>
+</div>
+
+<p>
+Isto irá cria uma nova aplicação já pronta em <code>test/</code> com o seguinte<br />
+arquivo <code>Program.fs</code>:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fsharp" id="org64cebbe"><span style="color: #51afef;">open</span> <span style="color: #FCCE7B;">System</span>
+
+<span style="color: #C57BDB; font-weight: bold;">[&lt;entryPoint&gt;]</span>
+<span style="color: #51afef;">let</span> <span style="color: #5cEfFF;">main</span> <span style="color: #DFDFDF;">argv</span> =
+    printfn <span style="color: #7bc275;">"Hello World, F#!"</span>
+    0 <span style="color: #62686E;">// </span><span style="color: #62686E;">return an integer exit code</span>
+</pre>
+</div>
+
+<p>
+Isso funciona até bem, mas infelizmente eu tenho alguns problemas que<br />
+realmente me incomoda um bucado. Um desses problemas envolve a uma<br />
+certa necessidade de instalar dependências na máquina host. As que<br />
+precisei instalar explicitamente pra funcionar foram no Ubuntu Xenial<br />
+(16.04) <code>libicu-dev</code> e <code>libunwind8</code>. É importante também lembrar que<br />
+o aplicativo publicado fica em <code>/&lt;conf&gt;/&lt;runtime/publish</code>. Isso embora<br />
+pareça óbvio, eu me confundi inicialmente pq é compilado também na<br />
+raíz do runtime outra versão que não sei nem pq existe lá&#x2026;<br />
+</p>
+
+<p>
+Mas então, voltando aos passos, foi necessário os seguintes:<br />
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dependências necessárias para executar o self-contained app</label><pre class="src src-sh" id="org240697e">sudo apt install libunwind8 libicu-dev
+</pre>
+</div>
+
+
+<p>
+Sendo que o procedimento de rele<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">dotnet publish -c Release -r ubuntu.16.04-x64 --self-contained
+</pre>
+</div>
+
+<p>
+A flag <code>--self-contained</code> parece fazer pouco sentido no começo, tendo<br />
+em vista que <code>publish</code> deveria já fazer isso de toda maneira, mas no<br />
+entanto não é o comportamento padrão. Se eu não passar essa flag, a<br />
+aplicação será apenas free-framework e dependências, mas ainda<br />
+precisará do runtime do .NET Core.<br />
+</p>
+
+
+<p>
+Eu ainda não achei uma forma de listar os runtimes disponíveis pela<br />
+linha de comando e se quer achei também uma documentação clara sobre<br />
+isso.<br />
+</p>
+
+<p>
+O que me incomoda ainda é o fato de eu ainda ter que instalar algumas<br />
+coisas no host para a <i>self-contained application</i> funcionar como é o<br />
+esperado. Se é <i>self-contained</i> porque eu tenho que instalar alguma<br />
+coisa a mais no host? Isso é muito chato&#x2026;<br />
+</p>
+
+
+<p>
+Uma compilação <i>self-contained</i> não é nada leve. É cerca de <b>70MB</b> puro<br />
+e uns <b>24MB</b> com <code>.tar.gz</code>, algoritmo de compactação <code>gzip</code>.<br />
+Por que tanto sofrimento?<br />
+</p>
+
+<p>
+Referências de problemas:<br />
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/dotnet/cli/issues/3390">Self-contained applications in Linux does not work</a><br /></li>
+<li><a href="https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md">Self-contained Linux applications</a><br /></li>
+<li><a href="https://github.com/dotnet/core/blob/master/Documentation/build-and-install-rhel6-prerequisites.md">How to use .NET Core on RHEL 6 / CentOS 6</a> (fala sobre embarcar third-libraries)<br /></li>
+</ul>
+</div>
+</div>
+</div>

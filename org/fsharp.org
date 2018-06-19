@@ -1,0 +1,417 @@
+#+STARTUP: hideall
+#+OPTIONS: H:3 num:nil tags:nil \n:t ^:nil todo:nil tasks:done toc:nil timestamps:t
+#+EXCLUDE_TAGS: TOC_3
+#+LANGUAGE: bt-br
+#+DATE: 2017-08-20
+#+TITLE: Aprendendo F#
+#+DESCRIPTION: Um breve relato de aventura entre Mono e .NET Core
+#+AUTHOR: Manoel Vilela
+#+CATEGORIES: programming
+#+TAGS:  programming
+#+LAYOUT: post
+#+COMMENTS: true
+#+HTML_HEAD: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
+
+* Table of Contents :TOC_3:
+- [[#descrição][Descrição]]
+- [[#setup][Setup]]
+  - [[#pacotes-instalados-no-manjaro][Pacotes instalados no Manjaro]]
+  - [[#mudar-entre-múltiplas-versões-do-sdk-de-net-core][Mudar entre múltiplas versões do SDK de .NET Core]]
+  - [[#issues-com-net-core][Issues com .NET Core]]
+    - [[#bugs-com-múltiplos-sdks-instalados][Bugs com múltiplos SDKs instalados]]
+    - [[#inviabilidade-de-usar-sdk-104-em-alguns-casos][Inviabilidade de usar SDK 1.0.4 em alguns casos]]
+    - [[#fable-template-só-funciona-com-a-versão-104-conflito-com-sdk-20][Fable Template só funciona com a versão 1.0.4: conflito com sdk 2.0]]
+    - [[#monodevelop-e-fable][MonoDevelop e Fable]]
+    - [[#emacs-e-f][Emacs e F#]]
+- [[#syntax][Syntax]]
+  - [[#funções-tuplas-e-pattern-matching][Funções, tuplas e pattern matching]]
+  - [[#funções-recursivas][Funções recursivas]]
+  - [[#sequências-listas-e-arrays][Sequências, Listas e Arrays]]
+- [[#ecosystem][Ecosystem]]
+  - [[#web-development][Web Development]]
+  - [[#api-net-core][API .NET Core]]
+- [[#tooling][Tooling]]
+  - [[#forge][Forge]]
+    - [[#forge-add-reference-não-funciona-com-o-nuget][Forge add reference não funciona com o Nuget]]
+    - [[#adicionar-um-asset-não-compilável-para-fsproj][Adicionar um asset não compilável para fsproj]]
+  - [[#dotnet-self-contained-apps][Dotnet Self-Contained Apps]]
+
+* Descrição
+
+Este arquivo contém notas pessoais sobre aprendizado do ecossistema de F#.
+
+* Setup
+** Pacotes instalados no Manjaro
+Atualmente tenho instalados o mono junto com trocentas coisas. Aliás, embora
+isso não tenha nada a ver, é somente com o monodevelop que estou conseguindo
+definitivamente usar F# [1]. Não dei jeito ainda no meu emacs. Vou verificar depois
+se consigo usar.
+
+Mas para instalar o .NET Core precisei dos seguintes pacotes que estão no AUR:
+
+- dotnet-sdk-2.0
+- dotnet-host
+- dotnet-runtime-1.1
+- dotnet-sdk-1.1
+
+Já instalei tanta coisa que nem sei mais o que é realmente necessário. Mas, bem,
+na verdade o setup mais estável que consegui foi instalando os seguintes pacotes
+do AUR:
+
+- dotnet-host (cli dotnet, cross-sdk manager)
+- dotnet-runtime-1.1
+- dotnet-sdk-1.1 (actually 1.0.4)
+
+
+De resto estou conseguindo me virar.
+
+[1]: Na verdade estou conseguindo usar o Emacs e VS code também. Só tenho
+problemas com o MonoDevelop na hora de usar .NET Core quando faz referências
+a pacotes do paket. O Emacs estou tendo problemas apenas com os templates usados
+pelo .NET Core SDK 1.0.4. VS Code está supostamente funcionando tudo, tirando a parte
+que ele me dá kernel panic.
+** Mudar entre múltiplas versões do SDK de .NET Core
+
+É possível definir a versão por projeto do .NET Core, criando um arquivo
+~global.json~ na raíz do projeto:
+
+#+BEGIN_SRC json
+{
+  "projects": [ "src", "test" ],
+  "sdk": {
+    "version": "1.0.4"
+  }
+}
+#+END_SRC
+
+Inclusive é a que estou usando atualmente pra mexer com Fable. Pois simplesmente
+a versão 2.0 preview está com muitos problemas e não é recomendada pelo pessoal
+do fable. Na verdade, eles até falam que é possível fazer desenvolvimento do projeto,
+embora recomendem usar o SDK 1.0.4, no entanto simplesmente os templates não funcionam.
+Queria apenas um template que funcionasse...
+
+EDIT <2017-08-16 Wed 06:55>:
+Isso na verdade gera um outro problema, que é do cache ficar sendo repopulado toda
+vez que é chamado. Não sei se corrigiu recentemente, mas estava tendo sérios problemas com isso!
+Se eu precisar novamente fazer isso e vê que não funciona setar o ~global.json~, venho comentar isso aqui.
+
+** Issues com .NET Core
+*** Bugs com múltiplos SDKs instalados
+
+Usar ao mesmo tempo sdk 2.0 e 1.0.4 dá merda. Embora haja a opção pra
+a definir a versão por projeto, simplesmente toda vez que chamo o
+comando ~dotnet new~ é populado o diretório cache de pacotes do nuget
+e outras coisas SEMPRE. E isso é beeeem demorado. Leva quase 2 minutos.
+Executar um comando recorrente que leva 2 minutos é simplesmente
+inviável.
+
+*** Inviabilidade de usar SDK 1.0.4 em alguns casos
+
+Outro ponto infeliz é que simplesmente os templates para F# PRATICAMENTE
+de todos que testei estão cagados na versão SDK 1.0.4. Simplesmente os arquivos
+.fsproj são legacy, não funcionam na hora de dar build nem com os comandos
+do .NET core. O xbuild também não funciona pela linha de comando nem pelo
+emacs. Por outro lado, como última alternativa, o comando `msbuild` funciona.
+Mas não o do .NET Core (dotnet msbuild), somente o do mono [1].
+
+EDIT <2017-08-06 Sun 06:10>: parece que esse problema específico já foi
+reportado, e para minha alegria está com a tag wont-fix, QUE MARAVILHA.
+Isto foi corrigido no SDK 2.0, mas o fable não deixa eu usar o sdk 2.0...
+De qualquer maneira, aqui está: [[https://github.com/dotnet/netcorecli-fsc/issues/91][dotnet/netcorecli-fsc/issues/91]].
+
+Além do mais eu também criei minha própria issue no dotnet/cli.
+Aqui está: [[https://github.com/dotnet/cli/issues/7378][dotnet/cli/issues/7378]]
+
+Eles falaram que Fsharp.Net.SDK foi deprecated e é também a causa desse problema.
+
+[1]: NOTA às <2017-08-16 Wed 06:52>:
+esse comando não vem por padrão no mono! só pude usar na minha máquina
+porque tenho o MonoDevelop instalado e por dependência ele instala o pacote do AUR
+~msbuild-15-bin~
+
+*** Fable Template só funciona com a versão 1.0.4: conflito com sdk 2.0
+
+Pra minha felicidade o fable template só tá funcionando com justamente a versão
+do SDK 1.0.4, que embora seja a estável, simplesmente tá com os templates bem cagados
+de F#.
+
+Aparentemente eles mudaram recentemente a estrutura do projeto e talvez isso
+tenha tido algum efeito colateral. Esta [[https://github.com/fable-compiler/Fable/issues/1042][issue]] descreve o que estou comentando.
+
+EDIT <2017-08-06 Sun 07:09>: fazendo uma pergunta diretamente pra issue anterior,
+recebi uma resposta que removendo a referencencia de Fsharp.Net.SDK dos arquivos
+de .fsproj e references resolve esse problema. Estou ainda re-instalando os arquivos
+para saber se isso irá mesmo corrigir. Isso está relacionado com
+Inviabilidade de usar 1.0.4 em alguns casos.
+
+EDIT2 <2017-08-06 Sun 09:17>: infelizmente a dica do carinha não funcionou e
+ainda não consigo rodar o projeto com o SDK 2.0 preview 2. :(
+Sinceramente estou pensando em dropar plenamente o SDK 2.0 e fazer uns
+alias pros comandos que não funcionarem apontando para o certo. Como
+`alias dotnet build` => msbuild do mono kkk
+Mas isso não vai dar muito certo...
+
+EDIT3 <2017-08-16 Wed 06:44>: finalmente foi lançado na <2017-08-14 Mon>
+.NET Core 2.0 e ainda tive problemas relatado com esse /heading/. Na verdade
+o problema é mais profundo e está relacionado a shared frameworks. Quando tenho
+shared framework de SDK 1.0.4 e 2.0.0, com runtimes 1.1.2 e 2.0.0, Fable
+aponta para a versão 1.0.4 DO RUNTIME que não existe. Embora instalando o runtime
+1.0.4 também não funcione e a razão está descrita [[https://github.com/dotnet/cli/issues/6390][dotnet/cli/issues/6390]].
+No entanto, um workaround possível é fazer um link simbólico do runtime 1.1.2 para
+o 1.0.4 (e claro removendo esse runtime). Em geral apenas fazendo isso corrige:
+
+#+BEGIN_SRC shell-script
+cd /opt/dotnet/shared/Microsoft.NETCore.App
+sudo ln -s 1.1.2 1.0.4
+#+END_SRC
+
+*** MonoDevelop e Fable
+
+Uma alternativa pra criar projetos de console seria usar o MonoDevelop + Mono.
+Mas, o MonoDevelop também NÃO ESTÁ FUNCIONANDO com o Fable porque simplesmente
+não consegue reconhecer as dependências setadas pelo paket.
+
+Configurei o paket pra rodar no MonoDevelop como um addin, mas também não está
+funcionando. Simplesmente ele congela ao tentar fazer ~fetch~ das dependências.
+Além disso, a entrada `clitool dotnet-fable` não é reconhecida pelo parser.
+Sendo que isto está definido em paket.dependencies e é crucial para fazer
+build do projeto.
+
+Se faço ~dotnet restore~ pela linha de comando, mesmo funcionando pela linha de
+comando o build do projeto com ~dotnet fable yarn-start~, SIMPLESMENTE o
+MonoDevelop não reconhece todas as referências, explicitamente as que estão
+setadas pelo paket.references. Desse modo além de não dar pra fazer build no
+MonoDevelop, não tenho também autocomplete.
+
+*** Emacs e F#
+
+O autocomplete no emacs simplesmente só funciona quando quer. Não entendo
+mais nada. Mas com o Fable nunca funcionou. Quando funciona é somente com
+os projetos gerados pelo MonoDevelop (não pelos templates do .NET Core e
+dotnet new). EDIT <2017-08-06 Sun 05:29>: por alguma razão ele começou a funcionar! D:
+* Syntax
+** Funções, tuplas e pattern matching
+
+A maioria dos métodos de F# que fazem wrapping na API da .NET
+não são funções com múltiplos argumentos, mas sim tuplas. Isso
+pode ser confuso no começo, mas é assim que funciona no ecossistema
+de F#. O tipo ~int * int~ denota uma tupla de inteiros (int, int).
+Enquanto na notação de tipos ~int -> int~ é uma função curry que recebe
+uma parâmetro int e retorna int.
+
+
+#+BEGIN_SRC fsharp
+open System.Net
+
+// usando tuplas como argumento (url, file) e definindo uma função curry
+// do tipo: string -> string -> unit
+let download (url:string) (file:string) = new WebClient().DownloadFile(url, file)
+
+download "www.google.com" "google.html" // faz download de um arquivo
+
+#+END_SRC
+
+Curried functions são muito úteis por causa da possibilidade de fazer
+partial application. Onde você passa apenas alguns dos primeiros parâmetros
+e então uma nova função é definida. Um exemplo simples é dado a seguir:
+
+#+BEGIN_SRC fsharp
+open System
+
+[<EntryPoint>]
+let main argv =
+  let print = printfn "%d" // canonical print
+  [1..10] |> List.map print |> ignore
+
+#+END_SRC
+
+** Funções recursivas
+
+Uma função recursiva recebe a keyword ~rec~ antes da definição.
+
+#+BEGIN_SRC fsharp
+let rec fat n =
+    match n with
+    | 1 | 0 -> 1
+    | _ -> n * fat (n - 1)
+#+END_SRC
+
+A precisão de entrada e saída, por padrão é Int32.
+
+** Sequências, Listas e Arrays
+
+Em F# há três tipos de coleções usadas:
+
+- Seq
+- List
+- Array
+
+List e Array possuem a diferença em que Arrays possuem tamanho
+fixo, mas acesso constante. Listas possuem tamanhos arbitrários, mas por outro lado
+o acesso é O(n).
+
+Sequências são definidas como lazy lists, onde os elementos são avaliados
+de forma preguiçosa. Um bom exemplo é um algoritmo para cálculo de números
+primos de forma assíncrona:
+
+#+BEGIN_SRC fsharp
+/// A simple prime number detector
+let isPrime (n:int) =
+   let bound = int (sqrt (float n))
+   seq {2 .. bound} |> Seq.forall (fun x -> n % x <> 0)
+
+// We are using async workflows
+let primeAsync n =
+    async { return (n, isPrime n) }
+
+/// Return primes between m and n using multiple threads
+let primes m n =
+    seq {m .. n}
+        |> Seq.map primeAsync
+        |> Async.Parallel
+        |> Async.RunSynchronously
+        |> Array.filter snd
+        |> Array.map fst
+
+// Run a test
+primes 1000000 1002000
+    |> Array.iter (printfn "%d")
+#+END_SRC
+
+* Ecosystem
+** Web Development
+
+- Giraffe é um webframework funcional para F#
+- Fable é usado para fazer transpiler de JS
+
+Ou seja, Giraffe é recomendado para fazer backend em F#
+e Fable frontend.
+
+** API .NET Core
+
+Algumas coisas úteis que encontrei na API do .NET core:
+
+- ~System.IO.GetTempPath~ retorna ~/tmp~
+
+* Tooling
+** Forge
+
+Quem está me salvando ultimamente para criação de projetos na linha de comando
+é o ~Forge~. Um sistema de gerenciamento de projetos/soluções criado para
+atuar em conjunto com o FAKE(build system de F#) e Paket, o gerenciador
+de dependências.
+
+Em geral você cria uma solução, então cria um projeto anexado a essa solução.
+Quero ainda ver se é possível criar um projeto sem precisar criar uma solução,
+mas não tenho certeza ainda se é possível.
+
+*** Forge add reference não funciona com o Nuget
+
+Algo que me deixou um pouco confuso foi o comando ~forge add reference~ que
+só pode ser usado para referências locais, como ~System.Drawing~.
+Se for uma dependência externa, geralmente gerenciada pelo paket, deve ser adicionada
+da seguinte maneira: forge paket ~add -i Nuget Some.Dependency~
+
+Não há pretensão de isso ser incluido como uma feature por quebra de design, já
+que é algo que o paket faz. Esta [[https://github.com/fsharp-editing/Forge/issues/33][issue]] descreve exatamente este problema.
+
+
+*** Adicionar um asset não compilável para fsproj
+
+É necessário adicionar uma entrada semelhante a essa ao .fsproj
+
+#+BEGIN_SRC xml
+  <Content Include="Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+#+END_SRC
+
+Fiz uma issue perguntando se é possível fazer isso diretamente usar o forge.
+Resta esperar uma resposta.
+
+EDIT: <2017-08-09 Wed 11:20>
+Ainda não é possível fazer isso. [[https://github.com/fsharp-editing/Forge/issues/75]]
+Embora seja possível fazer algo semelhante com a flag:
+~--build-action Content~ na qual a tag criada será <Content> invés de <Compile>.
+Mas ainda não adicionará a tag <CopyToOutputDirectory> para copiar na compilação.
+De toda maneira, vou ter que editar esses arquivos nojentos de projeto da Microsoft.
+** Dotnet Self-Contained Apps
+
+Então, environment .NET Core é simplesmente infernal, como fazer
+com que o seu /target host/ não sofra o mesmo? Microsoft pensou nisso
+considerando a dor descomunal que é ter uma instalação do .NET. Então
+provê um meio de disponibilizar aplicações que contém o próprio
+runtime.
+
+Para exemplo desse tópico estarei criando um aplicação hello-world de
+exemplo baseado no template console pra F#. Estou assumindo aqui que
+esteja sendo usado .NET Core SDK 2.0 e o runtime também. Legacy is
+dead.
+
+#+BEGIN_SRC sh
+dotnet new console -lang 'f#' -n test
+#+END_SRC
+
+Isto irá cria uma nova aplicação já pronta em ~test/~ com o seguinte
+arquivo ~Program.fs~:
+
+#+NAME: procedimento:hello-world
+#+BEGIN_SRC fsharp
+  open System
+
+  [<entryPoint>]
+  let main argv =
+      printfn "Hello World, F#!"
+      0 // return an integer exit code
+#+END_SRC
+
+Isso funciona até bem, mas infelizmente eu tenho alguns problemas que
+realmente me incomoda um bucado. Um desses problemas envolve a uma
+certa necessidade de instalar dependências na máquina host. As que
+precisei instalar explicitamente pra funcionar foram no Ubuntu Xenial
+(16.04) ~libicu-dev~ e ~libunwind8~. É importante também lembrar que
+o aplicativo publicado fica em ~/<conf>/<runtime/publish~. Isso embora
+pareça óbvio, eu me confundi inicialmente pq é compilado também na
+raíz do runtime outra versão que não sei nem pq existe lá...
+
+Mas então, voltando aos passos, foi necessário os seguintes:
+
+#+NAME: procedimento:host-dependencies
+#+CAPTION: Dependências necessárias para executar o self-contained app
+#+BEGIN_SRC sh
+sudo apt install libunwind8 libicu-dev
+#+END_SRC
+
+
+Sendo que o procedimento de rele
+
+#+BEGIN_SRC sh
+dotnet publish -c Release -r ubuntu.16.04-x64 --self-contained
+#+END_SRC
+
+A flag ~--self-contained~ parece fazer pouco sentido no começo, tendo
+em vista que ~publish~ deveria já fazer isso de toda maneira, mas no
+entanto não é o comportamento padrão. Se eu não passar essa flag, a
+aplicação será apenas free-framework e dependências, mas ainda
+precisará do runtime do .NET Core.
+
+
+Eu ainda não achei uma forma de listar os runtimes disponíveis pela
+linha de comando e se quer achei também uma documentação clara sobre
+isso.
+
+O que me incomoda ainda é o fato de eu ainda ter que instalar algumas
+coisas no host para a /self-contained application/ funcionar como é o
+esperado. Se é /self-contained/ porque eu tenho que instalar alguma
+coisa a mais no host? Isso é muito chato...
+
+
+Uma compilação /self-contained/ não é nada leve. É cerca de *70MB* puro
+e uns *24MB* com ~.tar.gz~, algoritmo de compactação ~gzip~.
+Por que tanto sofrimento?
+
+Referências de problemas:
+
+- [[https://github.com/dotnet/cli/issues/3390][Self-contained applications in Linux does not work]]
+- [[https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md][Self-contained Linux applications]]
+- [[https://github.com/dotnet/core/blob/master/Documentation/build-and-install-rhel6-prerequisites.md][How to use .NET Core on RHEL 6 / CentOS 6]] (fala sobre embarcar third-libraries)
