@@ -37,4 +37,4 @@ Ps.: yes after the `22:29:16` I typed `/log` and old messages comeback.
 
 ## Source
 You can look to the source here on [github](https://github.com/ryukinix/lisp-chat)
-The minimal instructions to build and setup the project is written on README.md. At least for now, the day I wrote this post a server instance is running at `ryukinix.tk:5558`. As alternative I provide too, for non-lispers, a simple Python client too. Both clients and the servers are configured to running at `ryukinix.tk:5558`.
+The minimal instructions to build and setup the project is written on README.md. At least for now, the day I wrote this post a server instance is running at `server.lerax.me:5558`. As alternative I provide too, for non-lispers, a simple Python client too. Both clients and the servers are configured to running at `server.lerax.me:5558`.
