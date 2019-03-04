@@ -8,7 +8,7 @@ date: 2016-04-23
 ## Tag of life
 I love Mathematics - then the subsequent science falls like a glove
 upon that passion. All knowledge is valid, but IT is the merger that
-captivates me more.
+captivates me more. You can find me resume here: https://resume.lerax.me
 
 ## Programming Languages
 
