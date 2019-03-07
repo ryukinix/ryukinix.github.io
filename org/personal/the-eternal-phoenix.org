@@ -6,9 +6,8 @@
 #+DATE: 2017-11-06 Mon 03:38
 #+TITLE: The Eternal Phoenix
 #+DESCRIPTION: A conceptual album about my mind
-#+TAGS: music,personal
-#+LANG: en
 #+CATEGORIES: personal
+#+LANG: en
 #+COMMENTS: true
 
 #+BEGIN_HTML html

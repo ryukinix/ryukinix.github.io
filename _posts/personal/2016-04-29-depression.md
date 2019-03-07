@@ -9,6 +9,7 @@ tag:
 - anime
 - personal
 comments: true
+category: personal
 ---
 
 ![the-life](https://68.media.tumblr.com/tumblr_m3e46kxM6H1qlcutao1_500.gif)

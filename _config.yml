@@ -1,6 +1,6 @@
 # Site
 title:              Manoel Vilela
-bio:                "Undergraduate Computer Engineer and Mathematics enthusiast."
+bio:                "Almost Computer Engineer and Mathematics enthusiast."
 description:        "This is my site where I have my projects and blog."
 reading_time:       true
 words_per_minute:   100
@@ -10,7 +10,7 @@ locale:             pt_BR
 url:                https://lerax.me
 
 # Jekyll
-permalink:          /:title/
+permalink:          /:categories/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -53,6 +53,8 @@ quora:              Manoel-Vilela
 #flickr:            username
 #codepen:           username
 
+
+
 # Gems
 plugins:
   - jekyll-mentions
@@ -64,5 +66,6 @@ jekyll-mentions:
     base_url: https://github.com
 
 # Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js,
+          package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
 include: [.well-known]

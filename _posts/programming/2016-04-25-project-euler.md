@@ -9,6 +9,7 @@ tag:
 - programming
 - contest
 comments: false
+categories: programming
 ---
 
 ## Main Proposal

@@ -1,0 +1,228 @@
+---
+date: 2017-08-17
+tags:
+- java
+- programming
+author: Manoel Vilela
+layout: post
+title: Java - compilação e execução na linha de comando
+excerpt: Uma alternativa às IDE gulosas de Java
+categories:
+- programming
+comments: true
+---
+<div class="HTML">
+<p>
+&lt;style&gt;
+  pre.src {
+    background-color: #303030;
+    color: #e5e5e5;
+    padding: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+&lt;/style&gt;
+</p>
+
+</div>
+
+
+<div id="outline-container-orgf771bb1" class="outline-2">
+<h2 id="toc-org"><a id="orgf771bb1"></a>Sumário</h2>
+<div class="outline-text-2" id="text-toc-org">
+<ul class="org-ul">
+<li><a href="#org9f2d55e">Descrição</a></li>
+<li><a href="#org0ae4b3f">Ambiente</a></li>
+<li><a href="#orgc9ff81a">Compilação</a></li>
+<li><a href="#org2fe9e62">Execução</a></li>
+<li><a href="#org1bc3233">Geração e execução de arquivos .jar</a>
+<ul class="org-ul">
+<li><a href="#orgf80bfea">Definir classe principal através do arquivo MANIFEST.mf</a></li>
+<li><a href="#org0bc486c">Definir classe principal como argumento</a></li>
+<li><a href="#org71315f2">Execução arquivo .jar</a></li>
+</ul></li>
+<li><a href="#org413cfd0">Referências</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f2d55e" class="outline-2">
+<h2 id="org9f2d55e">Descrição</h2>
+<div class="outline-text-2" id="text-org9f2d55e">
+<p>
+Este documento pretende demonstrar como é possível escrever um simples
+programas em Java sem a necessidade de uso de uma IDE e a criação
+de todo um projeto. O que pode ser muito útil pra execução de um rápido
+exemplo ou no caso de uma IDE de Java não estar
+disponível no sistema. Este tutorial foi inspirado em uma resposta dada
+no Stack Overflow <a href="#orgc4d5684">{1}</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ae4b3f" class="outline-2">
+<h2 id="org0ae4b3f">Ambiente</h2>
+<div class="outline-text-2" id="text-org0ae4b3f">
+<p>
+Você deve ter instalado no seu sistema o <code>JDK</code> (Java Developer Kit), sendo
+que esse tutorial foi testado através da <code>jdk8-openjdk</code> no Linux.
+</p>
+
+<p>
+Além disso, os binários <code>java</code>, <code>jar</code> e <code>javac</code> devem estar presentes através
+da variável de ambiente <code>PATH</code>, onde a configuração disso pode variar pra cada
+sistema operacional. Tutorias na internet podem ser encontrados facilmente sobre como fazer isso no Linux
+<a href="#org331c771">{2}</a> e Windows <a href="#orgaacba23">{3}</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9ff81a" class="outline-2">
+<h2 id="orgc9ff81a">Compilação</h2>
+<div class="outline-text-2" id="text-orgc9ff81a">
+<p>
+Primeiramente você precisa escrever uma classe de exemplo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #26a6a6;">public</span> <span style="color: #26a6a6;">class</span> <span style="color: #f8f8f0;">HelloWorld</span> {
+    <span style="color: #26a6a6;">public</span> <span style="color: #26a6a6;">static</span> <span style="color: #f8f8f0;">void</span> <span style="color: #bcd42a;">main</span>(<span style="color: #f8f8f0;">String</span>[] <span style="color: #f8f8f0;">args</span>) {
+        System.out.println(<span style="color: #bcd42a;">"Hello world!"</span>)
+    }
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Salve este arquivo como: <code>HelloWorld.java</code>.</li>
+<li>Compile com: <code>javac HelloWorld.java</code>.</li>
+</ol>
+
+<p>
+Isso irá criar um arquivo intermediário chamado <code>HelloWorld.class</code>
+no mesmo diretório que foi chamado o comando anterior. A seguir é demonstrado
+uma sequência de passos feitas em um terminal Linux [1].
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script">$ cat &gt; HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println(<span style="color: #bcd42a;">"Hello world!"</span>)
+    }
+}
+$ javac HelloWorld.java
+$ ls
+HelloWorld.java HelloWorld.class
+</pre>
+</div>
+
+<p>
+[1]: <code>$</code> é apenas um carácter do terminal que indica o tipo de usuário
+que está logado (nesse caso um usuário normal). Para forçar a saída do comando <code>cat</code> pressione
+<code>Ctrl-D</code> pra emitir um <code>EOF</code> (<i>End of File</i>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2fe9e62" class="outline-2">
+<h2 id="org2fe9e62">Execução</h2>
+<div class="outline-text-2" id="text-org2fe9e62">
+<p>
+A execução pode ser feita de uma maneira simples: <code>java HelloWorld</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script">&gt; java HelloWorld
+Hello world!
+</pre>
+</div>
+
+
+<p>
+Embora isso pareça estranho, pois não há nenhum arquivo <code>HelloWorld</code>
+no seu diretório, o programa <code>java</code> espera que seja passado o nome da classe a ser executado e não
+o arquivo <code>HelloWorld.class</code>.
+</p>
+
+<p>
+Se você ingenuamente chamar <code>java HelloWorld.class</code> um erro será retornado:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script">&gt; java HelloWorld.class
+Error: Could not find or load main class HelloWorld.class
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1bc3233" class="outline-2">
+<h2 id="org1bc3233">Geração e execução de arquivos .jar</h2>
+<div class="outline-text-2" id="text-org1bc3233">
+<p>
+Para criar um <i>bytecode</i> <code>.jar</code> que possa ser distribuído livremente, você tem duas alternativas:
+escrever um arquivo <code>MANIFEST.mf</code> especificando a classe <i>Main</i> ou passando o nome da classe <i>Main</i>
+para a linha de comando. Para criar um arquivo <code>.jar</code> você deve previamente já ter passado pelo
+processo de compilação explicado na seção <a href="#orgc9ff81a">Compilação</a>, pois será necessário os arquivos <code>.class</code>.
+</p>
+
+<p>
+Estarei exemplificando aqui os dois modos. Ambos no final irão gerar um
+arquivo <code>HelloWorld.jar</code>.
+</p>
+</div>
+
+<div id="outline-container-orgf80bfea" class="outline-3">
+<h3 id="orgf80bfea">Definir classe principal através do arquivo MANIFEST.mf</h3>
+<div class="outline-text-3" id="text-orgf80bfea">
+<ol class="org-ol">
+<li>Crie um arquivo <code>MANIFEST.mf</code> com apenas a linha <code>Main-Class: HelloWorld</code></li>
+<li>Execute: <code>jar -cvfm HelloWorld.jar MANIFEST.mf HelloWorld.class</code></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0bc486c" class="outline-3">
+<h3 id="org0bc486c">Definir classe principal como argumento</h3>
+<div class="outline-text-3" id="text-org0bc486c">
+<ol class="org-ol">
+<li>Execute: <code>jar -cvfe HelloWorld.jar HelloWorld HelloWorld.class</code></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org71315f2" class="outline-3">
+<h3 id="org71315f2">Execução arquivo .jar</h3>
+<div class="outline-text-3" id="text-org71315f2">
+<p>
+Para executar o arquivo <code>.jar</code> gerado execute.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script">$ java -jar HelloWorld.jar
+Hello world!
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org413cfd0" class="outline-2">
+<h2 id="org413cfd0">Referências</h2>
+<div class="outline-text-2" id="text-org413cfd0">
+<ol class="org-ol">
+<li><a id="orgc4d5684"></a> Stack Overflow, <a href="https://stackoverflow.com/questions/16137713/how-do-i-run-a-java-program-from-the-command-line-on-windows">How do I run a Java program from the command line on Windows</a>,
+acesso em 17 de agosto de 2017.</li>
+<li><a id="org331c771"></a> Viva o Linux,  <a href="https://www.vivaolinux.com.br/dica/Configurando-JDK-no-PATH-no-Linux-qualquer-distro">Configurando JDK no PATH no Linux qualquer distro</a>,
+acesso em 17 de agosto de 2017.</li>
+<li><a id="orgaacba23"></a> Java at Point, <a href="https://www.javatpoint.com/how-to-set-path-in-java">How to set path in java</a>,
+acesso em 17 de agosto de 2017.</li>
+</ol>
+</div>
+</div>
