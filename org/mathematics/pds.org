@@ -13,9 +13,8 @@
 #+LATEX_HEADER: \usepackage{mathtools}
 #+LAYOUT: post
 #+DESCRIPTION: Sistemas e Sinais Discretos no Tempo
-#+TAGS: ec,pds,engenharia,matemática
 #+LANG: pt
-#+CATEGORIES: ec
+#+CATEGORIES: mathematics
 #+COMMENTS: true
 
 

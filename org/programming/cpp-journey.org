@@ -7,7 +7,7 @@
 #+DATE: 2017-07-26 Wed 14:48
 #+TITLE: C++ Journey
 #+DESCRIPTION: Uma jornada no mundo infernal de C++ através do HackerRank
-#+CATEGORIES: c++, programming, hackerrank
+#+CATEGORIES: programming
 #+COMMENTS: true
 
 #+BEGIN_HTML

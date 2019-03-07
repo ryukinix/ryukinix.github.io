@@ -22,29 +22,26 @@ layout: compress
                     </a>
                 </div>
                 <div class="post-list">
-                    {% for post in site.posts %}
-                        {% if post.project == null %}
-                    <ul>
-                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-                            {{ post.title }}
-                          </a>
-                          <p>{{ post.excerpt }}</p>
-                          <div id="textbox">
-                            <span style="float:left">
-                              <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">
-                              Read More
-                              </a>
-                            </span>
-                            <span style="float:right">
-                              {{ post.date | date_to_string }}
-                            </span>
-                          </div>
-                          <div style="clear: both;"></div>
-                        </li>
-                    </ul>
+                    <ul class="taxonomy-index">
+                      {% assign categories_max = 0 %}
+                      {% for category in site.categories %}
+                        {% if category[1].size > categories_max %}
+                          {% assign categories_max = category[1].size %}
                         {% endif %}
-                    {% endfor %}
+                      {% endfor %}
+                      {% for i in (1..categories_max) reversed %}
+                        {% for category in site.categories %}
+                          {% if category[1].size == i %}
+                            <li>
+                              <a href="{{ site.url }}/{{ category[0] }}">
+                                <strong>{{ category[0] }}</strong>
+                                <span class="taxonomy-count">[{{ i }}]</span>
+                              </a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>

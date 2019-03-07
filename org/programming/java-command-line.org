@@ -6,7 +6,7 @@
 #+DATE: 2017-08-17 Thu 13:50
 #+TITLE: Java - compilação e execução na linha de comando
 #+DESCRIPTION: Uma alternativa às IDE gulosas de Java
-#+CATEGORIES: java, programming
+#+CATEGORIES: programming
 #+COMMENTS: true
 
 #+BEGIN_HTML
