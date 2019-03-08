@@ -53,6 +53,15 @@ quora:              Manoel-Vilela
 #flickr:            username
 #codepen:           username
 
+defaults:
+  # Post defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
 
 
 # Gems
