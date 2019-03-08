@@ -1,4 +1,4 @@
-DOCKER_IMG = ryukinix/lerax.me
+DOCKER_IMG = ryukinix/blog
 
 all: serve
 
