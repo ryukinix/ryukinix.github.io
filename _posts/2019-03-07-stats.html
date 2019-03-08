@@ -1,0 +1,621 @@
+---
+date: 2019-03-07
+tags:
+- mathematics
+- datascience
+author: Manoel Vilela
+layout: post
+title: Fundamentos de Estatística
+excerpt: Revisão de Fundamentos de Estatística
+categories:
+- mathematics
+---
+
+<div id="outline-container-org041a1ef" class="outline-2">
+<h2 id="org041a1ef">Capítulo I: Modelagem Probabilística</h2>
+<div class="outline-text-2" id="text-org041a1ef">
+<p>
+Este capítulo refere-se como uma contextualização do uso prático de
+probabilidade na engenharia.
+</p>
+</div>
+<div id="outline-container-org7c8b6e8" class="outline-3">
+<h3 id="org7c8b6e8">Modelos Determinísticos</h3>
+<div class="outline-text-3" id="text-org7c8b6e8">
+<p>
+Modelos determinísticos tem a propriedade que não há fatores de
+aleatoriedade no processo de modelagem da solução. Sua resposta sempre
+se aproxima de maneira ótima para o problema e é previsível em
+qualquer caso. Conhecidos modelos determinísticos são as análises da
+física newtoniana, como dinâmica e cinemática. Conhecendo os valores
+iniciais, é possível descrever a evolução de um sistema em condições
+ideais.
+</p>
+
+<p>
+Outro modelo conhecido por ser determinístico é o modelo matemático
+envolvido nos circuitos elétricos. Como a lei de Ohm \(v = RI\).  Em
+condições ideais, a resposta exata do sistema avaliado é descrito
+pelas equações que regem o modelo.
+</p>
+
+<p>
+É importante lembrar que um modelo matemático é comumente referenciado
+como um sistema para descrever algo mensurável, que se assemelha a
+algo real — como é o caso da física newtoniana e a teoria de circuitos
+elétricos.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org37cb4e3" class="outline-3">
+<h3 id="org37cb4e3">Modelos Probabilísticos</h3>
+<div class="outline-text-3" id="text-org37cb4e3">
+<p>
+Muitos sistemas de interesse envolvem comportamentos imprevisíveis e
+aleatórios. Esses sistemas não podem ser descritos com modelos
+determinísticos, pois dependem de fatores
+não-determinísticos. Experimentos aleatórios, como o fato de lançar
+uma moeda, transmissão de pacotes, tempo de espera em uma fila&#x2026; são
+problemas com natureza aleatória. Não é possível modelar esse tipo de
+problema com modelos determinísticos.
+</p>
+
+<p>
+Nesse momento então surge um novo tipo de matemática que lidaremos
+como Probabilidade e Estatística. No decorrer do livro, entraremos em
+conceitos mais abstratos como o de <i>Random Processes</i> (Processos
+Estocásticos).
+</p>
+
+<p>
+Os meios de comunicação da internet, assim como seus protocolos, são
+bons exemplos de sistemas modelados com modelos probabilísticos. Não é
+possível, por exemplo, saber de exato se um pacote ao ser enviado será
+chegado ao destinatário. Temos uma probabilidade que isso ocorra e uma
+determinada probabilidade relacionada a quantidade de vezes
+necessárias que um pacote seja enviado até que ele tenha sucesso.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge266544" class="outline-2">
+<h2 id="orge266544">Capítulo II: Fundamentação de Probabilidade</h2>
+<div class="outline-text-2" id="text-orge266544">
+<p>
+Conceitos básicos de probabilidade, axiomas, teoremas e implicações.
+</p>
+</div>
+
+
+<div id="outline-container-org0bf6414" class="outline-3">
+<h3 id="org0bf6414">Axiomas</h3>
+<div class="outline-text-3" id="text-org0bf6414">
+<p>
+Seja \(P\) o operador de probabilidade, \(A\) e \(B\) eventos do
+espaço amostral \(S\), é dado os seguintes axiomas no contexto de
+probabilidade:
+</p>
+
+<ol class="org-ol">
+<li>\(0 \leq P[A] \leq 1\)</li>
+<li>\(P[S] = 1\)</li>
+<li>Se A e B são eventos que não acontecem simultaneamente, então
+\(P[A \cup B] = P[A] + P[B]\)</li>
+</ol>
+
+<p>
+Uma extensão do axioma 3 é para o caso que tenhamos um conjunto
+enumerável de eventos que são mutuamente exclusivos, então a
+probabilidade de todos eles é a soma das suas probabilidades
+individuais.
+</p>
+
+<p>
+Um colorário interessante é o da probabilidade complemento:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P[A^c] =1 - P[A]
+\end{equation}
+
+</div>
+
+<p>
+Usualmente a operação de complemento pode ser vista como a negação da
+proposição que se avalia a probabilidade. Por exemplo: qual a
+probabilidade de se jogar um dado e não aparecer o número 6? Ao
+aplicar esse teorema o problema fica simples \(1 - \dfrac{1}{6}
+\Rightarrow \dfrac{5}{6}\) dado que a probabilidade de aparecer
+qualquer número em um dado é \(\dfrac{1}{6}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7bf3aa1" class="outline-3">
+<h3 id="org7bf3aa1">Eventos Independentes</h3>
+<div class="outline-text-3" id="text-org7bf3aa1">
+<p>
+Se dois eventos são independentes, como o ato de lançar duas moedas, a
+intersecção de suas probabilidades devem ser igual ao produto das
+probabilidades dos eventos.
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P(A \cap B) = P(A) \cdot P(B)
+\end{equation}
+
+</div>
+
+<p>
+Um exemplo de eventos independentes é quando o estado anterior de um
+evento ocorrido não interfere na probabilidade do próximo evento
+ocorrer.  Por exemplo, duas moedas sendo lançadas ao mesmo tempo são
+eventos independentes.  O que ocorrer em uma não depende de outra.
+</p>
+
+<p>
+No entanto, por outro lado, a probabilidade de tirar uma carta \(X\)
+num deque de 52 cartas sem reposição e tirar outra \(Y\) não são
+eventos independentes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb969ed1" class="outline-3">
+<h3 id="orgb969ed1">Eventos Mutualmente Exclusivos</h3>
+<div class="outline-text-3" id="text-orgb969ed1">
+<p>
+Se dois eventos \(A\) e \(B\) não podem ocorrer simultaneamente, então
+temos duas propriedades:
+</p>
+
+<div class="LATEX">
+\begin{align}
+P[A \cap B] &= 0 \\ P[A \cup B] &= P[A] + P[B]
+\end{align}
+
+</div>
+
+<p>
+Isso se deve pelo tipo de experimento que ocorre. Em alguns casos, um
+evento não pode ocorrer simultaneamente. Como o caso de um moeda ser
+cara e coroa ao mesmo tempo, um carro ser verde e amarelo ao mesmo
+tempo.  São eventos impossíveis, por isso a probabilidade é zero
+(intuitivamente).  Muitas provas existem sobre esses colorários dos
+axiomas da probabilidade, mas estão fora do escopo dessas notas — a
+não ser quando for interessante demonstrar.
+</p>
+
+<div class="LATEX">
+\begin{align}
+P[A \cup B] &= P[A] + P[B] - P[A \cap B]
+\end{align}
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd6efdaa" class="outline-3">
+<h3 id="orgd6efdaa">Probabilidade Condicional</h3>
+<div class="outline-text-3" id="text-orgd6efdaa">
+<p>
+A probabilidade condicional pode ser enxergada como uma nova base do
+<b>espaço amostral</b> em cima de uma nova condição. É anunciado que \(P(A
+\mid B)\) como: 'Probabilidade de A, dado que B já ocorreu'. Ou
+simplesmente 'P de A dado B'.  A fórmula para seu cálculo é dado por:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P[A \mid B] = \dfrac{P[A \cap B]}{P[B]}
+\end{equation}
+
+</div>
+
+<p>
+Probabilidade condicional é usado quando estamos se referindo a
+eventos dependentes. Um bom exemplo, como comentado anteriormente, é a
+probabilidade de duas cartas escolhidas sequencialmente serem
+advinhadas num deque de cartas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b20621" class="outline-3">
+<h3 id="org7b20621">Experimentos Sequenciais</h3>
+<div class="outline-text-3" id="text-org7b20621">
+<p>
+Experimentos sequenciais nada mais são que eventos aplicados um depois
+do outro.  Sua probabilidade depende se os eventos são dependentes ou
+não. Para eventos independentes podemos aplicar simplesmente a regra
+do produto, a probabilidade dos eventos ocorrerem é o produtório das
+probabilidades desses eventos.
+</p>
+
+<p>
+No entanto, se os eventos são dependentes, devemos ter mais cautela.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd12607e" class="outline-3">
+<h3 id="orgd12607e">Probabilidade Binomial</h3>
+<div class="outline-text-3" id="text-orgd12607e">
+<p>
+A lei da probabilidade binomial descreve como a probabilidade de um
+experimento evolui de acordo com o número de eventos sequenciais.
+</p>
+
+<div class="LATEX">
+\begin{equation}
+p_n(k) = \binom{n}{k}p^k(n -p)^{n-k}
+\end{equation}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3cb241f" class="outline-3">
+<h3 id="org3cb241f">Teorema de Bayes</h3>
+<div class="outline-text-3" id="text-org3cb241f">
+<p>
+O teorema de Bayes, ou regra de Bayes, estabelece que o evento
+condicional estão intrinsecamente ligados com a probabilidade do
+evento em si ocorrer.  Isto é, a probabilidade condicional de A dado B
+e B dado A, é proporcional as probabilidades de B e A.
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P(A \mid B) = \dfrac{P(B \mid A) P(A)}{P(B)}
+\end{equation}
+
+</div>
+
+<p>
+Muito similar ao teorema da probabilidade condicional, o teorema de
+Bayes geralmente tem sua formula descrita de forma mais sucinta
+traduzindo a definição da probabilidade de \(P(A \cap \B)\) em termos
+da probabilidade condicional.
+</p>
+
+<p>
+Isto fica evidente quando lembramos que:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P(A \cap B) = P(B \mid A)P(A) = P(A \mid B) P(B)
+\end{equation}
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1b39ed3" class="outline-3">
+<h3 id="org1b39ed3">Teorema da Probabilidade Total</h3>
+<div class="outline-text-3" id="text-org1b39ed3">
+<p>
+O teorema da probabilidade total referencia o teorema de Bayes com uma
+especifica modelagem. Ele é enxergado com fatias do espaço amostral em
+relação ao um evento de interesse. Logo, a probabilidade de um evento
+\(A\) pode ser visto como a intersecção de todas essas parcelas de
+eventos com nosso evento de interesse \(A\).
+</p>
+
+
+<p>
+A partir disso tem-se que uma probabilidade qualquer \(A)\) pode ser
+expressa em cima de:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P[A] = \sum_{i=1}^n P[E_i \cap A] = \sum_{i=i}^n P[A \mid E_i] P[E_i]
+\end{equation}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org06c4eb3" class="outline-3">
+<h3 id="org06c4eb3">Diagrama de Árvore</h3>
+<div class="outline-text-3" id="text-org06c4eb3">
+<p>
+O diagrama de árvore é usado geralmente para descrever todos os
+possíveis caminhos de um determinado experimento.  Como um modelo
+probabilístico pode se comportar diante das variações de eventos.
+</p>
+
+<p>
+Muito útil durante a análise, principalmente de eventos sequenciais,
+para um caso avaliando dois lançamentos de moedas sequencias, tem-se a
+seguinte possível arquitetura:
+</p>
+
+<pre class="example">
+       _ / \
+   T H / \ / \
+T H T H
+</pre>
+
+<p>
+Onde <code>T</code> significa <i>tail</i> (coroa) e <code>H</code> <i>head</i> (cara). Embora nesse
+exemplo não pareça um tanto útil pois as probabilidades são iguais,
+quando lidamos com sistemas com muitas peculiaridades, como
+probabilidades condicionais pode ser bastante útil para
+visualização. No entanto, é uma ferramenta visual para esclarecimento,
+que pode ser muitas vezes ignorada.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org773b002" class="outline-2">
+<h2 id="org773b002">Capitulo III: Variáveis aleatórias discretas</h2>
+<div class="outline-text-2" id="text-org773b002">
+<p>
+Bom, variáveis aleatórias discretas são definidas no contexto de
+probabilidade e estatística. Uma variável aleatória nada mais é que
+uma função que relaciona um evento (experimento aleatório) a um dado
+número.
+</p>
+
+<p>
+Para um variável aleatória ser definida, essa relação deve ser
+conhecida.
+</p>
+
+<p>
+Há muitos tipos de variáveis aleatórias, como variável de poison,
+geométrica, bernoulli e a variável binomial. Cada uma delas são usadas
+para casos distintos de problemas com natureza probabilística.
+</p>
+
+<p>
+Nas próximas seções serão definidas, de uma maneira mais descritiva e
+formal, as propriedades que uma variável aleatória discreta possuí.
+</p>
+
+<p>
+Existe a noção de classe de eventos, que são uma coleção de
+experimentos aleatório que possuí o mesmo tipo de experimento.
+(como os resultados de lançar uma moeda ou um dado).
+</p>
+</div>
+
+<div id="outline-container-orgdf9614c" class="outline-3">
+<h3 id="orgdf9614c">Probability Mass Function (PMF)</h3>
+<div class="outline-text-3" id="text-orgdf9614c">
+<p>
+A PMF, em português FMP, que significa função massa de probabilidade
+se refere uma função de probabilidade que X assume dado valor. Sua
+definição é bem tirada como pode ser visto a seguir:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+p_x(x) = P[X = x] = P[\{\zeta:X(\zeta) = x\}]
+                    \qquad \text{for x a real number.}
+\end{equation}
+
+</div>
+
+<p>
+Três axiomas são definidas para a PMF, dentre quais:
+</p>
+
+<div class="LATEX">
+\begin{align}
+p_x(x) &\geq 0 &\text{for all x} \\
+\sum_{k \in S_x} p_x(k) &= 1 \\
+P[X \in B] &= \sum_{x \in B} p_x(x) &\text{where} \ B \subset S_X
+\end{align}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5bd1a8e" class="outline-3">
+<h3 id="org5bd1a8e">Distribuições</h3>
+<div class="outline-text-3" id="text-org5bd1a8e">
+<p>
+Há varias tipos de distribuições para modelos de probabilidade. Cada
+um desses modelos é aplicado para um determinado tipo de problema, a
+seguir é comentado algum deles. Dessa maneira, uma determinada
+distribuição está relacionado com uma definição de variável aleatória.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org04fb0f5"></a>Bernoulli<br />
+<div class="outline-text-4" id="text-org04fb0f5">
+<p>
+Provavelmente uma das distribuições mais simples de todas, quando se
+possui um problema de natureza binária, isto é, a variável aleatória
+só pode assumir dois valores, então seu nome recebe como variável
+aleatória de Bernoulli. Em casos, como um sistema que avalia
+sucesso/falha de uma operação, é interessante usar Bernoulli. Por
+exemplo \(X(E_{sucesso}) = 1\) e \(X(E_{falha}) = 0\).
+</p>
+</div>
+</li>
+
+<li><a id="orgbe9cd38"></a>Geométrica<br />
+<div class="outline-text-4" id="text-orgbe9cd38">
+<p>
+Quando uma sequência de eventos é relacionada de forma independente
+aos seus estados anteriores, essa variável é conhecida como Variável
+Aleatória Geométrica. Sua forma é acontecer n eventos iguais sequencialmente,
+até que o posto aconteça. É a única variável aleatória sem memória.
+Um exemplo de uso dessa distribuição é a quantidade de pacotes necessários
+que precisam ser enviados até que um deles chegue com sucesso.
+</p>
+
+<div class="LATEX">
+\begin{equation}
+p_x(k) = P[X = k] = (1 - p)^{k-1}p = q^{k-1}p
+\end{equation}
+
+</div>
+</div>
+</li>
+
+<li><a id="orgc8e27d5"></a>Binomial<br />
+<div class="outline-text-4" id="text-orgc8e27d5">
+<p>
+Semelhante ao caso da Geométrica, na binomial estamos interessados
+nas possíveis combinações geradas entre os eventos. Por exemplo,
+como é distribuída a probabilidade para eu obter n coroas no lançamento
+de uma moeda k vezes?
+</p>
+
+<p>
+A fórmula da binomial segue que:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+p_x(k) = P[X = k] = \binom{n}{k}p_k(1-p)^{n-k}
+\end{equation}
+
+</div>
+
+<p>
+Outro exemplo interessante é contar a quantidade de erros numa
+transmissão. Uma canal de comunicação binária introduz um bit de erro
+em uma transmissão com probabilidade \(p\). Seja \(X\) o número de erros
+em \(n\) independentes transmissões. Encontre a pmf de X. Encontre a
+probabilidade de um ou mais erros.
+</p>
+
+<p>
+A distribuição binomial é usada aqui pois pode ocorrer um erro em qualquer
+uma das transmissões, embora a ordem que eles ocorreram não importam,
+apenas que é possível ocorrer em qualquer das \(n\) transmissões.
+</p>
+
+<p>
+Por exemplo, para \(P[X \leq 1]\) iremos somar a probabilidade de que
+\(k = \{0, 1\}\).
+</p>
+</div>
+</li>
+
+
+<li><a id="org87d55ed"></a>Poisson<br />
+<div class="outline-text-4" id="text-org87d55ed">
+<p>
+A variável de Poisson, uma variável discreta, é modelada
+para descrever uma contagem num dado intervalo contínuo.
+Ela é modelada através de uma função exponencial.
+</p>
+
+<p>
+Um exemplo de uso para essa variável seria analisar quantas
+pessoas chegam na estação de trem no intervalo de uma hora.
+</p>
+
+<p>
+Define-se então a variável de Poisson como a seguir:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+P[N = k] = p_N(k) = \dfrac{\lambda^k e^{-\lambda}}{k!}
+\end{equation}
+
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org30b648d" class="outline-3">
+<h3 id="org30b648d">Valor esperado (Expected Value)</h3>
+<div class="outline-text-3" id="text-org30b648d">
+<p>
+O valor esperado ou média se refere a um valor de tendência numa distribuição
+probabilística. Isto é, os valores mais prováveis de serem encontrados estão
+em torno da média ou do valor esperado.
+</p>
+
+<div class="LATEX">
+\begin{equation}
+E[X] = \sum_{x \in S_x} xp_x(x) = \sum_k x_k p_k(x_k)
+\end{equation}
+
+</div>
+
+<p>
+Isto é, dado um subconjunto \(S_x\) do espaço amostral \(S\), sendo
+esse subconjunto aqueles com os nossos eventos de interesse, a definição
+de esperança define como a soma do produto dos individuais valores do conjunto
+por sua probabilidade de ocorrer.
+</p>
+
+<p>
+Para o valor esperado existir, é necessário que a soma convirja absolutamente.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0c942f" class="outline-3">
+<h3 id="orgb0c942f">Variância e Desvio Padrão</h3>
+<div class="outline-text-3" id="text-orgb0c942f">
+<p>
+A definição de variância em probabilidade estatística está relacionado
+a amplitude que os valores oscilam em torno da média. Pode-se definir
+de duas maneiras:
+</p>
+
+<div class="LATEX">
+\begin{equation}
+\sigma_X^2 = VAR[X] = E[(X - m_x)^2] = E[X^2] - E[X]^2
+\end{equation}
+
+</div>
+
+<p>
+Vale lembrar que a Esperança (E[X]) é um operador linear
+que possuí as propriedades de superposição e homogeneidade.
+</p>
+
+<p>
+O desvio padrão é denotado como a raiz quadrada da variança.
+Sendo apenas \(\sigma_x\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc66f69b" class="outline-3">
+<h3 id="orgc66f69b">Momento de uma variável</h3>
+<div class="outline-text-3" id="text-orgc66f69b">
+<p>
+O momento é definido como uma propriedade referente ao valor
+esperado de uma variável X. É definido como <b>n-ésimo momento de X</b>:
+\(E[X^n]\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6dc6fa6" class="outline-3">
+<h3 id="org6dc6fa6">PMF e Esperança Condicional</h3>
+<div class="outline-text-3" id="text-org6dc6fa6">
+<p>
+A PMF e Esperança condicional apenas estende os conceitos
+previamente descritos com a Regra de Bayes e o Teorema da
+Probabilidade Total.
+</p>
+</div>
+</div>
+</div>
