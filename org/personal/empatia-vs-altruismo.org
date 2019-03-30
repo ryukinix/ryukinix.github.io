@@ -1,0 +1,75 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:nil toc:nil timestamps:t todo:nil tasks:("IN-PROGRESS" "DONE")
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2019-03-30 Sat 07:43
+#+TITLE: Empatia vs Altruísmo
+#+DESCRIPTION: É necessário ser altruísta para ter empatia?
+#+TAGS: personal,social
+#+CATEGORIES: personal
+
+* DONE Motivação de escrever
+  CLOSED: [2019-03-30 Sat 08:01]
+
+Bom... eu estava aqui num dia de sábado, às 07h45 e me veio
+espontaneamente na cabeça: o que é preciso pra ter empatia?
+
+Um pouco óbvio, as pessoas que pensei como exemplo de empáticas,
+muitas vezes elas eram também altruístas. Lembrando que altruísmo é o
+ato dicotômico em relação ao egoísmo: ou seja, invés de se colocar em
+primeiro lugar frente aos outros, se coloca os outros acima de você.
+
+
+Mas então, isso é apenas uma coincidência ou é realmente é necessário?
+Em outras palavras: *é possível ter empatia mesmo não sendo
+altruísta?*
+
+* IN-PROGRESS Egoísmo
+
+Egoísmo é comum. Talvez mais do que deveria ser; há uma certa confusão
+de egoísmo com individualidade. Ora, são coisas distintas! Egoísmo
+está relacionada com nossa identidade pessoal, está ligada diretamente
+com a ideia de que tudo gira ao seu redor (centro das atenções). Não é
+que você seja somente importante pra sua vida, afinal óbvio que na sua
+vida você é importante, mas você acredita fielmente que as outras
+pessoas também deveriam dar importância a você de repente até mais do
+que elas dão a si mesmo!
+
+O egoísmo além de dar supremacia ao ego poderia tornar um indíviduo
+até mesmo um megalomaníaco: um complexo de superioridade que as
+outras vidas tem menos importância que a sua, uma ilusão, um delírio.
+
+A individualidade por outro lado apenas preza que eu sou um indíviduo, eu
+tenho minhas vontades e elas devem ser respeitadas. Eu gosto da ideia
+de individualidade, mas tenho realmente dificuldade de lidar com
+pessoas egocêntricas por serem tão acidas e centradas em si.
+
+Acredito que individualidade é necessário para a iluminação e o
+autoconhecimento, pelo menos em algum nível. É muito difícil não
+deixar sua identidade esparsa e nebulosa no meio de tanta explosão de
+informação pela internet.
+
+Então entramos no oposto, senão é egoísta, então é altruísta? Não
+necessariamente. A seguir eu comento que o altruísmo pode ser às vezes
+até mais nocivo pra própria vida que o egoísmo.
+
+
+* TODO Altruísmo
+
+
+
+* TODO Empatia
+
+
+* IN-PROGRESS Conclusão
+
+Ou seja, não é necessário adotar extremos entre egoísmo e altruísmo
+para definir sua personalidade, é possível muito bem balancear o uso
+de empatia e individualidade para que você alcance seus desejos
+pessoais respeitando também a vontade, desejo, complexidade e
+sofrimento alheio.
+
+Não devemos viver a vida dos outros! Mas também não devemos impedir
+que elas possam viver bem! Sejamos meros coadjuvantes na vida dos
+outros e na nossa, definitivamente, precisamos ser o protagonista!
