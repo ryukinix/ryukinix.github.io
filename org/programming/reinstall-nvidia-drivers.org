@@ -1,0 +1,100 @@
+#+STARTUP: hideall
+#+OPTIONS: H:3 num:nil tags:nil \n:t ^:nil todo:nil tasks:done toc:nil timestamps:t
+#+LANGUAGE: bt-br
+#+DATE: 2020-07-14
+#+TITLE: Reinstall NVIDIA drivers at shutdown
+#+DESCRIPTION: The master solution for slavery problems
+#+AUTHOR: Manoel Vilela
+#+CATEGORIES: programming
+#+TAGS:  programming
+#+LAYOUT: post
+#+COMMENTS: true
+#+HTML_HEAD: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
+
+
+/Disclosure/: essa solução é a coisa mais porca e funcional que já fiz na
+minha vida em manutenção de sistemas.
+
+
+Eu tava tendo vários problemas com meu sistema operacional do
+computador de mesa, que além de ter um hardware já datado (10+ anos),
+possuí uma placa de vídeo nvidia (GT 240) que constantemente tem me
+dado dor de cabeça durante quase toda minha jornada com o Linux. Acho
+que a única distribuição Linux que não tive muitos problemas foi o
+Manjaro e o Artix.
+
+Mas então, por questão de simplicidade multiusuário -- outras pessoas
+tem usado esse computador agora -- instalei o Linux Mint desde que
+perdi todos meus sistemas principais -- longa história: artix random
+upgrade bug caused kernel panic + ransomware no windows por causa de
+uma criança estúpida.
+
+De toda maneira, cortando o lenga-lenga -- ou uma parte dele -- tenho
+usado Linux Mint desde então (2020). Por alguma razão estranha, após
+alguns upgrades (distro version upgrade, pensa numa parada pra dar
+merda! rolling release rules) eu finalmente cheguei numa
+versão... mais bugada ainda pra minha felicidade. Toda vez que eu
+reiniciava meu computador simplesmente não funcionava mais o driver de
+vídeo. O X11 entrava em loop e eu se quer conseguia acionar o console
+via Ctrl+Alt+FN, minha única opção era reiniciar naquele ponto ou
+destruir essa desgraça. O fluxo padrão de uso então funcionava da
+seguinte maneira: toda vez que eu reiniciava e percebia que tava tudo
+fudido, eu reiniciava de NOVO, então entrava no modo recuperação, dava
+um jeito de acionar os serviços de rede (que depois de um tempo
+fazendo manualmente percebi que tinha uma OPÇÃO pra ativar pra você) e
+reinstalar os drivers de vídeo da nvidia com o seguinte comando:
+
+#+BEGIN_SRC shell
+apt install --reinstall nvidia-340
+#+END_SRC
+
+Toda vez, toda santa vez, que reiniciava ou desligava eu tinha que
+fazer essa merda. Claro, depois de corrigir eu reiniciava de novo. Só
+nisso já foi três restarts (o que deu ruim, a correção e o sistema
+funcionando de novo).
+
+Sabe o que pensei? Quer saber, bora vê aqui se nesse SystemDeus tem um
+jeito de usar um hook pra executar um comando antes de
+desligar/reiniciar. Afinal, se essa porra toda sempre acontece depois
+de desligar, eu corrigindo antes de desligar deve funcionar, não?
+
+Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e
+verificar que quase ninguém sabe direito como isso funcionar, ou
+quando sabe funcionar não sabe porque funciona, coletando os
+fragmentos de conhecimentos espalhados pelas threads encontradas,
+escrevi o seguinte serviço em
+~/etc/systemd/system/reinstall-drivers.service~:
+
+#+BEGIN_SRC text
+[Unit]
+Description=Reinstall Nvidia Drivers
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+After=network.target network-online.target
+Wants=network.target network-online.target
+
+
+[Service]
+ExecStart=/usr/local/bin/apt install --reinstall nvidia-340 -y
+Type=oneshot
+
+
+[Install]
+WantedBy=shutdown.target reboot.target halt.target
+#+END_SRC
+
+Logo então, acionei os seguintes comandos:
+
+#+BEGIN_SRC shell
+sudo systemctl daemon-reload
+sudo systemctl enable reinstall-drivers
+#+END_SRC
+
+Fiz reboot e testei. Funcionou! Fiz reboot de novo e funcionou
+novamente. Espero que continue funcionando. A parte chata é só a
+demora de cerca de 3min agora pra desligar/reiniciar, afinal toda vez
+vai ser reinstalado os drivers de vídeo, mas é muito
+melhor que fazer toda essa desgraça manualmente.
+
+Invés de ser escravo de computador, prefiro que o computador seja
+escravo de si mesmo.
