@@ -11,29 +11,29 @@ comments: true
 html_head: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
 ---
 <p>
-<i>Disclosure</i>: essa solução é a coisa mais porca e funcional que já fiz na<br />
-minha vida em manutenção de sistemas.<br />
+<i>Disclosure</i>: essa solução é a coisa mais porca e funcional que já fiz na
+minha vida em manutenção de sistemas.
 </p>
 
 <div id="outline-container-org07a4ea6" class="outline-2">
 <h2 id="org07a4ea6">Background</h2>
 <div class="outline-text-2" id="text-org07a4ea6">
 <p>
-Eu tava tendo vários problemas com meu sistema operacional do<br />
-computador de mesa, que além de ter um hardware já datado (10+ anos),<br />
-possuí uma placa de vídeo nvidia (GT 240) que constantemente tem me<br />
-dado dor de cabeça durante quase toda minha jornada com o Linux. Acho<br />
-que a única distribuição Linux que não tive muitos problemas foi o<br />
-Manjaro e o Artix.<br />
+Eu tava tendo vários problemas com meu sistema operacional do
+computador de mesa, que além de ter um hardware já datado (10+ anos),
+possuí uma placa de vídeo nvidia (GT 240) que constantemente tem me
+dado dor de cabeça durante quase toda minha jornada com o Linux. Acho
+que a única distribuição Linux que não tive muitos problemas foi o
+Manjaro e o Artix.
 </p>
 
 <p>
-Mas então, por questão de simplicidade multiusuário &#x2013; outras pessoas<br />
-tem usado esse computador agora &#x2013; instalei o Linux Mint desde que<br />
-perdi todos meus sistemas principais &#x2013; resumo de uma longa história:<br />
-(2019) artix random upgrade bug caused kernel panic at boot + (2020)<br />
-ransomware no windows por causa de uma criança estúpida querendo<br />
-baixar fortnite.<br />
+Mas então, por questão de simplicidade multiusuário &#x2013; outras pessoas
+tem usado esse computador agora &#x2013; instalei o Linux Mint desde que
+perdi todos meus sistemas principais &#x2013; resumo de uma longa história:
+(2019) artix random upgrade bug caused kernel panic at boot + (2020)
+ransomware no windows por causa de uma criança estúpida querendo
+baixar fortnite.
 </p>
 </div>
 </div>
@@ -42,27 +42,27 @@ baixar fortnite.<br />
 <h2 id="orge1b87e0">Real problem</h2>
 <div class="outline-text-2" id="text-orge1b87e0">
 <p>
-De toda maneira, cortando o lenga-lenga &#x2013; ou uma parte dele &#x2013; tenho<br />
-usado Linux Mint desde então (2020) depois de fugir por alguns anos de<br />
-sistemas baseado em debian/ubuntu e systemd. Por alguma razão estranha, após<br />
-alguns upgrades (distro version upgrade, pensa numa parada pra dar<br />
-merda! rolling release rules) eu finalmente cheguei numa<br />
-versão&#x2026; mais <b><b>bugada ainda</b></b> pra minha felicidade.<br />
+De toda maneira, cortando o lenga-lenga &#x2013; ou uma parte dele &#x2013; tenho
+usado Linux Mint desde então (2020) depois de fugir por alguns anos de
+sistemas baseado em debian/ubuntu e systemd. Por alguma razão estranha, após
+alguns upgrades (distro version upgrade, pensa numa parada pra dar
+merda! rolling release rules) eu finalmente cheguei numa
+versão&#x2026; mais <b><b>bugada ainda</b></b> pra minha felicidade.
 </p>
 
 <p>
-Toda vez que eu reiniciava meu computador simplesmente não funcionava<br />
-mais o driver de vídeo. O X11 entrava em loop e eu se quer conseguia<br />
-acionar o console via Ctrl+Alt+FN, ficava tudo travado; minha única<br />
-opção era reiniciar naquele ponto ou destruir essa desgraça &#x2013;<br />
-brincadeira, esse computador foi o início de tudo. No fim das contas,<br />
-o fluxo padrão de uso desse computador funcionava da seguinte maneira:<br />
-toda vez que eu desligava, ao ligar novamente percebia que tava tudo<br />
-fudido, então eu reiniciava de NOVO para então entrar no modo de<br />
-recuperação, dava um jeito de acionar os serviços de rede (que depois<br />
-de um tempo fazendo manualmente percebi que tinha uma OPÇÃO pra ativar<br />
-pra você) e reinstalar os drivers de vídeo da nvidia com o seguinte<br />
-comando:<br />
+Toda vez que eu reiniciava meu computador simplesmente não funcionava
+mais o driver de vídeo. O X11 entrava em loop e eu se quer conseguia
+acionar o console via Ctrl+Alt+FN, ficava tudo travado; minha única
+opção era reiniciar naquele ponto ou destruir essa desgraça &#x2013;
+brincadeira, esse computador foi o início de tudo. No fim das contas,
+o fluxo padrão de uso desse computador funcionava da seguinte maneira:
+toda vez que eu desligava, ao ligar novamente percebia que tava tudo
+fudido, então eu reiniciava de NOVO para então entrar no modo de
+recuperação, dava um jeito de acionar os serviços de rede (que depois
+de um tempo fazendo manualmente percebi que tinha uma OPÇÃO pra ativar
+pra você) e reinstalar os drivers de vídeo da nvidia com o seguinte
+comando:
 </p>
 
 <div class="org-src-container">
@@ -71,17 +71,17 @@ comando:<br />
 </div>
 
 <p>
-Toda vez, toda <b><b>santa vez</b></b>, que reiniciava ou desligava eu tinha que<br />
-fazer essa merda. Claro, depois de corrigir eu reiniciava de novo. Só<br />
-nisso já foi três restarts (o que deu ruim, a correção e o sistema<br />
-funcionando de novo).<br />
+Toda vez, toda <b><b>santa vez</b></b>, que reiniciava ou desligava eu tinha que
+fazer essa merda. Claro, depois de corrigir eu reiniciava de novo. Só
+nisso já foi três restarts (o que deu ruim, a correção e o sistema
+funcionando de novo).
 </p>
 
 <p>
-Sabe o que pensei? Quer saber, bora vê aqui se nesse SystemDeus tem um<br />
-jeito de usar um hook pra executar um comando antes de<br />
-desligar/reiniciar. Afinal, se essa porra toda sempre acontece depois<br />
-de desligar, eu corrigindo antes de desligar deve funcionar, não?<br />
+Sabe o que pensei? Quer saber, bora vê aqui se nesse SystemDeus tem um
+jeito de usar um hook pra executar um comando antes de
+desligar/reiniciar. Afinal, se essa porra toda sempre acontece depois
+de desligar, eu corrigindo antes de desligar deve funcionar, não?
 </p>
 </div>
 </div>
@@ -90,12 +90,12 @@ de desligar, eu corrigindo antes de desligar deve funcionar, não?<br />
 <h2 id="org424f90e">Master solution</h2>
 <div class="outline-text-2" id="text-org424f90e">
 <p>
-Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e<br />
-verifiquei que quase ninguém sabe direito como faz pra isso funcionar,<br />
-ou quando sabe fazer funcionar não sabe porque funciona, coletando os<br />
-fragmentos de conhecimentos espalhados pelas threads encontradas,<br />
-escrevi o seguinte serviço em<br />
-<code>/etc/systemd/system/reinstall-drivers.service</code>:<br />
+Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e
+verifiquei que quase ninguém sabe direito como faz pra isso funcionar,
+ou quando sabe fazer funcionar não sabe porque funciona, coletando os
+fragmentos de conhecimentos espalhados pelas threads encontradas,
+escrevi o seguinte serviço em
+<code>/etc/systemd/system/reinstall-drivers.service</code>:
 </p>
 
 <div class="org-src-container">
@@ -118,7 +118,7 @@ WantedBy=shutdown.target reboot.target halt.target
 </div>
 
 <p>
-Logo então, acionei os seguintes comandos:<br />
+Logo então, acionei os seguintes comandos:
 </p>
 
 <div class="org-src-container">
@@ -128,16 +128,16 @@ sudo systemctl enable reinstall-drivers
 </div>
 
 <p>
-Fiz reboot e testei. Funcionou! Fiz reboot de novo e funcionou<br />
-novamente. Espero que continue funcionando. A parte chata é só a<br />
-demora de cerca de 3min agora pra desligar/reiniciar, afinal toda vez<br />
-vai ser reinstalado o driver de vídeo, mas é muito<br />
-melhor que fazer toda essa desgraça manualmente.<br />
+Fiz reboot e testei. Funcionou! Fiz reboot de novo e funcionou
+novamente. Espero que continue funcionando. A parte chata é só a
+demora de cerca de 3min agora pra desligar/reiniciar, afinal toda vez
+vai ser reinstalado o driver de vídeo, mas é muito
+melhor que fazer toda essa desgraça manualmente.
 </p>
 
 <p>
-Invés de ser escravo de computador, prefiro que o computador seja<br />
-escravo de si mesmo.<br />
+Invés de ser escravo de computador, prefiro que o computador seja
+escravo de si mesmo.
 </p>
 </div>
 </div>

@@ -1,5 +1,5 @@
 #+STARTUP: hideall
-#+OPTIONS: H:3 num:nil tags:nil \n:t ^:nil todo:nil tasks:done toc:nil timestamps:t
+#+OPTIONS: H:3 num:nil tags:nil ^:nil todo:nil tasks:done toc:nil timestamps:t
 #+LANGUAGE: bt-br
 #+DATE: 2020-07-14
 #+TITLE: Reinstall NVIDIA drivers at shutdown
