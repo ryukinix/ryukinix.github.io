@@ -11,10 +11,10 @@
 #+COMMENTS: true
 #+HTML_HEAD: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
 
-
 /Disclosure/: essa solução é a coisa mais porca e funcional que já fiz na
 minha vida em manutenção de sistemas.
 
+* Background
 
 Eu tava tendo vários problemas com meu sistema operacional do
 computador de mesa, que além de ter um hardware já datado (10+ anos),
@@ -29,6 +29,8 @@ perdi todos meus sistemas principais -- resumo de uma longa história:
 (2019) artix random upgrade bug caused kernel panic at boot + (2020)
 ransomware no windows por causa de uma criança estúpida querendo
 baixar fortnite.
+
+* Real problem
 
 De toda maneira, cortando o lenga-lenga -- ou uma parte dele -- tenho
 usado Linux Mint desde então (2020) depois de fugir por alguns anos de
@@ -63,6 +65,8 @@ Sabe o que pensei? Quer saber, bora vê aqui se nesse SystemDeus tem um
 jeito de usar um hook pra executar um comando antes de
 desligar/reiniciar. Afinal, se essa porra toda sempre acontece depois
 de desligar, eu corrigindo antes de desligar deve funcionar, não?
+
+* Master solution
 
 Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e
 verifiquei que quase ninguém sabe direito como faz pra isso funcionar,
