@@ -1,5 +1,5 @@
 #+STARTUP: hideall
-#+OPTIONS: H:3 num:nil tags:nil \n:t ^:nil todo:nil tasks:done toc:nil timestamps:t
+#+OPTIONS: H:3 num:nil tags:nil ^:nil todo:nil tasks:done toc:nil timestamps:t
 #+EXCLUDE_TAGS: TOC_3
 #+LANGUAGE: bt-br
 #+DATE: 2017-08-20
