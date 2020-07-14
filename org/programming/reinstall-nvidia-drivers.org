@@ -25,30 +25,36 @@ Manjaro e o Artix.
 
 Mas então, por questão de simplicidade multiusuário -- outras pessoas
 tem usado esse computador agora -- instalei o Linux Mint desde que
-perdi todos meus sistemas principais -- longa história: artix random
-upgrade bug caused kernel panic + ransomware no windows por causa de
-uma criança estúpida.
+perdi todos meus sistemas principais -- resumo de uma longa história:
+(2019) artix random upgrade bug caused kernel panic at boot + (2020)
+ransomware no windows por causa de uma criança estúpida querendo
+baixar fortnite.
 
 De toda maneira, cortando o lenga-lenga -- ou uma parte dele -- tenho
-usado Linux Mint desde então (2020). Por alguma razão estranha, após
+usado Linux Mint desde então (2020) depois de fugir por alguns anos de
+sistemas baseado em debian/ubuntu e systemd. Por alguma razão estranha, após
 alguns upgrades (distro version upgrade, pensa numa parada pra dar
 merda! rolling release rules) eu finalmente cheguei numa
-versão... mais bugada ainda pra minha felicidade. Toda vez que eu
-reiniciava meu computador simplesmente não funcionava mais o driver de
-vídeo. O X11 entrava em loop e eu se quer conseguia acionar o console
-via Ctrl+Alt+FN, minha única opção era reiniciar naquele ponto ou
-destruir essa desgraça. O fluxo padrão de uso então funcionava da
-seguinte maneira: toda vez que eu reiniciava e percebia que tava tudo
-fudido, eu reiniciava de NOVO, então entrava no modo recuperação, dava
-um jeito de acionar os serviços de rede (que depois de um tempo
-fazendo manualmente percebi que tinha uma OPÇÃO pra ativar pra você) e
-reinstalar os drivers de vídeo da nvidia com o seguinte comando:
+versão... mais **bugada ainda** pra minha felicidade.
+
+Toda vez que eu reiniciava meu computador simplesmente não funcionava
+mais o driver de vídeo. O X11 entrava em loop e eu se quer conseguia
+acionar o console via Ctrl+Alt+FN, ficava tudo travado; minha única
+opção era reiniciar naquele ponto ou destruir essa desgraça --
+brincadeira, esse computador foi o início de tudo. No fim das contas,
+o fluxo padrão de uso desse computador funcionava da seguinte maneira:
+toda vez que eu desligava, ao ligar novamente percebia que tava tudo
+fudido, então eu reiniciava de NOVO para então entrar no modo de
+recuperação, dava um jeito de acionar os serviços de rede (que depois
+de um tempo fazendo manualmente percebi que tinha uma OPÇÃO pra ativar
+pra você) e reinstalar os drivers de vídeo da nvidia com o seguinte
+comando:
 
 #+BEGIN_SRC shell
 apt install --reinstall nvidia-340
 #+END_SRC
 
-Toda vez, toda santa vez, que reiniciava ou desligava eu tinha que
+Toda vez, toda **santa vez**, que reiniciava ou desligava eu tinha que
 fazer essa merda. Claro, depois de corrigir eu reiniciava de novo. Só
 nisso já foi três restarts (o que deu ruim, a correção e o sistema
 funcionando de novo).
@@ -59,8 +65,8 @@ desligar/reiniciar. Afinal, se essa porra toda sempre acontece depois
 de desligar, eu corrigindo antes de desligar deve funcionar, não?
 
 Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e
-verificar que quase ninguém sabe direito como isso funcionar, ou
-quando sabe funcionar não sabe porque funciona, coletando os
+verifiquei que quase ninguém sabe direito como faz pra isso funcionar,
+ou quando sabe fazer funcionar não sabe porque funciona, coletando os
 fragmentos de conhecimentos espalhados pelas threads encontradas,
 escrevi o seguinte serviço em
 ~/etc/systemd/system/reinstall-drivers.service~:
@@ -93,7 +99,7 @@ sudo systemctl enable reinstall-drivers
 Fiz reboot e testei. Funcionou! Fiz reboot de novo e funcionou
 novamente. Espero que continue funcionando. A parte chata é só a
 demora de cerca de 3min agora pra desligar/reiniciar, afinal toda vez
-vai ser reinstalado os drivers de vídeo, mas é muito
+vai ser reinstalado o driver de vídeo, mas é muito
 melhor que fazer toda essa desgraça manualmente.
 
 Invés de ser escravo de computador, prefiro que o computador seja
