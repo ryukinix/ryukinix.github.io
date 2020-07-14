@@ -9,7 +9,12 @@
 #+TAGS:  programming
 #+LAYOUT: post
 #+COMMENTS: true
-#+HTML_HEAD: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
+
+#+BEGIN_EXPORT html
+<link rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"/>
+#+END_EXPORT
 
 /Disclosure/: essa solução é a coisa mais porca e funcional que já fiz na
 minha vida em manutenção de sistemas.

@@ -10,7 +10,14 @@
 #+TAGS:  programming
 #+LAYOUT: post
 #+COMMENTS: true
-#+HTML_HEAD: <link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>
+#+HTML_HEAD: <link rel=\"stylesheet\" href=\"./assets/css/style.css\" type=\"text/css\"/>
+
+#+BEGIN_EXPORT html
+<link rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"/>
+#+END_EXPORT
+
 
 * Table of Contents :TOC_3:
 - [[#descrição][Descrição]]

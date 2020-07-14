@@ -9,19 +9,11 @@
 #+CATEGORIES: programming
 #+COMMENTS: true
 
-#+BEGIN_HTML
-<style>
-  pre.src {
-    background-color: #303030;
-    color: #e5e5e5;
-    padding: 1em;
-    padding-top: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-  }
-</style>
-#+END_HTML
+#+BEGIN_EXPORT html
+<link rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"/>
+#+END_EXPORT
 
 
 * Sumário                                                             :TOC_3_org:

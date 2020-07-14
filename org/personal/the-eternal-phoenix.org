@@ -10,14 +10,14 @@
 #+LANG: en
 #+COMMENTS: true
 
-#+BEGIN_HTML html
+#+BEGIN_EXPORT html
   <p align="center">
   <iframe style="border: 0; width: 350px; height: 786px;"
           src="https://bandcamp.com/EmbeddedPlayer/album=512666029/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless>
     <a href="http://chaoticlambdas.bandcamp.com/album/the-eternal-phoenix">The Eternal Phoenix by Manoel Vilela @ Lerax</a>
   </iframe>
   </p>
-#+END_HTML
+#+END_EXPORT
 
 * Description
 
