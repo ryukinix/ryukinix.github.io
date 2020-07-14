@@ -13,14 +13,15 @@ RUN apt-get update && \
     apt-get install \
     ruby-dev build-essential \
     patch zlib1g-dev liblzma-dev \
-    libxml2-dev libxslt-dev  -y
+    libxml2-dev libxslt-dev git  -y
 RUN gem install bundler
 
 # Application
 WORKDIR /app
-COPY . .
-RUN apt-get install git -y
+COPY Gemfile .
+COPY Gemfile.lock .
 RUN bundle install --path vendor/bundle
+COPY . .
 EXPOSE 4000
 
 ENTRYPOINT ["bundle", "exec", "jekyll", "serve"]
