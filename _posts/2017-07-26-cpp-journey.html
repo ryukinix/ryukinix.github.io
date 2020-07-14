@@ -1,0 +1,1201 @@
+---
+date: 2017-07-26 14:48
+author: Manoel Vilela
+tags: 
+layout: post
+title: C++ Journey
+excerpt: Uma jornada no mundo infernal de C++ através do HackerRank
+categories: 
+- programming
+comments: true
+---
+<div class="HTML">
+<p>
+&lt;style&gt;
+  pre.src {
+    background-color: #303030;
+    color: #e5e5e5;
+    padding: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+&lt;/style&gt;
+</p>
+
+</div>
+
+
+<div id="outline-container-org9275f8f" class="outline-2">
+<h2 id="toc-org"><a id="org9275f8f"></a>Tabela de Conteúdos</h2>
+<div class="outline-text-2" id="text-toc-org">
+<ul class="org-ul">
+<li><a href="#org85a8674">Descrição</a></li>
+<li><p>
+<a href="#org20a38a0">HackerRank C++</a>
+</p>
+<ul class="org-ul">
+<li><a href="#org5827cc2">The Type String</a></li>
+<li><a href="#orgdfbf251">Streams</a></li>
+<li><a href="#orgfa5433e">Attribute Parser</a></li>
+</ul>
+<ul class="org-ul">
+<li><a href="#orgb3bdd50">Orientação a Objetos</a>
+<ul class="org-ul">
+<li><a href="#org988de22">Introdução</a></li>
+<li><a href="#org9520052">Structs</a></li>
+<li><a href="#org035eeef">Básico de Classes</a></li>
+<li><a href="#org4afe0bb">Class constructors</a></li>
+<li><a href="#orgbaa1a11">Exceptions</a></li>
+<li><a href="#org5405fcb">Polymorphism and Abstract Base Classes</a></li>
+</ul></li>
+<li><a href="#org9ae1db9">Inheritance</a>
+<ul class="org-ul">
+<li><a href="#orgdf57fcc">Inheritance Introduction</a></li>
+<li><a href="#orge23efb8">Rectangle Area</a></li>
+<li><a href="#org375a563">Multi Level Inheritance</a></li>
+<li><a href="#orgacf9b9f">Accessing Inherited Functions</a></li>
+<li><a href="#orgdc23bd2">Magic Spells</a></li>
+</ul></li>
+<li><a href="#org52df3bc">STL - C++ Standard Library</a>
+<ul class="org-ul">
+<li><a href="#org0b36f92">Vector Sort</a></li>
+<li><a href="#orgd096e87">Vector-Erase</a></li>
+<li><a href="#org3ea81fe">Lower Bound</a></li>
+<li><a href="#orgbb82af9">Sets</a></li>
+<li><a href="#org13404ac">Maps</a></li>
+<li><a href="#org961a552">Print Pretty</a></li>
+<li><a href="#orgf0a0f5c">Deque</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#org20b6816">C++ prime checking</a></li>
+<li><a href="#orgbba1fee">Estudos de caso</a>
+<ul class="org-ul">
+<li><a href="#org03ee752">Listas de inicialização para construtores</a></li>
+<li><a href="#org4a30211">Separadores de escopo <code>::</code> e <code>.</code></a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org85a8674" class="outline-2">
+<h2 id="org85a8674">Descrição</h2>
+<div class="outline-text-2" id="text-org85a8674">
+<p>
+Minha jornada com C++ no HackerRank principalmente e outras coisas. Na maioria
+das questões não uso todos os recursos de <code>C++14</code>, mas às vezes sim. Assume-se,
+por via das dúvidas, que todos arquivos estão no padrão <code>C++14</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20a38a0" class="outline-2">
+<h2 id="org20a38a0">HackerRank C++</h2>
+<div class="outline-text-2" id="text-org20a38a0">
+</div>
+<div id="outline-container-org5827cc2" class="outline-4">
+<h4 id="org5827cc2">The Type String</h4>
+<div class="outline-text-4" id="text-org5827cc2">
+<p>
+CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2017-07-05 Wed 16:04]</span></span>
+</p>
+<p>
+Diferentemente de C, C++ implementa um tipo string não somente como uma cadeia
+de caracteres, mas como um objeto. Possui métodos associados, como `string::length`.
+É bem útil e menos difícil de tratar que <i>strings</i> em C, que são apenas vetores de caracteres.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #62686E;">// </span><span style="color: #62686E;">inicializa&#231;&#227;o de string</span>
+<span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">a</span> = <span style="color: #7bc275;">"abc"</span>;
+<span style="color: #62686E;">// </span><span style="color: #62686E;">tamanho</span>
+a.size()
+<span style="color: #62686E;">// </span><span style="color: #62686E;">concatena&#231;&#227;o</span>
+<span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">b</span> = <span style="color: #7bc275;">"def"</span>
+string c = a + b; <span style="color: #62686E;">// </span><span style="color: #62686E;">"abcdef"</span>
+
+</pre>
+</div>
+
+<p>
+O primeiro exercício do HackerRank:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iostream&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;string&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;algorithm&gt;</span>
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a991f1;">std</span>;
+
+<span style="color: #FCCE7B;">int</span> <span style="color: #5cEfFF;">main</span>() {
+    <span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">a</span>,<span style="color: #DFDFDF;">b</span>;
+    cin &gt;&gt; a;
+    cin &gt;&gt; b;
+    cout &lt;&lt; a.size() &lt;&lt; <span style="color: #7bc275;">" "</span> &lt;&lt; b.size() &lt;&lt; endl;
+    cout &lt;&lt; a + b &lt;&lt; endl;
+    <span style="color: #FCCE7B;">char</span> <span style="color: #DFDFDF;">temp</span> = a[0];
+    a[0] = b[0];
+    b[0] = temp;
+    cout &lt;&lt; a &lt;&lt; <span style="color: #7bc275;">" "</span> &lt;&lt; b &lt;&lt; endl;
+
+    <span style="color: #51afef;">return</span> 0;
+}
+
+</pre>
+</div>
+
+
+<p>
+Lidando com tamanho, concatenação e substituição de caracteres
+em <code>strings</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdfbf251" class="outline-4">
+<h4 id="orgdfbf251">Streams</h4>
+<div class="outline-text-4" id="text-orgdfbf251">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-05 Wed&gt;</span></span>
+</p>
+<p>
+Esse tópico refere-se ao gerenciamento de <i>stream</i> usando <i>strings</i>
+para C++. Muito interessante. O operador &lt;&lt; insere informação,
+por outro lado, o operador &gt;&gt; extrai informação.
+</p>
+
+
+<p>
+O método de inicialização da <code>stringstream</code> cria uma <i>stream</i>. O cabeçalho é <code>&lt;sstream&gt;</code>.
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-2.cpp">HackerRank-Problem-String</a>
+O método <code>sstream::eof</code> verifica se a <i>stream</i> está no fim. <code>EOF</code> = End Of File.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa5433e" class="outline-4">
+<h4 id="orgfa5433e">Attribute Parser</h4>
+<div class="outline-text-4" id="text-orgfa5433e">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-05 Wed&gt;</span></span>
+</p>
+<p>
+Nessa atividade, a última de <i>strings</i>, vou precisar fazer um <i>parser</i> de atributos
+em CancerPlusPlus (aka C++). Um pouco da descrição do site é dada no <i>block</i> de código abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-xml">We have defined our own markup language HRML. In HRML, each element consists of
+a starting and ending tag, and there are attributes associated with each tag.
+Only starting tags can have attributes. We can call an attribute by referencing
+the tag, followed by a tilde, '~' and the name of the attribute.
+The tags may also be nested.
+
+Sample Input
+
+4 3
+&lt;<span style="color: #5cEfFF;">tag1</span> <span style="color: #DFDFDF;">value</span> = <span style="color: #7bc275;">"HelloWorld"</span>&gt;
+&lt;<span style="color: #5cEfFF;">tag2</span> <span style="color: #DFDFDF;">name</span> = <span style="color: #7bc275;">"Name1"</span>&gt;
+&lt;/<span style="color: #5cEfFF;">tag2</span>&gt;
+&lt;/<span style="color: #5cEfFF;">tag1</span>&gt;
+tag1.tag2~name
+tag1~name
+tag1~value
+
+Sample Output
+
+Name1
+Not Found!
+HelloWorld
+</pre>
+</div>
+
+<p>
+A atividade está sendo desenvolvida no arquivo:
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-3-attribute-parser.cpp">Attribute Parser</a>
+</p>
+
+<p>
+Já estou há várias horas resolvendo esse problema. Sinceramente é um pouco
+trabalhoso. Agora é <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 Thu 01:50&gt;</span></span>. Já se passou mais de 8 horas&#x2026;
+que inferno! Mas eu dormi um pouco antes também. Cassete! terminei agora depois
+de 14 horas! Uma completa desgraça!
+</p>
+
+<p>
+QUE INFERNO!!!!!! TERMINEI!!!!
+</p>
+
+<p>
+Primeiramente interpretei o problema um tanto errado, pensando que a primeira
+tag seria a raíz da árvore. O que deu bastante problema para contornar.
+Após isso havia vários erros, como o não tratamento de espaços antes das chaves,
+como indentação. Isso não parece ter nenhum efeito durante a correção. Mas
+só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
+repositório do github. O problema central, depois de corrigir a modelagem errada,
+era em relação ao método de pesquisa.
+**
+</p>
+</div>
+</div>
+<div id="outline-container-orgb3bdd50" class="outline-3">
+<h3 id="orgb3bdd50">Orientação a Objetos</h3>
+<div class="outline-text-3" id="text-orgb3bdd50">
+</div>
+<div id="outline-container-org988de22" class="outline-4">
+<h4 id="org988de22">Introdução</h4>
+<div class="outline-text-4" id="text-org988de22">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-05 Wed&gt;</span></span>
+</p>
+<p>
+Estou fazendo alguns exercícios de C++ no HackerRank. Até agora não estou
+com muitos problemas. Na verdade C++ não é tão difícil quanto eu pensei.
+De fato, na verdade, eu nunca tinha parado pra olhar direito como era a
+linguagem e só ficava de tretinha básica.
+</p>
+
+<p>
+OO em C++ parece ser divertido, apesar de ainda ter uma impressão <i>cancerígina</i>.
+Não é pra menos&#x2026; <i>keywords</i>, <code>friend</code>, <code>public</code>, <code>private</code> e <code>protected</code>?
+Mas, enfim, acho que vou conseguir me acostumar. Quero terminar hoje ainda a
+introdução, estou na última parte envolvendo OO, herança e variáveis estáticas.
+</p>
+
+<p>
+Método virtuais em C++ são usados para fazer polimorfismo dinâmicos em heranças.
+<i>Protected</i> são membros acessíveis apenas pelas subclasses. <i>Private</i> são
+acessíveis apenas pelos métodos da classe. <i>Public</i> são publicos para todos.
+</p>
+
+<p>
+Por padrão, membros e métodos são privados em classes. Para fazer um membro ou
+método público você deve o fazer explicitamente com a keyword <code>public</code> e o uso
+de dois pontos <code>:</code>. É possível usar a <i>keyword</i> <code>friend</code> para acessar atributos
+privados de outra classe. Provavelmente eu não deveria
+estar falando desses tópicos avançados de OO na introdução (HAHA!). Mas
+é bom que dá o gostinho de desgraça que C++ tem tanto de especial.
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #51afef;">const</span> <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">NUMBER_OF_MARKS</span> = 6;
+
+<span style="color: #51afef;">class</span> <span style="color: #FCCE7B;">Person</span> {
+<span style="color: #51afef;">protected</span>:
+    <span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">name</span>;
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">age</span>;
+<span style="color: #51afef;">public</span>:
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">putdata</span>(<span style="color: #FCCE7B;">void</span>){};
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">getdata</span>(<span style="color: #FCCE7B;">void</span>){};
+};
+
+<span style="color: #51afef;">class</span> <span style="color: #FCCE7B;">Professor</span>: <span style="color: #51afef;">public</span> <span style="color: #FCCE7B;">Person</span> {
+<span style="color: #51afef;">private</span>:
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">publications</span>;
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">cur_id</span>;
+<span style="color: #51afef;">public</span>:
+    <span style="color: #51afef;">static</span> <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">count</span>;
+    <span style="color: #5cEfFF;">Professor</span>(<span style="color: #FCCE7B;">void</span>){
+        cur_id = count + 1;
+        count += 1;
+    }
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">putdata</span>(<span style="color: #FCCE7B;">void</span>) {
+        <span style="color: #62686E;">// </span><span style="color: #62686E;">The function putdata should print the name, age,</span>
+        <span style="color: #62686E;">// </span><span style="color: #62686E;">publications and the cur_id of the professor.</span>
+        cout &lt;&lt; name &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; age &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; publications &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; cur_id &lt;&lt; endl;
+    }
+
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">getdata</span>(<span style="color: #FCCE7B;">void</span>) {
+        cin &gt;&gt; name;
+        cin &gt;&gt; age;
+        cin &gt;&gt; publications;
+    }
+};
+
+<span style="color: #51afef;">class</span> <span style="color: #FCCE7B;">Student</span>: <span style="color: #51afef;">public</span> <span style="color: #FCCE7B;">Person</span> {
+<span style="color: #51afef;">private</span>:
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">marks</span>[NUMBER_OF_MARKS];
+    <span style="color: #FCCE7B;">int</span> <span style="color: #5cEfFF;">_sum_marks</span>() {
+        <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">total</span> = 0;
+        <span style="color: #51afef;">for</span> (<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">i</span> = 0; i &lt; NUMBER_OF_MARKS; i++) {
+            total += marks[i];
+        }
+        <span style="color: #51afef;">return</span> total;
+    }
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">cur_id</span>;
+<span style="color: #51afef;">public</span>:
+    <span style="color: #51afef;">static</span> <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">count</span>;
+    <span style="color: #5cEfFF;">Student</span>(<span style="color: #FCCE7B;">void</span>) {
+        cur_id = count + 1;
+        count += 1;
+    }
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">putdata</span>(<span style="color: #FCCE7B;">void</span>) {
+        <span style="color: #62686E;">// </span><span style="color: #62686E;">The function putdata should print the name, age,</span>
+        <span style="color: #62686E;">// </span><span style="color: #62686E;">sum of the marks and the cur_id of the student.</span>
+        cout &lt;&lt; name &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; age &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; _sum_marks() &lt;&lt; <span style="color: #7bc275;">" "</span>;
+        cout &lt;&lt; cur_id &lt;&lt; endl;
+
+    }
+
+    <span style="color: #51afef;">virtual</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">getdata</span>(<span style="color: #FCCE7B;">void</span>) {
+        cin &gt;&gt; name;
+        cin &gt;&gt; age;
+        <span style="color: #51afef;">for</span> (<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">i</span> = 0; i &lt; NUMBER_OF_MARKS; i++){
+            cin &gt;&gt; marks[i];
+        }
+
+    }
+
+};
+
+<span style="color: #FCCE7B;">int</span> <span style="color: #a991f1;">Professor</span>::<span style="color: #DFDFDF;">count</span> = 0;
+<span style="color: #FCCE7B;">int</span> <span style="color: #a991f1;">Student</span>::<span style="color: #DFDFDF;">count</span> = 0;
+
+</pre>
+</div>
+
+<p>
+Construtores podem ser definidos uma ou várias vezes.
+No entanto, destrutores só podem ser definidos uma vez.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9520052" class="outline-4">
+<h4 id="org9520052">Structs</h4>
+<div class="outline-text-4" id="text-org9520052">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 Thu&gt;</span></span>
+</p>
+<p>
+Os structs em C++ são semelhantes de C, no entanto eles são como classes
+com membros e métodos públicos por padrão. Usualmente structs são usados apenas
+para agrupar membros de variáveis numa estrutura compartilhada, podendo assim,
+criar estrutura de dados mais complexas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org035eeef" class="outline-4">
+<h4 id="org035eeef">Básico de Classes</h4>
+<div class="outline-text-4" id="text-org035eeef">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-05 Wed&gt;</span></span>
+</p>
+<p>
+Por padrão classes tem seus métodos e atributos privados, sendo reservado as
+keywords para controle de acesso: <code>protected</code>, <code>private</code> e <code>public</code>.
+Uma prática comum em C++ é deixar todos os atributos privados ou protegidos
+(case for uma classe base de herança), então criar <i>getters</i> e <i>setters</i> públicos.
+</p>
+
+<p>
+Um exemplo de código abaixo é dado:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #51afef;">class</span> <span style="color: #FCCE7B;">Student</span> {
+<span style="color: #51afef;">private</span>:
+    <span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">name</span>;
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">age</span>;
+<span style="color: #51afef;">public</span>:
+    <span style="color: #FCCE7B;">string</span> <span style="color: #5cEfFF;">get_mame</span>() {
+        <span style="color: #51afef;">return</span> name;
+    }
+
+    <span style="color: #FCCE7B;">string</span> <span style="color: #5cEfFF;">get_age</span>() {
+        <span style="color: #51afef;">return</span> age;
+    }
+
+    <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">set_name</span>(<span style="color: #FCCE7B;">string</span> <span style="color: #DFDFDF;">new_name</span>) {
+        name = new_name;
+    }
+
+    <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">set_age</span>(<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">new_age</span>) {
+        age = new_age;
+    }
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4afe0bb" class="outline-4">
+<h4 id="org4afe0bb">Class constructors</h4>
+<div class="outline-text-4" id="text-org4afe0bb">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 Thu&gt;</span></span>
+</p>
+
+<p>
+Construtores são chamados na inicialização de uma classe. Podem possuir um ou mais,
+com diferentes assinaturas.
+Os tipos de construtores são três:
+</p>
+
+<ol class="org-ol">
+<li>Construtor padrão</li>
+<li>Construtor parametrizado</li>
+<li>Construtor de cópia</li>
+</ol>
+
+<p>
+Exemplo: <a href="https://github.com/ryukinix/cpp-journey/tree/master/Classes/constructor.cpp">ConstructorsExample.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbaa1a11" class="outline-4">
+<h4 id="orgbaa1a11">Exceptions</h4>
+<div class="outline-text-4" id="text-orgbaa1a11">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 Thu&gt;</span></span>
+</p>
+
+<p>
+C++ permite criar exceções personalizadas ao criar uma herança da classe
+<code>exception</code>. O método descritivo da exceção é <code>const char* what(){}</code>.
+Uma atividade simples foi feita em: <a href="https://github.com/ryukinix/cpp-journey/tree/master/Classes/exception.cpp">Exceptions.cpp</a>
+Blocos <code>try/catch</code> são usados pra lidar com exceções que ocorreram.
+<code>throw Exception();</code> é usado para sinalizar uma exceção.
+</p>
+
+<p>
+Minha próxima atividade no HackerRank é a respeito de um servidor para
+capturar exceções customizadas.
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Classes/CustomExceptions.cpp">CustomExceptions.cpp</a>
+</p>
+
+<p>
+Todas as exceções padrões tem como base classe <code>std::exception</code>.
+Uma maneira simples de capturar uma exceção e imprimi-la, é desta maneira:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;exception&gt;</span> <span style="color: #62686E;">// </span><span style="color: #62686E;">defini&#231;&#227;o da classe base std::exception</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;stdexcept&gt;</span> <span style="color: #62686E;">// </span><span style="color: #62686E;">v&#225;rias exce&#231;&#245;es padr&#245;es para ser usadas</span>
+<span style="color: #51afef;">try</span> {
+    <span style="color: #a991f1;">std</span>::cout &lt;&lt; 1/0;
+} <span style="color: #51afef;">catch</span>(<span style="color: #a991f1;">std</span>::<span style="color: #FCCE7B;">exception</span> <span style="color: #51afef;">const</span>&amp; <span style="color: #DFDFDF;">e</span>) {
+    <span style="color: #a991f1;">std</span>::cout &lt;&lt; <span style="color: #7bc275;">"Erro do capeta: "</span> &lt;&lt; e.what();
+} <span style="color: #51afef;">catch</span>(...) {
+    <span style="color: #62686E;">// </span><span style="color: #62686E;">essa sess&#227;o captura qualquer exce&#231;&#227;o n&#227;o esperada</span>
+}
+</pre>
+</div>
+
+<p>
+Exceções definidas no cabeçalho &lt;stdexcept&gt;
+</p>
+<ul class="org-ul">
+<li><code>bad_alloc</code></li>
+<li><code>bad_cast</code></li>
+<li><code>bad_exception</code></li>
+<li><code>bad_typeid</code></li>
+<li><code>logic_error</code>
+<ul class="org-ul">
+<li><code>domain_error</code></li>
+<li><code>invalid_argument</code></li>
+<li><code>length_error</code></li>
+<li><code>out_of_range</code></li>
+</ul></li>
+<li><code>runtime_error</code>
+<ul class="org-ul">
+<li><code>range_error</code></li>
+<li><code>overflow_error</code></li>
+<li><code>underflow_error</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5405fcb" class="outline-4">
+<h4 id="org5405fcb">Polymorphism and Abstract Base Classes</h4>
+<div class="outline-text-4" id="text-org5405fcb">
+<p>
+Comecei a fazer essa atividade agora às <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-06 Thu 20:51&gt;</span></span>.
+Polimorfismo é quando um método na herança é modificado. Em C++
+existem as chamadas Classes Abstratas de Base, onde é permitido que elas
+possuam apenas métodos virtuais para futuramente, numa herança, realizar
+polimorfismo.
+</p>
+
+<p>
+Essa última atividade é bem <i>cabulosa</i>. O objetivo é implementar um sistema
+de <i>cache</i> usando listas duplamente encadeadas e, além disso, fazer de tal maneira
+que use os conceitos referentes a polimorfismo numa classe chamada Cache.
+</p>
+
+<p>
+As atividades a serem desenvolvidas aqui podem ser encontradas em:
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Classes/AbstractPolymorphism.cpp">AbstractPolymorphism.cpp</a>.
+</p>
+
+<p>
+Depois de um dia tentando ter um progresso com essa atividade, já consegui
+implementar a funcionalidade básica do <code>Cache</code>. No entanto, os testes com maiores
+entradas estão com problemas. De acordo com a execução do HackerRank, está
+ocorrendo <code>segfault</code>. Acredito que possa ser devido o não tratamento direto
+da desalocação dos objetos Nó durante a chamada de void <code>pop_node();</code> que
+desaloca a cauda da lista. Contínuo essa atividade mais tarde.
+</p>
+
+<p>
+De fato durante o <code>pop_node()</code>; há um vazamento de memória. A referência do objeto
+é perdida, mas no entanto o objeto em si não é removido. Foi realizado uma
+verificação manual na versão deste <a href="https://github.com/ryukinix/cpp-journey/tree/master/commit/bb6741d41c74cca1974bb41f3cd0f865a0d7be2c">commit</a>.
+A estratégia assumida é para gerenciar corretamente a memória durante as novas
+alocações.
+</p>
+
+<p>
+Como eu suspeitava, a função <code>LRUCache::pop_node()</code> que estava vazando memória.
+Após a adição das instruções pra desalocar tanto a cauda como também a entrada
+desse nó no <code>HashMap mp</code>, os testes do HackerRank passaram. Mas demorei demais pra
+fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
+difícil.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ae1db9" class="outline-3">
+<h3 id="org9ae1db9">Inheritance</h3>
+<div class="outline-text-3" id="text-org9ae1db9">
+<p>
+Este é um tópico especial envolvendo como funciona o conceito de herança
+em C++, todo mal da orientação objetos, como também é uma prática comum
+em muitos projetos que usam linguagens como C++.
+</p>
+
+<p>
+Estarei linkando nos próximos títulos os códigos-fontes de cada
+solução das questões.
+</p>
+</div>
+
+<div id="outline-container-orgdf57fcc" class="outline-4">
+<h4 id="orgdf57fcc">Inheritance Introduction</h4>
+<div class="outline-text-4" id="text-orgdf57fcc">
+<p>
+Nessa atividade é pedido pra construir um método de descrição de uma sub-classe
+de <code>Triangle</code> chamada <code>Isosceles</code>. A construção é bem direta e não é necessário
+muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
+Mas vamos lá&#x2026; <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/TriangleInheritance.cpp">TriangleInheritance.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge23efb8" class="outline-4">
+<h4 id="orge23efb8">Rectangle Area</h4>
+<div class="outline-text-4" id="text-orge23efb8">
+<p>
+Nesta atividade será feito um exercício para cálculo
+da área de um retângulo usando os conceitos de herança. Durante
+a construção da solução foi possível perceber que era possível
+chamar métodos da classe base com mesmo nome, no caso ambos possuíam
+o método <code>void display</code>, mas a instância do objeto era <code>RectangleArea</code>.
+Para acessar então, <code>display</code> de <code>Rectangle</code>, foi necessário a seguinte
+sintaxe:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #FCCE7B;">RectangleArea</span> <span style="color: #DFDFDF;">r_area</span>;
+r_area.<span style="color: #a991f1;">Rectangle</span>::display();
+</pre>
+</div>
+
+<p>
+A solução completa pode ser encontrada aqui:
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/RectangleArea.cpp">RectangleArea.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org375a563" class="outline-4">
+<h4 id="org375a563">Multi Level Inheritance</h4>
+<div class="outline-text-4" id="text-org375a563">
+<p>
+     É possível fazer herança em mais de um nível. Um exemplo é dado
+no exercício para a construção de uma classe <code>Equilateral</code>, que deriva
+de <code>Isosceles</code>, que é derivado de <code>Triangle</code>. Isso demonstra a interdependência
+das propriedades que uma instância de <code>Equilateral</code> tem entre <code>Isosceles</code>
+e <code>Triangle</code>. O que é realmente verdade, já que um triângulo Equilátero
+é obviamente também um Triângulo e é Isósceles.
+</p>
+
+<p>
+A atividade foi direta de ser completa e está descrita a seguir:
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/IsoscelesEquilateral.cpp">IsoscelesEquilateral.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgacf9b9f" class="outline-4">
+<h4 id="orgacf9b9f">Accessing Inherited Functions</h4>
+<div class="outline-text-4" id="text-orgacf9b9f">
+<p>
+     Como comentada na questão <i>Rectangle Area</i>, é possível acessar
+funções/métodos da classe base que foi herdada. Nessa atividade
+irei descrever brevemente a implementação do exercício proposto no
+HackerRank.
+</p>
+
+<p>
+A atividade é descrita em: <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/AcessingInheritedFunctions.cpp">AcessingInheritedFunctions.cpp</a>
+</p>
+
+<p>
+A questão pede para se chegar a um número de entrada usando apenas as classes
+de base A, B e C.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdc23bd2" class="outline-4">
+<h4 id="orgdc23bd2">Magic Spells</h4>
+<div class="outline-text-4" id="text-orgdc23bd2">
+<p>
+Lá vem questão <b>HARD</b> de novo diretamente do inferno no HackerRank. Essa questão
+envolve o uso de herança e <code>dynamic_cast</code>, que é basicamente o que tentei fazer
+uma vez em C e só me fudi &#x2013; implementar uma variável de tipo dinâmico, acabei terminando com um <code>union</code> e <code>enum</code>.
+Parece que C++ implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
+</p>
+
+<p>
+Nesse caso <code>dynamic_cast</code> é usado para modelar uma instância compatível com outro tipo
+ou classe. Se um <code>nullptr</code> é retornado, significa que os tipos não são compatíveis.
+Nessa questão isso é usado para saber que tipo de que classe derivada de <code>Spell</code>
+foi instanciada. A sintaxe é dada por <code>dynamic_cast&lt;Type*&gt;(instance*)</code>. Muito
+semelhante ao <i>cast</i> estático de C, embora há também <code>static_cast&lt;Type&gt;(instance)</code>.
+</p>
+
+<p>
+Estou tendo alguns problemas para construir um algoritmo do tipo LCS.
+Isto é: Longest Common Substring. Quando o spell é da classe Base, out seja,
+um tipo de magia desconhecida, é necessário que o mago olhe no catálogo de magias
+e compare o nome da magia com o que foi recebido. Dada as duas strings, a recebida
+e a do catálogo, devo retornar o tamanho da substring maior.
+</p>
+
+<p>
+Ou seja, é dado o exemplo que para <code>AquaVitae</code> e <code>AruTaVae</code> a maior substring é
+<code>AuaVae</code>. Não tenho tanta certeza se isso está correto, mas achei um código exemplo
+em C++ pra testar. Está linkado em <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/LongestCommonSubstring.cpp">LongestCommonSubstring.cpp</a>
+</p>
+
+<p>
+Minha desconfiança sobre isso é da natureza que esse exemplo não retorna
+exatamente a maior substring e sim a maior cadeia possível em sequência, se
+necessário, removendo o que tiver no meio entre elas.
+</p>
+
+<p>
+Vou dar uma pausa aqui nessa atividade agora às <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-08 Sat 13:48&gt;</span></span>.
+Depois vou tentar voltar mais tarde. A parte inicial da atividade está feita
+em: <a href="https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/MagicSpells.cpp">MagicSpells.cpp</a>
+</p>
+
+<p>
+Estou de volta nessa atividade dos demônios. Realmente a detecção das classes
+filhas ao usar dynamic cast estão funcionando bem. Na verdade dynamic cast é
+um pouco diferente do que pensei, você não pode fazer conversão de tipos
+arbitrários, mas sim àqueles que são possíveis. Como no caso de um instância
+Pai para uma classe Filha (derivada, herdada).
+</p>
+
+<p>
+No entanto estou com problemas demais em relação a desgraça do algoritmo
+para de cálculo de maior substring recorrente entre duas strings, pois esse
+problema de fato não é o Longest Common Substring. Vou precisar fazer um algoritmo
+personalizado pra isso. Talvez eu devesse começar fazendo em Python pra facilitar
+a lógica e depois passar pra Câncer++.
+</p>
+
+<p>
+Agora tudo faz sentido, eu estava tentando resolver um problema com a solução
+para outro tipo de problema. Esse problema na verdade tem outro nome. Apesar
+de semelhante ao Longest Common Substring, este se chama Longest Common
+Subsequence. Uma solução em Python transcrita de um pseudo código pode ser vista
+abaixo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">def</span> <span style="color: #5cEfFF;">LCSLength</span>(X, Y):
+    <span style="color: #51afef;">from</span> pprint <span style="color: #51afef;">import</span> pprint
+    <span style="color: #DFDFDF;">m</span>, <span style="color: #DFDFDF;">n</span> = <span style="color: #C57BDB;">len</span>(X) + 1, <span style="color: #C57BDB;">len</span>(Y) + 1
+    <span style="color: #DFDFDF;">C</span> = [[0 <span style="color: #51afef;">for</span> _ <span style="color: #51afef;">in</span> <span style="color: #C57BDB;">range</span>(n)] <span style="color: #51afef;">for</span> _ <span style="color: #51afef;">in</span> <span style="color: #C57BDB;">range</span>(m)]
+    <span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> <span style="color: #C57BDB;">range</span>(1, m):
+        <span style="color: #51afef;">for</span> j <span style="color: #51afef;">in</span> <span style="color: #C57BDB;">range</span>(1, n):
+            <span style="color: #51afef;">if</span> X[i-1] == Y[j-1]:
+                C[i][j] = C[i-1][j-1] + 1
+            <span style="color: #51afef;">else</span>:
+                C[i][j] = <span style="color: #C57BDB;">max</span>(C[i][j-1], C[i-1][j])
+    pprint(C)
+    <span style="color: #51afef;">return</span> C[n-1][m-1]
+</pre>
+</div>
+
+<p>
+Vou tentar agora codificar isso em C++. Finalizado. Que desgraça hein.
+A parte mais difícil desse problema não era exatamente lidar com o dynamic_cast
+e detectar que classe filha estão sendo referenciadas. Na verdade esse problema
+aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse tópico
+é sobre herança, o que esse problema NP-Hard é simplemente sem relação!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org52df3bc" class="outline-3">
+<h3 id="org52df3bc">STL - C++ Standard Library</h3>
+<div class="outline-text-3" id="text-org52df3bc">
+</div>
+<div id="outline-container-org0b36f92" class="outline-4">
+<h4 id="org0b36f92">Vector Sort</h4>
+<div class="outline-text-4" id="text-org0b36f92">
+<p>
+A Standard Library de C++ vem com muitos bultins. Um dos métodos
+da biblioteca é <code>std::sort(vector::begin, vector::end)</code>.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Ordenar n números</label><pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cmath&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cstdio&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;vector&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iostream&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;algorithm&gt;</span>
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a991f1;">std</span>;
+
+
+<span style="color: #FCCE7B;">int</span> <span style="color: #5cEfFF;">main</span>() {
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">n</span>, <span style="color: #DFDFDF;">x</span>;
+    cin &gt;&gt; n;
+    <span style="color: #FCCE7B;">vector</span>&lt;<span style="color: #FCCE7B;">int</span>&gt; <span style="color: #DFDFDF;">v</span>;
+    <span style="color: #51afef;">for</span>(<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">i</span> = 0; i &lt; n; i++) {
+        cin &gt;&gt; x;
+        v.push_back(x);
+    }
+    sort(v.begin(), v.end());
+    <span style="color: #51afef;">for</span>(<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">x</span> :v) {
+        cout &lt;&lt; x &lt;&lt; <span style="color: #7bc275;">" "</span>;
+    }
+    <span style="color: #51afef;">return</span> 0;
+}
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd096e87" class="outline-4">
+<h4 id="orgd096e87">Vector-Erase</h4>
+<div class="outline-text-4" id="text-orgd096e87">
+<p>
+A STL definida em <code>&lt;algorithm&gt;</code> e <code>&lt;vector&gt;</code> define alguns métodos
+úteis, como por exemplo o método <code>vector::erase</code> para remover elementos
+seja de apenas uma localização ou um intervalo.
+</p>
+
+<p>
+O seguinte código foi feito para o exercício proposto do hackerrank:
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cmath&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cstdio&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;vector&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iostream&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;algorithm&gt;</span>
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a991f1;">std</span>;
+
+
+<span style="color: #FCCE7B;">int</span> <span style="color: #5cEfFF;">main</span>() {
+    <span style="color: #FCCE7B;">vector</span>&lt;<span style="color: #FCCE7B;">long</span>&gt; <span style="color: #DFDFDF;">v</span>;
+    <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">n</span>,<span style="color: #DFDFDF;">x</span>,<span style="color: #DFDFDF;">a</span>,<span style="color: #DFDFDF;">b</span>;
+    cin &gt;&gt; n;
+    <span style="color: #51afef;">for</span> (<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">i</span> = 0; i &lt; n; i++) {
+        cin &gt;&gt; x;
+        v.push_back(x);
+    }
+
+    cin &gt;&gt; x;
+    v.erase(v.begin()+x-1);
+    cin &gt;&gt; a;
+    cin &gt;&gt; b;
+    v.erase(v.begin()+a-1, v.begin()+b-1);
+    cout &lt;&lt; v.size() &lt;&lt; endl;
+
+    <span style="color: #51afef;">for</span> (<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">x</span> : v) {
+        cout &lt;&lt; x &lt;&lt; <span style="color: #7bc275;">" "</span>;
+    }
+    <span style="color: #51afef;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+Ou seja, há duas definições para vector::erase.
+</p>
+<ul class="org-ul">
+<li><code>vector::erase(const iterator n);</code></li>
+<li><code>vector::erase(const iterator n, const iterator m);</code></li>
+</ul>
+
+<p>
+O const iterator pode ser obtido a partido dos métodos:
+<code>vector::begin</code> e <code>vector::end</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ea81fe" class="outline-4">
+<h4 id="org3ea81fe">Lower Bound</h4>
+<div class="outline-text-4" id="text-org3ea81fe">
+<p>
+Em C++ a STL provém funções úteis para iterações e comparações.
+Um delas são os métodos <code>std::lower_bound</code> e <code>std::upper_bound</code>.
+Ambas funções recebem três parâmetros, os dois primeiros sendo
+o iterador inicial então o iterador final (<code>vector::begin</code> &amp; <code>vector::end</code>).
+O terceiro elemento é um objeto de comparação que implementa operator&lt;
+para <code>std::lower_bound</code> e <code>std::upper_bound</code>.
+</p>
+
+<p>
+O método <code>std::lower_bound</code> retorna o número menor que a comparação que esteja
+mais próximo desse número esquerda. <code>std::upper_bound</code> retorna o maior número que esteja
+mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.
+</p>
+
+<p>
+Pode-se encontrar uma solução para este problema no arquivo:
+<a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/LowerBound.cpp">LowerBound.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb82af9" class="outline-4">
+<h4 id="orgbb82af9">Sets</h4>
+<div class="outline-text-4" id="text-orgbb82af9">
+<p>
+Essa próxima atividade se refere a implementação de conjuntos na biblioteca
+padrão de C++. Definida no cabeçalho <code>#include &lt;set&gt;</code> os métodos conhecidos para
+o tipo set, são:
+</p>
+
+<ul class="org-ul">
+<li><code>std::set&lt;int&gt; s</code>;</li>
+<li><code>s.length()</code>; (tamanho do conjunto)</li>
+<li><code>s.erase(int n)</code>; (apagar um elemento)</li>
+<li><code>s.insert(int n)</code>; (inserir um elemento)</li>
+<li><code>set&lt;int&gt;::iterator it = s.find(int n);</code> (procura um elemento, devolve um iterator)</li>
+</ul>
+
+<p>
+Se o elemento não é encontrado <code>it == s.end();</code>
+</p>
+
+<p>
+Um problema para explorar essas operações é proposto no HackerRank,
+onde uma solução pode ser encontrada aqui: <a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/Set.cpp">Set.cpp</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org13404ac" class="outline-4">
+<h4 id="org13404ac">Maps</h4>
+<div class="outline-text-4" id="text-org13404ac">
+<p>
+HashMaps e Maps são implementados em C++ pela STL, Standard Library. Também conhecidos
+em outras linguagens como dicionários (python), HashMaps armazenam unidades de
+de pares <code>&lt;chave, valor&gt;</code> na qual a existência para uma dada chave é única.
+</p>
+
+<p>
+Vale ressaltar, explicitamente, que HashMaps em C++ são conhecidos como <code>unordered_map</code>
+e Maps são implementados com <code>red black trees</code>, árvores de busca do tipo balanceada.
+A principal diferença é que <code>unordered_map</code> possui acesso/inserção com complexidade
+O(1) se não houver colisão (se houver, no pior caso é O(n)). E <code>map</code> é <b>SEMPRE</b> O(log(n)).
+</p>
+
+<p>
+Existem alguns métodos úteis implementados para HashMaps e Maps. O tipo <code>map</code> é definido
+em <code>&lt;map&gt;</code> e segue que:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;map&gt;</span>
+
+<span style="color: #a991f1;">std</span>::<span style="color: #FCCE7B;">map</span>&lt;<span style="color: #FCCE7B;">int</span>, <span style="color: #FCCE7B;">string</span>&gt; <span style="color: #DFDFDF;">m</span>; <span style="color: #62686E;">// </span><span style="color: #62686E;">declara&#231;&#227;o</span>
+m.insert(<span style="color: #a991f1;">std</span>::make_pair(1, <span style="color: #7bc275;">"banana"</span>)); <span style="color: #62686E;">// </span><span style="color: #62686E;">inser&#231;&#227;o</span>
+m[1] = <span style="color: #7bc275;">"banana"</span>; <span style="color: #62686E;">// </span><span style="color: #62686E;">a&#231;ucar sint&#225;tico para inser&#231;&#227;o</span>
+m.erase(<span style="color: #7bc275;">"banana"</span>); <span style="color: #62686E;">//</span><span style="color: #62686E;">remover elemento</span>
+m.find(key); <span style="color: #62686E;">// </span><span style="color: #62686E;">m&lt;int,string&gt;::iterator</span>
+<span style="color: #62686E;">// </span><span style="color: #62686E;">se um elemento n&#227;o &#233; encontrado ent&#227;o m.find(key) == m.end();</span>
+m[1]; <span style="color: #62686E;">// </span><span style="color: #62686E;">"banana</span>
+</pre>
+</div>
+
+<p>
+Um problema é proposto no HackerRank para explorar essas operações.
+A implementação está feita no arquivo <a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/HashMap.cpp">HashMap.cpp</a>.
+</p>
+
+<p>
+Edit: Pensei inicialmente que <code>map</code> de C++ eram HashMaps, por isso algumas trocas aqui.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org961a552" class="outline-4">
+<h4 id="org961a552">Print Pretty</h4>
+<div class="outline-text-4" id="text-org961a552">
+<p>
+Preciso fazer essa atividade. Irei começar daqui a pouco. Basicamente
+a atividade é em relação a imprimir diferente tipos de dados com uma determinada
+característica. Por exemplos, notação científica para decimais. Números
+decimais prefixado e também números inteiros com caracteres prefixado.
+Parece que STL já implementa isso em algum lugar.
+</p>
+
+<p>
+A atividade será desenvolvida em: <a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/PrettyPrint.cpp">PrettyPrint.cpp</a>
+</p>
+
+<p>
+Maiores anotações virão a seguir.
+</p>
+
+<p>
+Bem&#x2026; trabalhar com formatação de IO em C++ é no mínimo doloroso.
+Na verdade eu achei um completo inferno, mas vou tentar descrever algumas coisas
+que entendi.
+</p>
+
+<p>
+No cabeçalho <code>&lt;iomanip&gt;</code> é definido várias entradas para trabalhar com formatação
+de stringstreams, ou necessariamente IO.
+</p>
+
+<p>
+Entre diretrizes pra trabalhar com números de qualquer tipo tem-se:
+</p>
+
+<ul class="org-ul">
+<li><code>showbase</code> &#x2013; mostra a base do número, como hex e octal</li>
+<li><code>noshowbase</code> &#x2013; desativa a opção acima</li>
+<li><code>showpos</code> &#x2013; todos números são definidos com sinal prefixado +/-</li>
+<li><code>noshowpos</code> &#x2013; desativa a opção acima</li>
+<li><code>setbase</code> &#x2013; define qual é a base no parsing, por exemplo 16 -&gt; hexadecimal</li>
+<li><code>uppercase</code> &#x2013; base e outros caracteres são usados em uppercase</li>
+<li><code>nouppercase</code> &#x2013; o contrário da opção acima</li>
+</ul>
+
+<p>
+Para setbase temos atalhos predefinidos como <code>hex</code>, <code>oct</code> e <code>dec</code>.
+</p>
+
+<p>
+Para preenchimento de string, largura máxima e alinhamento temos:
+</p>
+
+<ul class="org-ul">
+<li><code>left</code> &#x2013; alinha pela esquerda</li>
+<li><code>right</code> &#x2013; alinha pela direita</li>
+<li><code>internal</code> &#x2013; aplica a formação no número em si</li>
+<li><code>setw</code> &#x2013; define largura máxima</li>
+<li><code>setfill</code> &#x2013; recebe um caracter e preenche de acordo com a largura máxima esperada</li>
+</ul>
+
+<p>
+Para processamento de números flutuantes temos:
+</p>
+
+<ul class="org-ul">
+<li><code>setprecision</code> &#x2013; precisão em casas decimais</li>
+<li><code>fixed</code> &#x2013; notação prefixa =&gt; 10.001</li>
+<li><code>scientific</code> &#x2013; notação científica-&gt; 3.30303E+03</li>
+<li><code>default</code> &#x2013; notação padrão</li>
+</ul>
+
+<p>
+Também tem hexfloat, mas isso é muito obscuro e não vou cobrir.
+</p>
+
+<p>
+Para fazer uma definição global de formação podemos usar <code>setiosflags</code> e <code>resetiosflags</code>.
+</p>
+
+<p>
+<code>setiosflags</code> recebe uma das <code>flags</code> acima não-parametrizada e define globalmente.
+Como o argumento esperado é uma <code>bitmask</code>, é possível fazer qualquer operação de <code>bitwise</code>.
+</p>
+
+<p>
+Por exemplo:
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iostream&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iomanip&gt;</span>
+
+<span style="color: #FCCE7B;">int</span> <span style="color: #5cEfFF;">main</span>()
+{
+    <span style="color: #a991f1;">std</span>::cout &lt;&lt;  <span style="color: #a991f1;">std</span>::resetiosflags(<span style="color: #a991f1;">std</span>::<span style="color: #a991f1;">ios_base</span>::dec)
+              &lt;&lt;  <span style="color: #a991f1;">std</span>::setiosflags(  <span style="color: #a991f1;">std</span>::<span style="color: #a991f1;">ios_base</span>::hex
+                                   | <span style="color: #a991f1;">std</span>::<span style="color: #a991f1;">ios_base</span>::uppercase
+                                   | <span style="color: #a991f1;">std</span>::<span style="color: #a991f1;">ios_base</span>::showbase) &lt;&lt; 42 &lt;&lt; <span style="color: #7bc275;">'\n'</span>;
+}
+
+<span style="color: #62686E;">// </span><span style="color: #62686E;">Output:</span>
+<span style="color: #62686E;">// </span><span style="color: #62686E;">0X2A</span>
+
+</pre>
+</div>
+
+
+<p>
+Isso é o básico. Mais informações estão <a href="http://en.cppreference.com/w/cpp/io/manip">aqui</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf0a0f5c" class="outline-4">
+<h4 id="orgf0a0f5c">Deque</h4>
+<div class="outline-text-4" id="text-orgf0a0f5c">
+<p>
+Bem, esse problema refere-se ao uso do container Deque da STL.
+É dado um array, o seu tamanho e um índice K. O problema deseja saber
+quais são os valores máximos para cada subarray contínuo divididos em K.
+</p>
+
+<p>
+Exemplo: [9,2,3,5,8], k=3
+</p>
+
+<p>
+[9,2,3] =&gt; 9
+[2,3,5] =&gt; 5
+[3,5,8] =&gt; 8
+</p>
+
+<p>
+Uma aproximação ingênua nos levaria a fazer um algoritmo O(nk). Mas,
+percebendo que é somente necessário n comparações, com o auxílio de um deque
+é possível armazenar os índices úteis dos valores para cada sub-array.
+Complexidade de Espaço: O(k).
+</p>
+
+<p>
+A idéia principal é criar um deque ordenado de maior valor ao menor, inserindo
+os índices do array. Quando terminar o subarray, imprimir a cabeça do deque
+e remover se ele não pertencer ao próximo array. Lembre-se que para cada sub-array,
+os indices x &lt;= (i - k) não pertencem mais ao sub-array.
+</p>
+
+<p>
+Uma aproximação ótima pode ser descrita nesta implementação: <a href="https://github.com/ryukinix/cpp-journey/tree/master/STL/Deque.cpp">Deque.cpp</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20b6816" class="outline-2">
+<h2 id="org20b6816">C++ prime checking</h2>
+<div class="outline-text-2" id="text-org20b6816">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-05 Wed&gt;</span></span>
+</p>
+<p>
+Usei as bibliotecas:
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;iostream&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cstdlib&gt;</span>
+<span style="color: #C57BDB; font-weight: bold;">#include</span> <span style="color: #7bc275;">&lt;cmath&gt;</span>
+</pre>
+</div>
+<p>
+Em iostream usei apenas cout. cstdlib precisei para a função atoi.
+cmath para sqrt.
+A linha de comando para compilação foi:
+<code>g++ source.cpp -o primep -lm</code>
+</p>
+
+<p>
+O arquivo pode ser encontrado em: <a href="https://github.com/ryukinix/cpp-journey/tree/master/Intro/primep.cpp">Prime Checking</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgbba1fee" class="outline-2">
+<h2 id="orgbba1fee">Estudos de caso</h2>
+<div class="outline-text-2" id="text-orgbba1fee">
+</div>
+<div id="outline-container-org03ee752" class="outline-3">
+<h3 id="org03ee752">Listas de inicialização para construtores</h3>
+<div class="outline-text-3" id="text-org03ee752">
+<p>
+Listas de inicialização é um tipo de sintaxe para escrever
+brevemente construtores de classes, geralmente para inicializar valores.
+A sintaxe é usada como a seguir:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #51afef;">struct</span> <span style="color: #FCCE7B;">Node</span> {
+   <span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">value</span>;
+   <span style="color: #FCCE7B;">Node</span>* <span style="color: #DFDFDF;">next</span>;
+   <span style="color: #5cEfFF;">Node</span>(<span style="color: #FCCE7B;">int</span> <span style="color: #DFDFDF;">v</span> = 0, <span style="color: #FCCE7B;">Node</span>* <span style="color: #DFDFDF;">ptr</span>): value(v), next(ptr){};
+}
+</pre>
+</div>
+
+<p>
+Dessa maneira, é possível construir de maneiras muito simplórias construtores
+que apenas relacionam entradas de função para atributos de um objeto.
+</p>
+
+<p>
+Vale lembrar que a ordem de inicialização deve estar de acordo com a declaração
+dos membros. De acordo com um membro do StackOverflow, em <a href="https://stackoverflow.com/questions/1242830/constructor-initialization-list-evaluation-order">Constructor initialization-list evaluation order</a>,
+foi dito que:
+</p>
+
+<p>
+"The reason for which they are constructed in the member declaration order
+and not in the order in the constructor is that one may have several
+constructors, but there is only one destructor.
+And the destructor destroy the members in the reserse order of construction.
+– AProgrammer"
+</p>
+
+<p>
+Ou seja, por conta de dependência entre os possíveis valores, a dependência
+é que o destruidor destrói os membros de um objeto na ordem inversa de
+construção, logo, a ordem importa e deve ser mantida.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a30211" class="outline-3">
+<h3 id="org4a30211">Separadores de escopo <code>::</code> e <code>.</code></h3>
+<div class="outline-text-3" id="text-org4a30211">
+<p>
+   O operador <code>::</code> é usado como separador de escopo e acessar
+métodos/atributos estáticos. Por outro lado, <code>.</code> é usado apenas para
+acessar métodos/atributos de uma classe/struct que tenha instância. Além disso,
+o operador <code>-&gt;</code> é usado no lugar de <code>.</code> quando o objeto é um ponteiro.
+Ou seja, na verdade, <code>(*a).b</code> &lt;=&gt; <code>a-&gt;b</code>. Ou seja, <code>-&gt;</code> é apenas uma açúcar
+sintático.
+</p>
+
+<p>
+No StackOverflow, novamente, é possível ver uma resposta semelhante onde é
+citado o que foi dito acima.
+<a href="https://stackoverflow.com/questions/2896286/whats-the-difference-between-dot-operator-and-scope-resolution-operator">What's the difference between dot operator and scope resolution operator?</a>
+</p>
+</div>
+</div>
+</div>

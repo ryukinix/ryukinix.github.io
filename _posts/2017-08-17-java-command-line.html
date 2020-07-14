@@ -1,13 +1,11 @@
 ---
-date: 2017-08-17
-tags:
-- java
-- programming
+date: 2017-08-17 13:50
 author: Manoel Vilela
+tags: 
 layout: post
 title: Java - compilação e execução na linha de comando
 excerpt: Uma alternativa às IDE gulosas de Java
-categories:
+categories: 
 - programming
 comments: true
 ---
@@ -87,9 +85,9 @@ Primeiramente você precisa escrever uma classe de exemplo.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #26a6a6;">public</span> <span style="color: #26a6a6;">class</span> <span style="color: #f8f8f0;">HelloWorld</span> {
-    <span style="color: #26a6a6;">public</span> <span style="color: #26a6a6;">static</span> <span style="color: #f8f8f0;">void</span> <span style="color: #bcd42a;">main</span>(<span style="color: #f8f8f0;">String</span>[] <span style="color: #f8f8f0;">args</span>) {
-        System.out.println(<span style="color: #bcd42a;">"Hello world!"</span>)
+<pre class="src src-java"><span style="color: #51afef;">public</span> <span style="color: #51afef;">class</span> <span style="color: #FCCE7B;">HelloWorld</span> {
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">static</span> <span style="color: #FCCE7B;">void</span> <span style="color: #5cEfFF;">main</span>(<span style="color: #FCCE7B;">String</span>[] <span style="color: #DFDFDF;">args</span>) {
+        System.out.println(<span style="color: #7bc275;">"Hello world!"</span>)
     }
 }
 </pre>
@@ -110,7 +108,7 @@ uma sequência de passos feitas em um terminal Linux [1].
 <pre class="src src-shell-script">$ cat &gt; HelloWorld.java
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println(<span style="color: #bcd42a;">"Hello world!"</span>)
+        System.out.println(<span style="color: #7bc275;">"Hello world!"</span>)
     }
 }
 $ javac HelloWorld.java

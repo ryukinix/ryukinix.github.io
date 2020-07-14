@@ -1,10 +1,5 @@
 ---
-date: 2017-08-24
-tags:
-- ec
-- pds
-- engenharia
-- matemática
+date: 2017-08-24 14:01
 author: Manoel Vilela
 title: Processamento Digital de Sinais
 latex_class: article
@@ -12,8 +7,10 @@ latex_header: \usepackage{mathtools}
 layout: post
 excerpt: Sistemas e Sinais Discretos no Tempo
 lang: pt
-categories: mathematics
+categories: 
+- mathematics
 comments: true
+tags: 
 ---
 <div class="ABSTRACT">
 <p>
@@ -25,9 +22,9 @@ refere-se a disciplina de Processamento Digital de Sinais.
 
 </div>
 
-<div id="outline-container-orgaad542e" class="outline-2">
-<h2 id="orgaad542e">Descrição</h2>
-<div class="outline-text-2" id="text-orgaad542e">
+<div id="outline-container-org4868679" class="outline-2">
+<h2 id="org4868679">Descrição</h2>
+<div class="outline-text-2" id="text-org4868679">
 <p>
 As últimas aulas de PDS foram dadas a respeito sobre as definições
 básicas de sinal e sistema. Outras propriedades foram faladas também
@@ -65,9 +62,9 @@ tempo (abscissas) são discretos.
 </div>
 
 
-<div id="outline-container-org1850adc" class="outline-2">
-<h2 id="org1850adc">Conceitos</h2>
-<div class="outline-text-2" id="text-org1850adc">
+<div id="outline-container-orgcf3a10b" class="outline-2">
+<h2 id="orgcf3a10b">Conceitos</h2>
+<div class="outline-text-2" id="text-orgcf3a10b">
 <p>
 Os conceitos principais para a disciplina de Processamento Digitais de
 Sinais (PDS), envolve os conceitos já definidos na disciplina de
@@ -90,9 +87,9 @@ chamado de sistema.
 </p>
 </div>
 
-<div id="outline-container-org0677068" class="outline-3">
-<h3 id="org0677068">Sinais</h3>
-<div class="outline-text-3" id="text-org0677068">
+<div id="outline-container-orga45d4af" class="outline-3">
+<h3 id="orga45d4af">Sinais</h3>
+<div class="outline-text-3" id="text-orga45d4af">
 <p>
 Sinal é nada mais que uma função com uma interpretação física: uma
 entidade mensurável.  No domínio discreto no tempo recebe uma notação
@@ -138,9 +135,9 @@ Sendo \(T\) o período de amostragem, tal que \(T \in \mathbb{R} \) e
 </div>
 </div>
 
-<div id="outline-container-org0407b22" class="outline-3">
-<h3 id="org0407b22">Sistemas</h3>
-<div class="outline-text-3" id="text-org0407b22">
+<div id="outline-container-org29a32c0" class="outline-3">
+<h3 id="org29a32c0">Sistemas</h3>
+<div class="outline-text-3" id="text-org29a32c0">
 <p>
 Sistema tem como entrada um sinal e resposta um novo sinal. De forma
 um tanto detalhada, é dita que: `Fenômeno físico que exerce transformações sobre os sinais, modificando
@@ -149,9 +146,9 @@ o conteúdo de informação nele contida.'
 </div>
 </div>
 
-<div id="outline-container-org1c438bc" class="outline-3">
-<h3 id="org1c438bc">Sinal unitário</h3>
-<div class="outline-text-3" id="text-org1c438bc">
+<div id="outline-container-org378dfca" class="outline-3">
+<h3 id="org378dfca">Sinal unitário</h3>
+<div class="outline-text-3" id="text-org378dfca">
 <p>
 Sinal unitário é definido como delta de kronecker para o domínio
 discreto.
@@ -159,9 +156,9 @@ discreto.
 </div>
 </div>
 
-<div id="outline-container-org383e58c" class="outline-3">
-<h3 id="org383e58c">Delta de Kronecker</h3>
-<div class="outline-text-3" id="text-org383e58c">
+<div id="outline-container-orgc468609" class="outline-3">
+<h3 id="orgc468609">Delta de Kronecker</h3>
+<div class="outline-text-3" id="text-orgc468609">
 <p>
 O delta de kronecker é definido como \(\delta[0]=1\) e para todos
 outros igual a 0.
@@ -169,9 +166,9 @@ outros igual a 0.
 </div>
 </div>
 
-<div id="outline-container-org1352b7c" class="outline-3">
-<h3 id="org1352b7c">Sinal degrau</h3>
-<div class="outline-text-3" id="text-org1352b7c">
+<div id="outline-container-org5d3fa13" class="outline-3">
+<h3 id="org5d3fa13">Sinal degrau</h3>
+<div class="outline-text-3" id="text-org5d3fa13">
 <p>
 O sinal degrau é \(u[n \geq 0] = 1\) e zero para todo o resto. Há
 algumas implicações do sinal degrau com o sinal unitário, como de fato
@@ -182,14 +179,14 @@ entrada, vamos criar o sinal degrau.
 </div>
 </div>
 
-<div id="outline-container-org30c92c1" class="outline-2">
-<h2 id="org30c92c1">Propriedades de sistemas</h2>
-<div class="outline-text-2" id="text-org30c92c1">
+<div id="outline-container-orgee808d6" class="outline-2">
+<h2 id="orgee808d6">Propriedades de sistemas</h2>
+<div class="outline-text-2" id="text-orgee808d6">
 </div>
 
-<div id="outline-container-orgfb5c47c" class="outline-3">
-<h3 id="orgfb5c47c">Memória</h3>
-<div class="outline-text-3" id="text-orgfb5c47c">
+<div id="outline-container-org48373bf" class="outline-3">
+<h3 id="org48373bf">Memória</h3>
+<div class="outline-text-3" id="text-org48373bf">
 <p>
 Um sistema pode ser definido com memória ou sem memória. Sistemas
 ideais sem memória não dependem de entradas passadas. Por exemplo o
@@ -202,14 +199,14 @@ sei <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
 </div>
 </div>
 
-<div id="outline-container-org14ac5b4" class="outline-3">
-<h3 id="org14ac5b4">Linearidade</h3>
-<div class="outline-text-3" id="text-org14ac5b4">
+<div id="outline-container-org40b3dfb" class="outline-3">
+<h3 id="org40b3dfb">Linearidade</h3>
+<div class="outline-text-3" id="text-org40b3dfb">
 <p>
 Se provado as condições de superposição, é dito que o sistema é
 linear. Vale lembrar que as condições de superposição são os axiomas
-da aditividade (Eq. <a href="#orgd3942af">1</a>) e homogeneidade
-(Eq. <a href="#orga64ef36">1</a>) .
+da aditividade (Eq. <a href="#orgc5d5f84">1</a>) e homogeneidade
+(Eq. <a href="#orgdefa3c0">1</a>) .
 </p>
 
 <div class="LATEX" id="linearidade:aditividade">
@@ -228,9 +225,9 @@ T\{ax[n]\} = aT\{x[n]\} = ay[n]
 </div>
 </div>
 
-<div id="outline-container-org4686177" class="outline-3">
-<h3 id="org4686177">Invariância no Tempo</h3>
-<div class="outline-text-3" id="text-org4686177">
+<div id="outline-container-orgbb2a9b8" class="outline-3">
+<h3 id="orgbb2a9b8">Invariância no Tempo</h3>
+<div class="outline-text-3" id="text-orgbb2a9b8">
 <p>
 Sistemas invariantes no tempo são aqueles quando o sinal atrasado na
 entrada ou atrasado na saida, gera o mesmo sistema. Para provar se é
@@ -262,9 +259,9 @@ y[n] = \sum_{i=-\infty}^n x[k]
 </div>
 </div>
 
-<div id="outline-container-orgb686192" class="outline-3">
-<h3 id="orgb686192">Causalidade</h3>
-<div class="outline-text-3" id="text-orgb686192">
+<div id="outline-container-orgaa7ddee" class="outline-3">
+<h3 id="orgaa7ddee">Causalidade</h3>
+<div class="outline-text-3" id="text-orgaa7ddee">
 <p>
 A causalidade define que um sistema causal é aquele que não depende de
 entradas futuras.  Isto é, um sistema é causal se, para todo \(n_0\),
@@ -286,9 +283,9 @@ anteriores para calcular os próximos sinais.
 </div>
 </div>
 
-<div id="outline-container-orgdcf9c0c" class="outline-3">
-<h3 id="orgdcf9c0c">Estabilidade</h3>
-<div class="outline-text-3" id="text-orgdcf9c0c">
+<div id="outline-container-org05af708" class="outline-3">
+<h3 id="org05af708">Estabilidade</h3>
+<div class="outline-text-3" id="text-org05af708">
 <p>
 Para um sistema ser estável ele precisa ter uma saída e entrada
 limitada <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
@@ -317,9 +314,9 @@ limitada.</li>
 </div>
 </div>
 
-<div id="outline-container-org9984bae" class="outline-2">
-<h2 id="org9984bae">Convolução de Sinais Discreto no Tempo</h2>
-<div class="outline-text-2" id="text-org9984bae">
+<div id="outline-container-org832cbbc" class="outline-2">
+<h2 id="org832cbbc">Convolução de Sinais Discreto no Tempo</h2>
+<div class="outline-text-2" id="text-org832cbbc">
 <p>
 Sistemas convolucionais. Uma convolução é realizada entre dois sinais
 e gera um novo sinal. Uma das interpretações intuitivas é que ao
@@ -375,8 +372,8 @@ As propriedades definidas para a convolução são:
 </ul>
 
 
-<div id="org5243bd9" class="figure">
-<p><img src="/assets/posts/pds/convolucao.png" alt="convolucao.png" />
+<div id="orgf7127b7" class="figure">
+<p><img src="res/convolucao.png" alt="convolucao.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Exemplo de convolução contínua no tempo entre uma função exponencial descrescente e a função degrau.</p>
 </div>
@@ -389,9 +386,9 @@ fórmulas são conhecidas.
 </div>
 
 
-<div id="outline-container-orge85c9e4" class="outline-3">
-<h3 id="orge85c9e4">Exercício sobre convolução</h3>
-<div class="outline-text-3" id="text-orge85c9e4">
+<div id="outline-container-org5939cfd" class="outline-3">
+<h3 id="org5939cfd">Exercício sobre convolução</h3>
+<div class="outline-text-3" id="text-org5939cfd">
 <p>
 Exercício 2.3: Encontre a resposta ao degrau dado a resposta ao
 impulso a seguir:
@@ -406,7 +403,7 @@ impulso a seguir:
 
 <p>
 Resposta: De acordo com a definição de soma de convolução na
-(Eq. <a href="#org74c9d8f">1</a>), é importante lembrar também que a operação de
+(Eq. <a href="#orgefcf601">1</a>), é importante lembrar também que a operação de
 convolução é um operador que suporta comutatividade. O que será
 importante nessa análise.
 </p>
@@ -491,8 +488,8 @@ y[n] &= x[n] * h[n] = h[n] * x[n] \\
 <p>
 Como \(k \leq 0 \Rightarrow -k \geq 0\), portanto a mesma relação de
 PG vale no último passo.  Dessa maneira, finalmente temos que através
-de (Eq. <a href="#orgc8eac15">1</a>) e
-(Eq. <a href="#orgfa6d1fb">1</a>) a convolução desses dois sinais é
+de (Eq. <a href="#org74ba9a6">1</a>) e
+(Eq. <a href="#org38e256f">1</a>) a convolução desses dois sinais é
 dado como:
 </p>
 
@@ -509,9 +506,9 @@ y[n] =
 </div>
 </div>
 
-<div id="outline-container-org8c37f2d" class="outline-3">
-<h3 id="org8c37f2d">Relação: Transformada de Laplace e Convolução</h3>
-<div class="outline-text-3" id="text-org8c37f2d">
+<div id="outline-container-orgd356594" class="outline-3">
+<h3 id="orgd356594">Relação: Transformada de Laplace e Convolução</h3>
+<div class="outline-text-3" id="text-orgd356594">
 <p>
 A convolução e a transformada de Laplace possuí algumas propriedades
 interessantes, entre elas, durante a transformada de Laplace, a
@@ -542,9 +539,9 @@ F(s) = \mathcal{L}\{f\}(s) =\int_0^\infty e^{-st} f(t)\,dt.
 </div>
 
 
-<div id="outline-container-org5a82907" class="outline-2">
-<h2 id="org5a82907">Equações de Diferenças</h2>
-<div class="outline-text-2" id="text-org5a82907">
+<div id="outline-container-orgcd78fea" class="outline-2">
+<h2 id="orgcd78fea">Equações de Diferenças</h2>
+<div class="outline-text-2" id="text-orgcd78fea">
 <p>
 Equações de diferenças podem ser usadas para implementar sistemas que
 podem ter duração infinita ao impulso infinita ou simplesmente para o
@@ -573,13 +570,13 @@ somável.
 
 <p>
 Um bom exemplo de IIR estável é a resposta impulso do último exemplo
-sobre convolução feito em <a href="#orge85c9e4">Exercício sobre convolução</a>.
+sobre convolução feito em <a href="#org5939cfd">Exercício sobre convolução</a>.
 </p>
 </div>
 
-<div id="outline-container-org866b587" class="outline-3">
-<h3 id="org866b587">A equação de recorrência</h3>
-<div class="outline-text-3" id="text-org866b587">
+<div id="outline-container-org02f76ce" class="outline-3">
+<h3 id="org02f76ce">A equação de recorrência</h3>
+<div class="outline-text-3" id="text-org02f76ce">
 <p>
 Uma implementação de sistema por equações de diferenças, tem sua
 representação numa equação de recorrência (recursiva). Um bom exemplo
@@ -609,9 +606,9 @@ memória (posso afirmar isso?).
 </div>
 </div>
 
-<div id="outline-container-orgf11d83c" class="outline-3">
-<h3 id="orgf11d83c">Relação com equações diferenciais (caso contínuo)</h3>
-<div class="outline-text-3" id="text-orgf11d83c">
+<div id="outline-container-org7eef6e1" class="outline-3">
+<h3 id="org7eef6e1">Relação com equações diferenciais (caso contínuo)</h3>
+<div class="outline-text-3" id="text-org7eef6e1">
 <p>
 As equações de diferenças são definidas no tempo discreto. O que
 conhecemos de equações diferenciais isto está definido no contexto do
@@ -621,9 +618,9 @@ semelhantes.
 </div>
 </div>
 
-<div id="outline-container-org372ac59" class="outline-3">
-<h3 id="org372ac59">Solução homogênea(natural) e particular (forçada)</h3>
-<div class="outline-text-3" id="text-org372ac59">
+<div id="outline-container-org287ba1e" class="outline-3">
+<h3 id="org287ba1e">Solução homogênea(natural) e particular (forçada)</h3>
+<div class="outline-text-3" id="text-org287ba1e">
 <p>
 A solução homogênea, embora não necessária nesse curso, refere-se ao
 contexto de que um sistema possui uma condição inicial. A solução
@@ -668,9 +665,9 @@ Sendo que a equação para solução homogênea é a solução de:
 </div>
 
 
-<div id="outline-container-orge3fa049" class="outline-2">
-<h2 id="orge3fa049">Representação no domínio da frequência</h2>
-<div class="outline-text-2" id="text-orge3fa049">
+<div id="outline-container-org4d1af4e" class="outline-2">
+<h2 id="org4d1af4e">Representação no domínio da frequência</h2>
+<div class="outline-text-2" id="text-org4d1af4e">
 <p>
 Um sistema pode ser caracterizado por sua frequência, um exemplo é
 aplicar a entrada de \(x[n] = e^{jwn}\) para \(n \in (-\infty,
@@ -712,9 +709,9 @@ projeto de filtros.
 </p>
 </div>
 
-<div id="outline-container-orgdc1986d" class="outline-3">
-<h3 id="orgdc1986d">Resposta em frequência</h3>
-<div class="outline-text-3" id="text-orgdc1986d">
+<div id="outline-container-org59c25c7" class="outline-3">
+<h3 id="org59c25c7">Resposta em frequência</h3>
+<div class="outline-text-3" id="text-org59c25c7">
 <p>
 Definição de resposta em frequência, como descrito na seção anterior,
 tem-se que:
@@ -745,9 +742,9 @@ período \(2\pi\).
 </div>
 </div>
 
-<div id="outline-container-org665a8df" class="outline-3">
-<h3 id="org665a8df">Transformada de Fourier (TF)</h3>
-<div class="outline-text-3" id="text-org665a8df">
+<div id="outline-container-orgf5428ed" class="outline-3">
+<h3 id="orgf5428ed">Transformada de Fourier (TF)</h3>
+<div class="outline-text-3" id="text-orgf5428ed">
 <p>
 A transforma de Fourier no contexto de processamento digital de sinais
 é usada para representar um sistema de domínio do tempo para domínio
@@ -784,9 +781,9 @@ Também conhecida como uma operação de análise.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd6a640b" class="outline-3">
-<h3 id="orgd6a640b">Transformada de Fourier Inversa (TFI)</h3>
-<div class="outline-text-3" id="text-orgd6a640b">
+<div id="outline-container-org47d6943" class="outline-3">
+<h3 id="org47d6943">Transformada de Fourier Inversa (TFI)</h3>
+<div class="outline-text-3" id="text-org47d6943">
 <p>
 A operação de reconstrução do sinal, voltando ao domínio real e
 discreto é feito através de uma integral complexa. A
@@ -817,9 +814,9 @@ Sendo que para nosso caso a entrada da transformação \(\mathcal{F}\) é
 </div>
 
 
-<div id="outline-container-org76b60b1" class="outline-2">
-<h2 id="org76b60b1">Referências</h2>
-<div class="outline-text-2" id="text-org76b60b1">
+<div id="outline-container-orgf3d2772" class="outline-2">
+<h2 id="orgf3d2772">Referências</h2>
+<div class="outline-text-2" id="text-orgf3d2772">
 <ul class="org-ul">
 <li>OPPENHEIM; ALAN, 1999, Discrete-Time Signal Processing 2nd Edition</li>
 <li>DINIZ; PAULO, 2010, Digital Signal Processing System Analysis and Design 2nd Edition</li>
