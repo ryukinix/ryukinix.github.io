@@ -3,9 +3,9 @@ date: 2020-07-14 00:00
 author: Manoel Vilela
 title: Reinstall NVIDIA drivers at shutdown
 excerpt: The master solution for slavery problems
-categories: 
+categories:
 - programming
-tags: 
+tags:
 layout: post
 comments: true
 ---
@@ -18,9 +18,9 @@ comments: true
 minha vida em manutenção de sistemas.
 </p>
 
-<div id="outline-container-org07a4ea6" class="outline-2">
-<h2 id="org07a4ea6">Background</h2>
-<div class="outline-text-2" id="text-org07a4ea6">
+<div id="outline-container-orge739ffd" class="outline-2">
+<h2 id="orge739ffd">Background</h2>
+<div class="outline-text-2" id="text-orge739ffd">
 <p>
 Eu tava tendo vários problemas com meu sistema operacional do
 computador de mesa, que além de ter um hardware já datado (10+ anos),
@@ -41,9 +41,9 @@ baixar fortnite.
 </div>
 </div>
 
-<div id="outline-container-orge1b87e0" class="outline-2">
-<h2 id="orge1b87e0">Real problem</h2>
-<div class="outline-text-2" id="text-orge1b87e0">
+<div id="outline-container-orge14c139" class="outline-2">
+<h2 id="orge14c139">Real problem</h2>
+<div class="outline-text-2" id="text-orge14c139">
 <p>
 De toda maneira, cortando o lenga-lenga &#x2013; ou uma parte dele &#x2013; tenho
 usado Linux Mint desde então (2020) depois de fugir por alguns anos de
@@ -89,9 +89,9 @@ de desligar, eu corrigindo antes de desligar deve funcionar, não?
 </div>
 </div>
 
-<div id="outline-container-org424f90e" class="outline-2">
-<h2 id="org424f90e">Master solution</h2>
-<div class="outline-text-2" id="text-org424f90e">
+<div id="outline-container-org9b721e0" class="outline-2">
+<h2 id="org9b721e0">Master solution</h2>
+<div class="outline-text-2" id="text-org9b721e0">
 <p>
 Pois então, aí vamos lá. Eu fiz o seguinte, após uma breve pesquisa e
 verifiquei que quase ninguém sabe direito como faz pra isso funcionar,
@@ -141,6 +141,73 @@ melhor que fazer toda essa desgraça manualmente.
 <p>
 Invés de ser escravo de computador, prefiro que o computador seja
 escravo de si mesmo.
+</p>
+</div>
+</div>
+<div id="outline-container-org250c25b" class="outline-2">
+<h2 id="org250c25b">Edit: SystemDestroyed</h2>
+<div class="outline-text-2" id="text-org250c25b">
+<p>
+<i>Post</i> atualizado em: <code>&lt;2020-09-04 Fri&gt;</code>
+</p>
+
+<p>
+Na real, essa porra de ficar reinstalando não é muito
+confiável. Depois de um mês e meio usando essa solução, às vezes isso
+funciona, às vezes não. O <i>systemd</i> nunca foi muito confiável, mas
+eu supus que pelo menos pra fazer ativação correta dos serviços poderia
+se confiar. Nem isso.
+</p>
+
+<p>
+Às vezes os <i>drivers</i> eram reinstalados quando o computador desligava,
+mas nem sempre &#x2013; também não sei o porquê isso acontecia. Além disso,
+se o computador fosse desligado abruptamente já era, aí não
+funcionaria mesmo a reinstalação no desligamento. Tentei também deixar
+o serviço rodando na inicialização do sistema, embora demorasse muito
+o computador pra desligar, iria assegurar que iria pelo menos
+ligar. Mas também não funcionou muito bem. <b><b>ÀS VEZES</b></b> funcionava.
+</p>
+
+<p>
+Por esse motivo, eu resolvi usar uma propriedade do sistema dos
+arquivos e simplesmente marcar o atributo de imutabilidade como ativo
+para os arquivos de driver da nvidia. Uma solução brutal, mas que
+funcionou bem. Nesse caso, precisei rodar os seguinte comandos com
+permissão de administrador:
+</p>
+
+<div class="org-src-container">
+  <pre class="src src-shell">
+    sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
+    sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+</pre>
+</div>
+
+<p>
+Para checar se a mudança teve efeito observa-se a perca do atributo de
+edição <code>e</code> via <code>lsattr</code>:
+</p>
+
+<pre class="example">
+lsattr /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
+lsattr /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+</pre>
+
+<p>
+Você deve receber uma resposta similar a:
+</p>
+
+<pre class="example">
+-------------------- /lib/modules/5.4.0-42-generic/kernel/drivers/video/nvidia_uvm.ko
+-------------------- /lib/modules/5.4.0-42-generic/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+</pre>
+
+<p>
+O lado negativo dessa solução é que precisarei fazer esses comandos
+toda vez que o <i>kernel</i> for atualizado. Talvez uma solução definitiva
+seria assegurar que um <i>script</i> ativa os atributos de imutabilidade dos
+<i>drivers</i> assim que são reinstalados. Mas isso é papo pra outra história.
 </p>
 </div>
 </div>

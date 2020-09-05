@@ -113,3 +113,51 @@ melhor que fazer toda essa desgraça manualmente.
 
 Invés de ser escravo de computador, prefiro que o computador seja
 escravo de si mesmo.
+* Edit: SystemDestroyed
+
+/Post/ atualizado em: ~<2020-09-04 Fri>~
+
+Na real, essa porra de ficar reinstalando não é muito
+confiável. Depois de um mês e meio usando essa solução, às vezes isso
+funciona, às vezes não. O /systemd/ nunca foi muito confiável, mas
+eu supus que pelo menos pra fazer ativação correta dos serviços poderia
+se confiar. Nem isso.
+
+Às vezes os /drivers/ eram reinstalados quando o computador desligava,
+mas nem sempre -- também não sei o porquê isso acontecia. Além disso,
+se o computador fosse desligado abruptamente já era, aí não
+funcionaria mesmo a reinstalação no desligamento. Tentei também deixar
+o serviço rodando na inicialização do sistema, embora demorasse muito
+o computador pra desligar, iria assegurar que iria pelo menos
+ligar. Mas também não funcionou muito bem. **ÀS VEZES** funcionava.
+
+Por esse motivo, eu resolvi usar uma propriedade do sistema dos
+arquivos e simplesmente marcar o atributo de imutabilidade como ativo
+para os arquivos de driver da nvidia. Uma solução brutal, mas que
+funcionou bem. Nesse caso, precisei rodar os seguinte comandos com
+permissão de administrador:
+
+#+BEGIN_SRC shell-script
+  sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
+  sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+#+END_SRC
+
+Para checar se a mudança teve efeito observa-se a perca do atributo de
+edição ~e~ via =lsattr=:
+
+#+BEGIN_SRC
+  lsattr /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
+  lsattr /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+#+END_SRC
+
+Você deve receber uma resposta similar a:
+
+#+BEGIN_EXAMPLE
+-------------------- /lib/modules/5.4.0-42-generic/kernel/drivers/video/nvidia_uvm.ko
+-------------------- /lib/modules/5.4.0-42-generic/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+#+END_EXAMPLE
+
+O lado negativo dessa solução é que precisarei fazer esses comandos
+toda vez que o /kernel/ for atualizado. Talvez uma solução definitiva
+seria assegurar que um /script/ ativa os atributos de imutabilidade dos
+/drivers/ assim que são reinstalados. Mas isso é papo pra outra história.
