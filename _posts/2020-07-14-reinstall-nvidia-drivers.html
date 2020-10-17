@@ -178,9 +178,9 @@ permissão de administrador:
 </p>
 
 <div class="org-src-container">
-  <pre class="src src-shell">
+  <pre class="src src-shell-script">
     sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
-    sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+    sudo chattr +i /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko</span>
 </pre>
 </div>
 
@@ -189,10 +189,11 @@ Para checar se a mudança teve efeito observa-se a inclusão do atributo de
 imutabilidade <code>i</code> via <code>lsattr</code>:
 </p>
 
-<pre class="example">
-lsattr /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
-lsattr /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
-</pre>
+<div class="org-src-container">
+  <pre class="src src-shell-script">lsattr /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
+    lsattr /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
+  </pre>
+</div>
 
 <p>
 Você deve receber uma resposta similar a:
@@ -208,6 +209,40 @@ O lado negativo dessa solução é que precisarei fazer esses comandos
 toda vez que o <i>kernel</i> for atualizado. Talvez uma solução definitiva
 seria assegurar que um <i>script</i> ativa os atributos de imutabilidade dos
 <i>drivers</i> assim que são reinstalados. Mas isso é papo pra outra história.
+</p>
+</div>
+</div>
+<div id="outline-container-org60c9950" class="outline-2">
+<h2 id="org60c9950">Edit2: Definitive Solution</h2>
+<div class="outline-text-2" id="text-org60c9950">
+<p>
+Post atualizado em: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-17 Sat&gt;</span></span>
+</p>
+
+<p>
+Instalei outra distribuição Linux mais decente neste computador:
+<a href="https://artixlinux.org">Artix</a>. Já venho usando essa distribuição desde 2017 e tem sido muito
+bom. Não vem com SystemD e é considerado um mini-fork do <a href="https://https//www.archlinux.org/">Arch Linux</a>,
+uma distribuição rolling-release com uma ótima documentação online e
+também um repositório de pacotes de usuários com muitas coisas úteis:
+<a href="https://aur.archlinux.org/">AUR</a>.
+</p>
+
+<p>
+Apesar de não existir suporte oficial para placas de vídeo NVIDIA mais
+legadas como a minha &#x2013; GT 240 (2010) &#x2013; pois os últimos drivers que a
+suportam é a versão <code>340.xx</code> eu consegui ter uma versão funcional do meu
+sistema com a instalação dos seguintes pacotes via AUR:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script">yay -S lib32-nvidia-340xx-utils nvidia-340xx-dkms nvidia-340xx-utils
+</pre>
+</div>
+
+<p>
+O lib32 é necessário pra rodar alguns softwares mais legados, como o
+da steam.
 </p>
 </div>
 </div>

@@ -145,7 +145,7 @@ permissão de administrador:
 Para checar se a mudança teve efeito observa-se a inclusão do atributo de
 imutabilidade ~i~ via =lsattr=:
 
-#+BEGIN_SRC
+#+BEGIN_SRC shell-script
   lsattr /lib/modules/$(uname -r)/kernel/drivers/video/nvidia_uvm.ko
   lsattr /lib/modules/$(uname -r)/kernel/drivers/video/fbdev/nvidia/nvidiafb.ko
 #+END_SRC
@@ -161,3 +161,25 @@ O lado negativo dessa solução é que precisarei fazer esses comandos
 toda vez que o /kernel/ for atualizado. Talvez uma solução definitiva
 seria assegurar que um /script/ ativa os atributos de imutabilidade dos
 /drivers/ assim que são reinstalados. Mas isso é papo pra outra história.
+* Edit2: Definitive Solution
+
+Post atualizado em: <2020-10-17 Sat>
+
+Instalei outra distribuição Linux mais decente neste computador:
+[[https://artixlinux.org][Artix]]. Já venho usando essa distribuição desde 2017 e tem sido muito
+bom. Não vem com SystemD e é considerado um mini-fork do [[https://https://www.archlinux.org/][Arch Linux]],
+uma distribuição rolling-release com uma ótima documentação online e
+também um repositório de pacotes de usuários com muitas coisas úteis:
+[[https://aur.archlinux.org/][AUR]].
+
+Apesar de não existir suporte oficial para placas de vídeo NVIDIA mais
+legadas como a minha -- GT 240 (2010) -- pois os últimos drivers que a
+suportam é a versão =340.xx= eu consegui ter uma versão funcional do meu
+sistema com a instalação dos seguintes pacotes via AUR:
+
+#+begin_src shell-script
+yay -S lib32-nvidia-340xx-utils nvidia-340xx-dkms nvidia-340xx-utils
+#+end_src
+
+O lib32 é necessário pra rodar alguns softwares mais legados, como o
+da steam.
