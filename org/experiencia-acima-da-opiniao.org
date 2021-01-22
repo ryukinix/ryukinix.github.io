@@ -1,0 +1,122 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:t toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2021-01-21
+#+TITLE: Experiência acima da opinião - atenção, silêncio e transformação
+#+DESCRIPTION: Porque a experiência está em escassez para muitos?
+#+TAGS: philosophy, personal
+#+CATEGORIES: personal
+
+* Opinião, perspectiva e verdade
+
+
+#+CAPTION: Fonte Desconhecida
+[[/assets/posts/experiencia-acima-da-opiniao/provocacao-1.png]]
+
+
+*Opinião*. O que é opinião? Pela etimologia, é possível reconhecer que
+essa palavra deriva-se do termo Latim `opinari`, sinônimo de pensar e
+acreditar. Popularmente, opinião é a visão de mundo de uma pessoa
+sobre um determinado assunto, mas na filosofia de Parmênides o caminho
+da opinião (/doxa/) estaria baseado na aparência, como uma ideia
+imprecisa acerca da realidade a ponto de levar ao engano e
+incertezas. A opinião se opõe à verdade. Dessa maneira, opinião não se
+trata sobre fatos -- afirmações verdadeiras -- mas perspectivas orientadas
+a um determinado assunto.
+
+Quando ocorre o desferimento de uma frase como /"Essa é minha opinião,
+FIM."/, algo recorrente na atualidade política e social, isso
+demonstra um fechamento sobre a busca da verdade quanto àquele
+assunto. Mas ora, o que é a verdade? Refiro-me nesse momento a verdade
+da razão, como Leibniz a define. A verdade é um estado de supremo
+conhecimento e irrevogável quanto a um acontecimento. Algo só pode ser
+verdade quando não há qualquer dúvida sobre tal assunto, como os
+teoremas na matemática, um sistema idealizado e bem comportado.
+
+Pergunto, portanto, será que na nossa realidade existem verdades? É
+questionável, pois, se não é permitido algo verdadeiro conter qualquer
+dúvida sequer, eu poderia dizer que há poucas verdades no mundo, ou
+talvez nenhuma. Ao tomar como exemplo o céu azul, o que inocentemente
+parece ser uma verdade, pode não ser. Nós como humanos enxergamos o
+céu com essa coloração dita /azul/ pois a declaramos dessa maneira
+pela nossa visão. Mas não significa que para os outros animais, ou até
+mesmo outros humanos, o céu seja de fato azul. Enxergar o céu azul é
+uma perspectiva. Desta maneira, percebe-se que a verdade é um ideal a
+ser buscado, e a opinião é uma ilusão.
+
+
+* Consumismo e Escapismo contra a Experiência
+
+
+#+CAPTION:  Tirinha /os Malvados/ por André Dahmer
+[[/assets/posts/experiencia-acima-da-opiniao/provocacao-2.png]]
+
+Durante nossas vidas cotidianas consumimos muitas coisas. Passamos a
+vida consumindo, todos dias notícias, drogas, músicas, emoções, livros
+e até mesmo o ar que respiramos. O que reflete meu ser senão aquilo
+que eu consumo todos dias? Desde meu alimento, o que leio, o que
+estudo, o que me distrai. O consumo me consome como ser, consome meu
+tempo e meu estar, a distração atrapalha meu foco e minha atenção ao
+que estar ao redor. Porque sentimos necessidade de tanto consumir e
+nos distrair? O sofrimento não é fácil de gerenciar, muito menos
+confrontar, muitas vezes é mais simples buscar o conforto na fuga. Mas
+será esse o caminho para aproveitarmos a *experiência* em vida?
+
+O consumo na indústria do entretenimento é uma fuga das emoções
+externas e internas que abalam a nossa alma; seja uma música que
+incita o alcoolismo e o apelo sexual, um livro de autoajuda cheio de
+métodos vãos para a busca da verdade, um jogo de videogame cheio de
+violência pra extravasar sua raiva. Dito isto, pergunto: O que estamos
+fazendo nessa vida breve e finita?
+
+A fuga nos afasta da experiência, do confronto, das emoções reais que
+sentimos. O consumismo consome nosso tempo e nossa mente, como um
+artifício em ilusão de repor o que perdemos, para acalmar nossa dor,
+um remédio pra postergar o confronto. Se o que há de mais valioso
+nessa vida é a experiência, porque deveríamos perder tanto tempo com
+tantas coisas vazias e sem valor?
+
+O reconhecimento do que significa experiência é necessário. O autor
+J. L. Bondia no artigo intitulado `Notas sobre a experiência e o saber da
+experiência' defende: "A experiência é o que nos passa, o que nos
+acontece, o que nos toca. Não o que se passa, não o que acontece, ou o
+que toca. A cada dia se passam muitas coisas, porém, ao mesmo tempo,
+quase nada nos acontece. Dir-se-ia que tudo o que se passa está
+organizado para que nada nos aconteça. [...]".
+
+O excesso não é bom em praticamente nada nesta vida, não seria
+diferente quanto a *informação*. O autor anteriormente citado,
+parafrasesando-o, diz que a experiência tem sido cada vez mais rara,
+em primeiro lugar pelo excesso de informação, e informação não é
+experiência. Em segundo lugar, a experiência é cada vez mais rara por
+*excesso de opinião*. Pelo excesso de informação, opinamos
+demasiadamente. O autor continua e diz: "Em nossa arrogância, passamos
+a vida opinando sobre qualquer coisa sobre que nos sentimentos
+informados [...]. A obsessão pela opinião também anula nossas
+possibilidades de experiência, também faz com que nada nos aconteça".
+
+Ainda nessa perpectiva, é posto em cheque a raridade da experiência
+pela *falta de tempo*. O autor afirma que tudo se passa demasiadamente
+depressa, cada vez mais depressa na modernidade, de tal maneira que o
+acontecimento nos é dado na forma de choque e a velocidade com que
+ocorre é tão tremenda que impede a conexão significativa entre esses
+acontecimentos.
+
+Por último, de acordo com o autor, a falta de experiência acontece
+pela *excesso de trabalho*. Portanto, conectando estes pontos e a
+tirinha do /André Dahmer/, temos tido pouco tempo para apreciar a
+vida, o que nos ocorre a todo instante, inundados de informações
+inúteis e trabalhos medíocres que não nos fazem felizes, pra piorar, no
+estado de infelicidade fugimos da realidade com qualquer coisa que
+ajude a nos esquecer do que vivemos. No fim, chega o pior caso: a vida se
+torna um grande vazio completo sem experiência alguma. Tudo passou por
+nós e nada em nós terá ficado, pois estávamos sem tempo, trabalhando dia e
+noite, ocupados demais opinando sobre qualquer assunto irrelevante de uma
+notícia do governo, uma vacina que está pra chegar ou outra besteira
+de alguma rede social.
+
+Sem experiência não teremos vida. Seremos uma mula até a morte. A
+experiência requer atenção, silêncio para que ocorra a transformação
+em nossa vida. O grande show da vida.
