@@ -14,9 +14,8 @@ Aceitação do Transtorno Bipolar
 
 * Prelúdio
 
-#+begin_example
-TL;DR: Em 2022 fui diagnosticado com Transtorno Bipolar Tipo II, desde então minha vida ganhou uma perspectiva diferente.
-#+end_example
+//TL;DR: Em 2022 fui diagnosticado com Transtorno Bipolar Tipo II, desde então minha vida ganhou uma perspectiva diferente.//
+
 
 
 Não sei ao certo como começar esse texto, não é um assunto fácil pra
@@ -27,7 +26,7 @@ especialmente no aspecto de lidar com emoções intensas.
 
 Olá! Meu nome é Manoel Vilela, tenho 29 anos na data de publicação
 desse artigo. Fui diagnosticado com Transtorno Bipolar Tipo II após
-mais de 12 sofrendo com episódios de depressão profunda de maneira
+mais de 12 anos sofrendo com episódios de depressão profunda de maneira
 cíclica.
 
 * O início e a família
