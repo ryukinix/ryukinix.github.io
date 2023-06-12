@@ -16,7 +16,7 @@
 
 
 
-Não sei ao certo como começar esse texto, não é um assunto fácil pra
+Não sei ao certo como começar esse texto, não é um assunto fácil praq
 mim. De certa maneira, durante muitos anos, principalmente após a
 separação dos meus pais em 2009, aos meus 15 anos, eu tinha dúvidas de
 que eu poderia ser uma pessoa diferente em vários sentidos... Mas
@@ -60,19 +60,19 @@ desse episódio que acontece exclusivamente com o T.B. tipo I.
 #+CAPTION: Transições de humor entre diferentes transtornos psiquiátricos em relação a uma pessoa comum, a mania e hipomania é a diferença entre os bipolares tipo I e tipo II
 [[/assets/posts/transtorno-bipolar/bipolar_mood_shifts.png]]
 
-Durante uma crise de mania, já vi meu pai destruir uma casa inteira,
+Durante uma crise de mania, já vi meu pai destruir uma casa inteira
 enquanto criança (aos 6 anos de idade) e isso foi devastador pra mim,
 por muito tempo tive medo do meu pai e também não compreendia isso
 muito bem. Muitos falavam de possessão demoníaca, e honestamente, até
-que parecia mesmo... Seu tom de voz mudava, seu personalidade, sua
-percepção... E muitas vezes ele se tornava extremamente agressivo,
+que parecia mesmo... Seu tom de voz mudava, sua personalidade, sua
+percepção, até mesmo suas memórias... E muitas vezes ele se tornava extremamente agressivo,
 principalmente com seus familiares.
 
 Isso persistiu por muitos anos na minha família, as crises de mania e
 depressão que meu pai sofria. E eu, que tinha meus problemas, não
 recebia atenção que talvez eu precisasse sobre os traumas que estavam
-sendo criados continuamente, e eu escolhendo a reclusão como meu
-protetor. Pois eu sentia honestamente que não dava pra contar com
+sendo criados continuamente, e eu escolhi ali a reclusão como meu
+protetor, pois eu senti naquele momento que não poderia contar com
 ninguém.
 
 * Entre a adolescência e a vida adulta
@@ -99,30 +99,33 @@ anos... 2012, 2014, 2016, 2019, 2021...
 
 Os ciclos de depressões no geral sempre foram bastante longas (9 meses
 em média), e entre esses ciclos, há intervalos de *hipomania* que podem
-parecer uma ressuscitação emocional de tão agressiva que era, afinal
-tudo parecia novo, e eu com toda aquela energia de renovação fiz
-muitas coisas... Seja na faculdade, no aprendizado individual com a
-música e outras coisas... Isso é tão forte, que pessoas próximas,
-principalmente em relacionamentos, já pensaram que eu tivesse
-personalidade dupla. A hipomania é tão revitalizante após a depressão,
-que te mexe com sua percepção de auto-resistência, tornando uma
-espécie de super homem na sua auto imagem. A criação de uma distorção
-de si mesmo nesse período é comum, podendo também ter crises de
-[[https://pt.wikipedia.org/wiki/Megalomania][megalomania]] (como um gatinho que olha pro espelho e vê um leão).
+parecer uma ressuscitação emocional de tão agressiva que pode ser,
+afinal nesse momento tudo parecia ser novo, e eu com toda essa energia
+de renovação fiz muitas coisas... Seja na faculdade, no aprendizado
+individual com a música e outras coisas... Isso é tão forte, que
+pessoas próximas, principalmente em relacionamentos, já pensaram que
+eu tivesse dupla personalidade, e brincavam com meus nomes tentando
+separar as identidades (Manoel, Neto...). A hipomania é tão
+revitalizante após a depressão, que te mexe com sua percepção de
+auto-resistência, tornando uma espécie de super homem na sua auto
+imagem. Essa criação de uma distorção da percepção de si mesmo nesse período é comum,
+podendo também gerar até mesmo crises de [[https://pt.wikipedia.org/wiki/Megalomania][megalomania]] (como um gatinho que olha pro
+espelho e vê um leão).
 
-Essa sensação de ser imparável tira os limites do cansaço, é possível
-aguentar longas exposições de esforço físico e mental, entre várias
-horas e dias, como também a baixa necessidade de sono (entre 3 a 4h
-diárias, ainda se mantendo entre dias sem os sinais de cansaço).
+Esse combustível da hipomania te deixa imparável, tira os limites do
+cansaço e da distração, é possível aguentar longas exposições de
+esforço físico e mental, entre várias horas e dias, como também a
+baixa necessidade de sono (mesmo dormindo entre 3 a 4h diárias, ainda
+é possível se manter sem sinais de cansaço por VÁRIOS DIAS).
 
 Mas existe um problema, a hipomania além de ser breve, ela costuma ter
 lados negativos também, em algumas situações muito negativas. Pressa na fala,
 irritabilidade, agressividade, dificuldade de sentir empatia. Isso
 pode ser devastador num relacionamento ou no trabalho
 profissional. Além do mais, por estar operando acima da sua capacidade
-normal cognitivo, a chance de provocar uma exaustão emocional se não
-for gerida, é imensa, sendo um gatilho eventual para depressão (e
-assim perpetuando a dinâmica malévola maníaca-depressiva).
+cognitiva normal, a chance disso provocar uma exaustão emocional e
+mental se não for gerida é imensa, sendo um gatilho eventual para depressão (e
+assim perpetuando a dinâmica oscilatória malévola: a transição maníaca-depressiva).
 
 * Relacionamentos e o Bipolar
 
