@@ -22,30 +22,32 @@ separação dos meus pais em 2009, aos meus 15 anos, eu tinha dúvidas de
 que eu poderia ser uma pessoa diferente em vários sentidos... Mas
 especialmente no aspecto de lidar com emoções intensas.
 
-Olá! Meu nome é Manoel Vilela, tenho 29 anos na data de publicação
-desse artigo. Fui diagnosticado com Transtorno Bipolar Tipo II após
-mais de 12 anos sofrendo com episódios de depressão profunda de maneira
-cíclica.
+Olá! Meu nome é **Manoel Vilela**, tenho 29 anos na data de publicação
+deste artigo. Fui diagnosticado com [[https://pt.wikipedia.org/wiki/Transtorno_bipolar_II][Transtorno Bipolar Tipo II]]
+(T.B. Tipo II) após mais de 12 anos sofrendo com episódios de
+depressão profunda de maneira cíclica.
 
 * O início e a família
 
-Minha primeira depressão ocorreu aos 16 anos, em 2010, mesmo sendo um
-aluno aplicado, um ano adiantado na formação por ter pulado a segunda
-série para terceira aos 8 anos, sendo que mal frequentei a terceira a
-série, fiquei recluso por todo esse ano em casa, no último ano do
-ensino médio com um turbilhão de sentimentos, envolvendo a separação
-dos meus pais, meu primeiro namoro e uma traição de um amigo próximo.
+Minha primeira depressão ocorreu quando tinha 16 anos, em 2010. Fiquei
+recluso por todo esse ano em casa, no último ano do ensino médio com
+um turbilhão de sentimentos, onde se misturava a separação dos meus
+pais, meu primeiro namoro e uma traição que sofri de um amigo
+próximo. Mesmo sendo um aluno aplicado — um ano adiantado na formação
+de ensino por ter pulado a segunda série para terceira aos 8 anos
+sendo que mal frequentei a terceira a série por conta de problemas
+familiares — a depressão não encontrou barreiras pra destruir esse
+histórico.
 
 Penso até o momento que o Transtorno Bipolar é uma condição psiquiatra
-extremamente mal compreendida, incluindo pelos próprios pacientes em
-certas ocasiões. Um transtorno que pode ter tantas variações — ao
-mesmo tempo podendo ser confundido com uma pessoa completamente
-normal, mas também com alguém que possa ter esquizofrenia (Tipo I) —
+extremamente mal compreendida, começando pelos próprios pacientes em
+certas ocasiões. Um transtorno como esse que pode possuir tantas variações
 não pode ser caracterizado como um transtorno psiquiátrico fácil de
-entender.
+entender — ao mesmo tempo que possa ser confundido com uma pessoa completamente
+normal, é possível também confundir com esquizofrenia (T.B. Tipo I).
 
 Cresci toda minha vida rodeado de dramas em relação ao Transtorno
-Bipolar (T.B.) por conta do meu pai, que possui T.B. tipo I. Esse tipo
+Bipolar por conta do meu pai, que possui T.B. Tipo I. Esse tipo
 de transtorno possui várias semelhanças ao tipo II, mas com uma
 diferença substancial: a mania. O portador de transtorno bipolar
 maníaco-depressivo tipo I possui uma resposta oposta a depressão
@@ -55,83 +57,103 @@ agressividade, estresse e até mesmo alucinações.
 Eu não tenho mania, apenas hipomania, que é uma versão mais branda
 desse episódio que acontece exclusivamente com o T.B. tipo I.
 
+#+CAPTION: Transições de humor entre diferentes transtornos psiquiátricos em relação a uma pessoa comum, a mania e hipomania é a diferença entre os bipolares tipo I e tipo II
+[[/assets/posts/transtorno-bipolar/bipolar_mood_shifts.png]]
+
 Durante uma crise de mania, já vi meu pai destruir uma casa inteira,
 enquanto criança (aos 6 anos de idade) e isso foi devastador pra mim,
 por muito tempo tive medo do meu pai e também não compreendia isso
 muito bem. Muitos falavam de possessão demoníaca, e honestamente, até
 que parecia mesmo... Seu tom de voz mudava, seu personalidade, sua
-percepção... E muitas vezes se tornava extremamente agressivo,
+percepção... E muitas vezes ele se tornava extremamente agressivo,
 principalmente com seus familiares.
 
 Isso persistiu por muitos anos na minha família, as crises de mania e
 depressão que meu pai sofria. E eu, que tinha meus problemas, não
-tinha atenção sobre o que passava, escolhendo a reclusão como meu
+recebia atenção que talvez eu precisasse sobre os traumas que estavam
+sendo criados continuamente, e eu escolhendo a reclusão como meu
 protetor. Pois eu sentia honestamente que não dava pra contar com
 ninguém.
 
 * Entre a adolescência e a vida adulta
 
 
-Ano de 2010... É um ano chave. Como comentei, é o início de muitas coisas na
+O ano de 2010... É um ano chave. Como comentei, é o início de muitas coisas na
 minha vida, a incluir o alcoolismo juvenil, a primeira traição, a
-primeira vez de tantas coisas... Isso foi devastador pra mim de muitas
-maneiras.
+primeira vez de tantas coisas. Isso foi devastador pra mim de muitas
+maneiras. Foi uma experiência muito intensa, que me obrigou a me
+afastar de praticamente todas as pessoas que eu conhecia... e me
+aproximar da música, neste ano foi quando comecei a aprender tocar
+violão enquanto faltava as aulas do ensino médio.
 
-A diferença substancial de uma pessoa com transtorno bipolar é a
-resposta as emoções, seja as boas ou ruins... No geral, tudo é muito
-intenso. Alguns caracterizam nós como pessoas sensíveis, mas não é
-somente isso, as emoções perduram por muito mais tempo e isso trás
-consequências que nem sempre tão agradáveis.
+Na perspectiva de quem possui essa condição, a diferença substancial
+de uma pessoa com transtorno bipolar é a resposta as emoções, seja as
+boas ou ruins... No geral, tudo é muito intenso. Alguns tem a
+percepção que bipolares são muito sensíveis, mas não é somente sobre
+isso, as emoções perduram por muito mais tempo e isso trás
+consequências que nem sempre são tão agradáveis.
 
 Meu primeiro episódio de depressão durou cerca de 9 meses.  Isso
-ocorreu novamente em anos posteriores, em praticamente ciclos de 2
+ocorreu novamente em anos posteriores, em ciclos de aproximadamente 2
 anos... 2012, 2014, 2016, 2019, 2021...
 
-Sempre depressões bastante longas, com intervalos de hipomania que
-parecia uma ressuscitação emocional tão agressiva que tudo parecia
-novo, e eu com toda aquela energia fiz muitas coisas... Seja na
-faculdade, no aprendizado individual... A hipomania é tão
-revitalizante após a depressão, que te mexe com sua percepção de
-resistência, tornando uma espécie de super homem na sua auto imagem.
+Os ciclos de depressões no geral sempre foram bastante longas (9 meses
+em média), e entre esses ciclos, há intervalos de *hipomania* que podem
+parecer uma ressuscitação emocional de tão agressiva que era, afinal
+tudo parecia novo, e eu com toda aquela energia de renovação fiz
+muitas coisas... Seja na faculdade, no aprendizado individual com a
+música e outras coisas... Isso é tão forte, que pessoas próximas,
+principalmente em relacionamentos, já pensaram que eu tivesse
+personalidade dupla. A hipomania é tão revitalizante após a depressão,
+que te mexe com sua percepção de auto-resistência, tornando uma
+espécie de super homem na sua auto imagem. A criação de uma distorção
+de si mesmo nesse período é comum, podendo também ter crises de
+[[https://pt.wikipedia.org/wiki/Megalomania][megalomania]] (como um gatinho que olha pro espelho e vê um leão).
 
-Seja por aguentar longas exposições de esforço físico e mental, como
-também a baixa necessidade de sono (entre 3 a 4h diárias, ainda se
-mantendo entre dias sem os sinais de cansaço).
+Essa sensação de ser imparável tira os limites do cansaço, é possível
+aguentar longas exposições de esforço físico e mental, entre várias
+horas e dias, como também a baixa necessidade de sono (entre 3 a 4h
+diárias, ainda se mantendo entre dias sem os sinais de cansaço).
 
 Mas existe um problema, a hipomania além de ser breve, ela costuma ter
-lados negativos, em algumas situações muito negativas. Pressa na fala,
+lados negativos também, em algumas situações muito negativas. Pressa na fala,
 irritabilidade, agressividade, dificuldade de sentir empatia. Isso
-pode ser devastador num relacionamento ou no trabalho profissional.
+pode ser devastador num relacionamento ou no trabalho
+profissional. Além do mais, por estar operando acima da sua capacidade
+normal cognitivo, a chance de provocar uma exaustão emocional se não
+for gerida, é imensa, sendo um gatilho eventual para depressão (e
+assim perpetuando a dinâmica malévola maníaca-depressiva).
 
-* O transtorno bipolar vs Relacionamentos
+* Relacionamentos e o Bipolar
 
 Eu tive poucos relacionamentos na minha vida, e sempre o Transtorno
 Bipolar, esteve presente como um ator de conflito mesmo que eu não
 soubesse da sua existência.
 
-Há muitos anos estou no mesmo relacionamento, mas nem por isso, esse
-relacionamento é imune a isso. Pelo contrário, é uma batalha constante
-para ambos aqueles que participam.
+Há muitos anos estou no mesmo relacionamento (minha atual querida
+esposa), mas nem por isso, esse relacionamento é imune aos males do
+transtorno. Pelo contrário, é uma batalha constante para ambos aqueles
+que participam da relação onde há o bipolar.
 
 Dou mérito a minha **esposa**, por mais que na minha completa descrença, e
-com minha relutância, insistiu que eu buscasse ajuda profissional.
+com minha grande relutância, insistiu que eu buscasse ajuda profissional.
 
 Não dá pra saber o que vai acontecer no futuro a partir daqui, mas o
-processo diagnóstico foi essencial para salvar minha vida e também meu
-casamento ao abismo.
+processo de diagnóstico foi essencial para salvar minha vida e também meu
+casamento que caminhava ao abismo.
 
 Em 2022, além de ter passado por um problema de saúde familiar grave
-com minha mãe, tive um burnout severo no trabalho por conta de
+com minha mãe, tive um //burnout// severo no trabalho por conta de
 incompetência alheia, que prefiro nesse artigo não dar detalhes pra
 perder o foco.
 
-Além de estar num episódio de depressão, burnout no trabalho, infeliz
+Além de estar num episódio de depressão, //burnout// no trabalho, infeliz
 na vida pessoal, infeliz no casamento, os investimentos em colapso e
-todas minhas economias derretendo, perdi uma das essências que mais
+todas minhas economias derretendo, perdi uma das essências que mais me
 motivava continuar: meus estudos.
 
 Em 2021 entrei em exaustão profunda e não consegui dar continuidade
-nem na bolsa de pesquisa que ganhei no ITA, nem finalizar minha
+nem na bolsa de pesquisa que ganhei no [[https://pt.wikipedia.org/wiki/Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica][ITA]], nem finalizar minha
 graduação que apenas faltava o trabalho de conclusão de concurso. Isso
 foi um veneno extremamente poderoso pra minha alma.
 
@@ -139,11 +161,12 @@ Até hoje sinto ainda estar em recuperação disso tudo, pois não é
 apenas uma questão de medicação pra restabelecer o equilíbrio
 físico-químico do meu cérebro que é deficiente por natureza, mas
 também... Aceitar a condição psiquiatra que possuo e aprender a
-conviver com os traumas que fui adquirindo.
+conviver com os traumas que fui adquirindo com cada fase da minha vida.
 
 Não sou uma pessoa aberta, sou bastante recluso, anti social e tenho
-poucos amigos. E mesmo nesses poucos amigos, em episódios de crise é
-praticamente impossível eu me comunicar. Eu perco a comunicação
+poucos amigos. E mesmo entre esses poucos amigos, em episódios de crise é
+praticamente impossível eu me comunicar de maneira efetiva. No pico da
+depressão, eu perco a comunicação
 total. E quem mais sofre, além de mim, é quem está perto de mim.
 
 Por esses motivos, a única sensação que sobra é a de isolamento. E de
@@ -152,6 +175,17 @@ certa maneira, isso não mudou muito, mesmo com a medicação.
 A vontade de isolamento persiste. E isso torna um relacionamento
 saudável, seja amoroso, profissional, ou de amizade, extremamente difícil.
 
+* Referências
+
+Estudar sobre o transtorno bipolar me fez aumentar meu nível de
+aceitação e também entendimento sobre os gatilhos que podem fazer eu sair da
+zona de estabilidade.
+
+Uma monografia em particular de Maria F. F. Mota como estudo de caso
+do transtorno bipolar para conclusão de curso de Psicologia (2005,
+UniCEUB) é bastante elucidativo: [[https://repositorio.uniceub.br/jspui/bitstream/123456789/3053/2/20059837.pdf][MEU DEUS, POR QUE EU FIZ ISTO?]].
+
 * Esperança?
 
-WIP.
+
+/To be continued/
