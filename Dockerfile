@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:stable-slim
 
 # Locale stuff
 RUN apt-get update && apt-get install locales -y
