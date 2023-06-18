@@ -55,10 +55,13 @@ chamada mania, onde acontece uma extrema euforia, podendo levar a
 agressividade, estresse e até mesmo alucinações.
 
 Eu não tenho mania, apenas hipomania, que é uma versão mais branda
-desse episódio que acontece exclusivamente com o T.B. tipo I.
+desse episódio que acontece exclusivamente com o T.B. tipo I. Na
+imagem a seguir é possível observar as transições de humor entre
+diferentes transtornos psiquiátricos em relação a uma pessoa comum, a
+mania e hipomania é a diferença entre os bipolares tipo I e tipo II.
 
-#+CAPTION: Transições de humor entre diferentes transtornos psiquiátricos em relação a uma pessoa comum, a mania e hipomania é a diferença entre os bipolares tipo I e tipo II
-[[/assets/posts/transtorno-bipolar/bipolar_mood_shifts.png]]
+[[img:transtorno-bipolar/bipolar_mood_shifts.png]]
+
 
 Durante uma crise de mania, já vi meu pai destruir uma casa inteira
 enquanto criança (aos 6 anos de idade) e isso foi devastador pra mim,
@@ -125,9 +128,31 @@ pode ser devastador num relacionamento ou no trabalho
 profissional. Além do mais, por estar operando acima da sua capacidade
 cognitiva normal, a chance disso provocar uma exaustão emocional e
 mental se não for gerida é imensa, sendo um gatilho eventual para depressão (e
-assim perpetuando a dinâmica oscilatória malévola: a transição maníaca-depressiva).
+assim perpetuando a dinâmica oscilatória malévola: a transição
+maníaca-depressiva).
+
+* Suicídio
+
+Há uma preocupação grave com o transtorno bipolar não tratado, pois é
+a doença de transtorno de personalidade maior causadora de suicídios,
+sendo que 30% a 50% dos portadores tentam o suicídio [fn:1], 20% conseguem e
+o T.B. II é ainda pior nesse sentido, pois os ciclos de depressão
+costumam ser maiores, e também mais reincidentes. Pesquisador alerta
+sobre transtorno bipolar e comportamento suicida na
+adolescência ([[https://portal.fiocruz.br/noticia/pesquisador-alerta-sobre-transtorno-bipolar-e-comportamento-suicida-na-adolescencia][Fiocruz]], 2022).
+
+[[img:transtorno-bipolar/suicidio_bipolaridade.jpg]]
+
+É um tema recorrente que passa pela mente do bipolar, mais agravante
+em períodos depressivos, coisas que já sofri muitas vezes, e o apoio
+da família e amigos nessa etapa é fundamental. Em outro momento talvez
+possa contar sobre um episódio crítico pessoal sobre esse tema.
+
+[fn:1] [[https://drauziovarella.uol.com.br/psiquiatria/transtorno-bipolar-e-a-doenca-que-mais-causa-suicidios/][Transtorno bipolar é a doença que mais causa suicídios]]
 
 * Relacionamentos e o Bipolar
+
+[[https://psiquiatriapaulista.com.br/meu-companheiro-e-bipolar][/Ele é bipolar... e agora?/]]
 
 Eu tive poucos relacionamentos na minha vida, e sempre o Transtorno
 Bipolar, esteve presente como um ator de conflito mesmo que eu não
@@ -186,9 +211,24 @@ zona de estabilidade.
 
 Uma monografia em particular de Maria F. F. Mota como estudo de caso
 do transtorno bipolar para conclusão de curso de Psicologia (2005,
-UniCEUB) é bastante elucidativo: [[https://repositorio.uniceub.br/jspui/bitstream/123456789/3053/2/20059837.pdf][MEU DEUS, POR QUE EU FIZ ISTO?]].
+UniCEUB) é bastante elucidativo:
+
+[[https://repositorio.uniceub.br/jspui/bitstream/123456789/3053/2/20059837.pdf][MEU DEUS, POR QUE EU FIZ ISTO?]].
+
+Para quem quiser explorar as características clínicas para diagnóstico
+do transtorno bipolar tipo 2, é possível consultar no //Manual
+Diagnóstico e Estatístico de Transtornos Mentais//. Para facilitar o
+processo de busca vou deixar um link da quinta edição numa página
+hospedada gentilmente pelo Psiquiatra Gustavo Amadera (CRM-SP
+117.682):
+
+[[https://kiai.med.br/transtorno-bipolar-tipo-2-criterios-diagnosticos-dsm-5/][Transtorno Bipolar Tipo 2 Critérios Diagnósticos DSM-5]]
 
 * Esperança?
 
 
-/To be continued/
+Em tratamento. Apenas deixo um recado pra quem se identificar: confie
+no seu psiquiatra e no tratamento. As medicações não são seus inimigos
+nem mudam quem você é realmente.
+
+//To be continued//.
