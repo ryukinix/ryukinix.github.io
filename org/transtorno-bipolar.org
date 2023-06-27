@@ -29,7 +29,7 @@ depressão profunda de maneira cíclica.
 
 * O início e a família
 
-Minha primeira depressão ocorreu quando tinha 16 anos, em 2010. Fiquei
+Minha primeira depressão ocorreu quando eu tinha 16 anos, em 2010. Fiquei
 recluso por todo esse ano em casa, no último ano do ensino médio com
 um turbilhão de sentimentos, onde se misturava a separação dos meus
 pais, meu primeiro namoro e uma traição que sofri de um amigo
@@ -134,19 +134,19 @@ maníaca-depressiva).
 * Suicídio
 
 Há uma preocupação grave com o transtorno bipolar não tratado, pois é
-a doença de transtorno de personalidade maior causadora de suicídios,
+o transtorno psiquiátrico maior causador de suicídios,
 sendo que 30% a 50% dos portadores tentam o suicídio [fn:1], 20% conseguem e
 o T.B. II é ainda pior nesse sentido, pois os ciclos de depressão
 costumam ser maiores, e também mais reincidentes. Pesquisador alerta
 sobre transtorno bipolar e comportamento suicida na
-adolescência ([[https://portal.fiocruz.br/noticia/pesquisador-alerta-sobre-transtorno-bipolar-e-comportamento-suicida-na-adolescencia][Fiocruz]], 2022).
+adolescência ([[https://portal.fiocruz.br/noticia/pesquisador-alerta-sobre-transtorno-bipolar-e-comportamento-suicida-na-adolescencia][Fiocruz]], 2022):
 
 [[img:transtorno-bipolar/suicidio_bipolaridade.jpg]]
 
 É um tema recorrente que passa pela mente do bipolar, mais agravante
 em períodos depressivos, coisas que já sofri muitas vezes, e o apoio
 da família e amigos nessa etapa é fundamental. Em outro momento talvez
-possa contar sobre um episódio crítico pessoal sobre esse tema.
+possa contar sobre um episódio pessoal crítico sobre esse tema.
 
 [fn:1] [[https://drauziovarella.uol.com.br/psiquiatria/transtorno-bipolar-e-a-doenca-que-mais-causa-suicidios/][Transtorno bipolar é a doença que mais causa suicídios]]
 
@@ -154,12 +154,12 @@ possa contar sobre um episódio crítico pessoal sobre esse tema.
 
 [[https://psiquiatriapaulista.com.br/meu-companheiro-e-bipolar][/Ele é bipolar... e agora?/]]
 
-Eu tive poucos relacionamentos na minha vida, e sempre o Transtorno
-Bipolar, esteve presente como um ator de conflito mesmo que eu não
+Eu tive poucos relacionamentos na minha vida e sempre o Transtorno
+Bipolar esteve presente como um ator de conflito mesmo que eu não
 soubesse da sua existência.
 
 Há muitos anos estou no mesmo relacionamento (minha atual querida
-esposa), mas nem por isso, esse relacionamento é imune aos males do
+esposa), mas nem por isso esse relacionamento é imune aos males do
 transtorno. Pelo contrário, é uma batalha constante para ambos aqueles
 que participam da relação onde há o bipolar.
 
@@ -172,7 +172,7 @@ casamento que caminhava ao abismo.
 
 Em 2022, além de ter passado por um problema de saúde familiar grave
 com minha mãe, tive um //burnout// severo no trabalho por conta de
-incompetência alheia, que prefiro nesse artigo não dar detalhes pra
+incompetência alheia, que prefiro nesse artigo não dar detalhes pra evitar
 perder o foco.
 
 Além de estar num episódio de depressão, //burnout// no trabalho, infeliz
@@ -198,7 +198,7 @@ depressão, eu perco a comunicação
 total. E quem mais sofre, além de mim, é quem está perto de mim.
 
 Por esses motivos, a única sensação que sobra é a de isolamento. E de
-certa maneira, isso não mudou muito, mesmo com a medicação.
+certa maneira, isso não mudou muito mesmo com a medicação.
 
 A vontade de isolamento persiste. E isso torna um relacionamento
 saudável, seja amoroso, profissional, ou de amizade, extremamente
