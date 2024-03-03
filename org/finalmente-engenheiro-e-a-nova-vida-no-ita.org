@@ -1,0 +1,118 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:t toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2024-03-02 sáb 20:42
+#+TITLE: Finalmente engenheiro e a nova vida no ITA
+#+DESCRIPTION: Após 10 anos cursando engenharia e realizando um sonho de estar no ITA
+#+TAGS: personal
+#+CATEGORIES: personal
+
+* Vida de pré-vestibular (2012-2013)
+
+Tudo começou logo após o término do ensino médio. Naquela época (2012), eu já
+trabalhava como técnico em informática e, no mesmo ano, consegui ser
+aprovado em um concurso público municipal para atuar na mesma
+função. Isso, mesmo possuindo apenas um diploma de um curso
+profissionalizante à distância que fiz no Instituto Padre Reus, que
+naquela época era realizado por correspondência.
+
+Eu era jovem, tinha apenas 18 anos, repleto de sonhos e uma arrogância
+natural, fruto da inocência de não compreender o quão vasto é o
+mundo. Naquele ano, enquanto frequentava um cursinho pré-vestibular e
+me preparava para cursar engenharia da computação em alguma
+universidade, conheci o ITA. Fiquei muito interessado na ideia de
+passar por uma experiência de confinamento, para me distanciar de tudo
+que estava vivendo no Pará, entre problemas familiares e questões que
+só viria a entender uma década depois.
+
+Naquele ano, nada saiu como planejado. Fui mal no vestibular da UFPA,
+no ENEM e tive um desempenho vergonhoso no ITA. Após a prova do ITA,
+que naquela época durava quatro dias consecutivos, peguei uma chuva em
+Belém que parecia lavar minha alma. Foi um choque de realidade,
+perceber a diferença entre o que eu sabia e o que estava sendo
+cobrado. Isso foi crucial, pois após essa experiência, passei a levar
+meus estudos mais a sério e desenvolvi uma relação muito mais intensa
+com a matemática.
+
+O ano de 2013 foi bem diferente. Consegui uma bolsa integral no
+instituto onde cursava o pré-vestibular, o que facilitou a continuação
+dos meus estudos após a sensação de grande fracasso. Naquele ano,
+estudei intensivamente, lia vários livros, resolvia questões do ITA
+durante o jantar... era um ritmo frenético que não sei se conseguiria
+manter hoje em dia (ah, a juventude).
+
+Apesar da confiança ainda abalada, tive um bom desempenho nos
+vestibulares naquele ano, o suficiente para ser aprovado em várias
+universidades, incluindo a UFPA, UNIFESSPA, UFC e também consegui uma
+bolsa integral pelo ProUni. Infelizmente, não tive coragem para tentar
+o ITA novamente, mesmo tendo pago a taxa de inscrição de 120 reais. O
+desânimo veio do meu desempenho no ENEM, sem ter ideia de que meses
+depois eu seria aprovado.
+
+Devido à falta de recursos, decidi cursar Engenharia da Computação na
+UFPA, campus de Tucuruí, onde ingressei em 2013.
+
+* 10 anos no curso de engenharia da computação (2014-2023)
+
+Se eu fosse relatar tudo o que aconteceu durante esses dez anos,
+poderia escrever um livro. Nos primeiros dois anos, de 2014 a 2016,
+cursei engenharia na UFPA. Por motivos pessoais, comecei a sentir que
+não me identificava mais com a instituição e que estava no lugar
+errado. Assim, em 2016, iniciei o processo de transferência de
+instituição e fui aprovado para continuar meu curso de Engenharia da
+Computação na UFC, em Sobral.
+
+Em Sobral, senti uma conexão mais forte com a instituição e percebi
+que estava em um lugar que fazia mais sentido para mim. Lá, consegui
+expandir significativamente meu conhecimento e estabelecer boas
+relações com professores e outros alunos, apesar de geralmente fazer
+poucas amizades.
+
+Os primeiros anos em Sobral, de 2016 até o final de 2017, foram
+marcados por muitos problemas financeiros, pois havia parado de
+trabalhar. Trabalhei em uma empresa de procedência duvidosa de 2015
+a 2016. Em 2018, ao ser contratado pela Neoway, empresa na qual
+trabalho até hoje (2024), consegui me manter financeiramente em
+Sobral.
+
+A partir de 2020, com o início da pandemia, minha graduação entrou em
+um ciclo terrível de depressão e adversidades. Embora já enfrentasse
+problemas antes, o confinamento e meu casamento recente (2019)
+pareceram intensificar a crise.
+
+Por mais de dois anos, a partir de 2021, fiquei paralisado com meu
+projeto de TCC. Uma mistura de ansiedade, que me levou à emergência
+pensando que estava tendo um infarto, depressão e outros problemas,
+tornaram o tema que escolhi praticamente impossível de desenvolver,
+apesar de ter parecido uma boa ideia quando o escolhi em 2021.
+
+Após várias reviravoltas, incluindo a obtenção de uma bolsa de
+iniciação científica voluntária no ITA em 2020 e quase perder minha
+relação com meu orientador na UFC devido à minha incapacidade de
+responder seus e-mails, 2023 trouxe uma grande mudança.
+
+Em meados de 2023, fui aprovado no programa de mestrado do ITA em Engenharia
+Eletrônica e Computação com o
+mesmo tema do meu TCC [fn:1], mesmo ainda estando na graduação. Isso me deu
+um novo impulso para finalmente concluir meu TCC. Felizmente, o
+resultado foi muito melhor do que eu esperava e a banca examinadora
+elogiou bastante o trabalho que passei mais de dois anos
+pesquisando. No dia 25 de janeiro de 2024, finalmente me formei,
+totalizando 10 anos na engenharia desde que fui aprovado na UFPA
+em 2014.
+
+[fn:1]: Segmentação Semi-Supervisionada de Imagens através de
+Dinâmicas Coletivas em Redes Complexas, [[https://github.com/ryukinix/tcc][link]].
+
+* Mestrado no ITA (2024-)
+
+Aqui estou... ao chegar em fevereiro de 2024, em São José dos Campos
+(SP), as minhas primeiras disciplinas presenciais começam nesse início
+de março. Pertencer ao ITA me trouxe uma grande alegria, pois era um
+sonho que eu havia já tido há mais de 10 anos e achava que estava
+perdido... e por mais que a pós-graduação é diferente da graduação, eu
+me sinto bem por estar dando esse passo na minha carreira acadêmica,
+que talvez um dia me leve há mais lugares que eu não consiga imaginar
+agora.
