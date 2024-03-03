@@ -11,6 +11,9 @@
 
 * Vida de pré-vestibular (2012-2013)
 
+#+ATTR_LATEX: :scale 0.5
+[[img:finalmente-engenheiro/me-2012.jpg]]
+
 Tudo começou logo após o término do ensino médio. Naquela época (2012), eu já
 trabalhava como técnico em informática e, no mesmo ano, consegui ser
 aprovado em um concurso público municipal para atuar na mesma
@@ -36,6 +39,8 @@ cobrado. Isso foi crucial, pois após essa experiência, passei a levar
 meus estudos mais a sério e desenvolvi uma relação muito mais intensa
 com a matemática.
 
+[[img:finalmente-engenheiro/me-2013.jpg]]
+
 O ano de 2013 foi bem diferente. Consegui uma bolsa integral no
 instituto onde cursava o pré-vestibular, o que facilitou a continuação
 dos meus estudos após a sensação de grande fracasso. Naquele ano,
@@ -56,6 +61,8 @@ UFPA, campus de Tucuruí, onde ingressei em 2013.
 
 * 10 anos no curso de engenharia da computação (2014-2023)
 
+[[img:finalmente-engenheiro/me-2014.jpg]]
+
 Se eu fosse relatar tudo o que aconteceu durante esses dez anos,
 poderia escrever um livro. Nos primeiros dois anos, de 2014 a 2016,
 cursei engenharia na UFPA. Por motivos pessoais, comecei a sentir que
@@ -70,6 +77,8 @@ expandir significativamente meu conhecimento e estabelecer boas
 relações com professores e outros alunos, apesar de geralmente fazer
 poucas amizades.
 
+[[img:finalmente-engenheiro/me-2016.jpg]]
+
 Os primeiros anos em Sobral, de 2016 até o final de 2017, foram
 marcados por muitos problemas financeiros, pois havia parado de
 trabalhar. Trabalhei em uma empresa de procedência duvidosa de 2015
@@ -81,6 +90,8 @@ A partir de 2020, com o início da pandemia, minha graduação entrou em
 um ciclo terrível de depressão e adversidades. Embora já enfrentasse
 problemas antes, o confinamento e meu casamento recente (2019)
 pareceram intensificar a crise.
+
+[[img:finalmente-engenheiro/me-2020.jpg]]
 
 Por mais de dois anos, a partir de 2021, fiquei paralisado com meu
 projeto de TCC. Uma mistura de ansiedade, que me levou à emergência
@@ -102,6 +113,9 @@ foi muito melhor do que eu esperava e a banca examinadora elogiou
 bastante o trabalho que passei mais de dois anos pesquisando. No dia
 25 de janeiro de 2024, finalmente me formei, totalizando 10 anos na
 engenharia desde que fui aprovado na UFPA em 2014.
+
+[[img:finalmente-engenheiro/formatura-2024.jpg]]
+
 
 * Mestrado no ITA (2024-)
 
