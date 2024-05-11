@@ -1,21 +1,21 @@
 DOCKER_IMG = ryukinix/blog
 
-all: serve
+all: run
 
-install-deps:
+install-local:
 	@if [ ! -d vendor ]; then \
 		bundle install --path vendor/bundle; \
 		bundle add jekyll; \
 	fi
 
-blog: image
+run: build
 	docker run -it --rm --network=host $(DOCKER_IMG)
 
-image:
+build:
 	docker build -t $(DOCKER_IMG) .
 
-serve: install-deps
+run-local: install-deps
 	bundle exec jekyll serve
 
-clean:
+clean-local:
 	rm -rfv _site vendor
