@@ -14,7 +14,7 @@ run: build
 build:
 	docker build -t $(DOCKER_IMG) .
 
-run-local: install-deps
+run-local: install-local
 	bundle exec jekyll serve
 
 clean-local:
