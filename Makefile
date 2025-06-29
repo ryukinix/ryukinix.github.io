@@ -10,7 +10,7 @@ install-local:
 	fi
 
 run: build
-	docker run $(MOUNT) -it --rm --network=host $(DOCKER_IMG)
+	docker run $(MOUNT) -it --rm  $(DOCKER_IMG)
 
 build:
 	docker build -t $(DOCKER_IMG) .
@@ -23,3 +23,9 @@ run-local: install-local
 
 clean-local:
 	rm -rfv _site vendor
+
+deploy-local:
+	ssh starfox bash /home/lerax/Deploy/blog.sh
+
+publish:
+	docker push $(DOCKER_IMG)
