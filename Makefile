@@ -14,6 +14,9 @@ run: build
 build:
 	docker build -t $(DOCKER_IMG) .
 
+build-show:
+	docker run -t --rm --network=host $(DOCKER_IMG) build
+
 run-local: install-local
 	bundle exec jekyll serve
 

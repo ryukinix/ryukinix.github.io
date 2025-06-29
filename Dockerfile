@@ -23,7 +23,7 @@ COPY Gemfile.lock .
 RUN bundle config set path 'vendor/bundle'
 RUN bundle install
 COPY . .
-RUN bundle exec jekyll build
+RUN bundle exec jekyll build --trace
 EXPOSE 4000
 CMD ["serve"]
 ENTRYPOINT ["bundle", "exec", "jekyll"]

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //@extend-elements
 %extend1 {
 	margin: 0;
@@ -136,10 +138,10 @@ body {
 .entry-meta {
 	@include font-rem(12);
 	text-transform: uppercase;
-	color: lighten($color_tuatara,60);
+	color: color.adjust($color_tuatara, $lightness: 60%);
 	padding-left: 0;
 	a {
-		color: lighten($color_tuatara,60);
+		color: color.adjust($color_tuatara, $lightness: 60%);
 	}
 	li {
 	    list-style-type: none;
@@ -160,11 +162,11 @@ body {
 			padding: 2px 6px;
 		}
 		.count {
-			background-color: darken($white,15);
+			background-color: color.adjust($white, $lightness: -15%);
 			@include border-radius(3px,3px,0,0);
 		}
 		&:hover {
-			background-color: darken($white,15);
+			background-color: color.adjust($white, $lightness: -15%);
 			box-shadow: 0 0 1px 0 rgba($color_shark,0.5);
 		}
 	}
