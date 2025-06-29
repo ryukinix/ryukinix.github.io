@@ -21,7 +21,7 @@ categories: programming
 
 ## Description
 
-`decorating` encourages an exploration into the limits of decorators in Python. While decorators might be new to beginners, they are an extremely useful feature of the language. They can be similar to Lisp Macros, but without changes to the AST, they actually only work like "Wrapper Macros". Great decorator examples are `@animated` and `@writing` on this project. This repository is made from scratch, using only Python's Standard Library, so there are no dependencies!
+[decorating](https://github.com/ryukinix/decorating) encourages an exploration into the limits of decorators in Python. While decorators might be new to beginners, they are an extremely useful feature of the language. They can be similar to Lisp Macros, but without changes to the AST, they actually only work like "Wrapper Macros". Great decorator examples are `@animated` and `@writing` on this project. This repository is made from scratch, using only Python's Standard Library, so there are no dependencies!
 
 
 
