@@ -34,8 +34,6 @@ But... In determined moment during the adventure of watching this... I really ha
 During the debugging of my jobs or my other painfull software activities, I have a deep feel to break all. Really this, with a hammer. But I cannot.
 I'm living yet because of my computer.
 
-![satou-breaking-all](http://stream1.gifsoup.com/view4/3641092/welcome-to-the-nhk-o.gif)
-
 
 The biggest afinity was when Satou said that sequence of phrases:
 
@@ -59,5 +57,3 @@ Always when Satou had a psychotic break he blamed that is a conspiracy behind of
 
 
     The biggest question whose comes to us sometime in a long sequence of conspiracy
-
-![the-question-of-the-life-and-death](http://medias.gifboom.com/medias/t_b3cbceb06b9c01328ba0723c91561e03.jpg)
