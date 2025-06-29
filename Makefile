@@ -1,5 +1,10 @@
 DOCKER_IMG = ryukinix/blog
-MOUNT = -v "$(PWD)/_posts:/app/_posts" -v "$(PWD)/assets:/app/assets"
+MOUNT = \
+    -v "$(PWD)/_posts:/app/_posts" \
+	-v "$(PWD)/assets:/app/assets" \
+	-v "$(PWD)/_sass:/app/_sass" \
+	-v "$(PWD)/_includes:/app/_includes" \
+	-v "$(PWD)/_layouts:/app/_layouts"
 
 all: run
 
