@@ -14,10 +14,10 @@ categories: programming
 
 ## Main Proposal
 
-The proposal of [organization](https://www.github.com/DestructHub) is a dump of each solution of common and bizarre challenges presents in programming world. Why? Because is fun, because is useful for learning and we can learn with other people! Now we can be small, about one year old and we have about 20 members.
+The aim of the [organization](https://www.github.com/DestructHub) is to provide a collection of solutions to common and unusual challenges found in the programming world. Why? Because it's fun, it's useful for learning, and we can learn from other people! Currently, we are a small group, about one year old, with around 20 members.
 
-We want more polyglot programmers possible. Actually we have solutions in Python, C, C++, Go, Haskell, Elixir, Lua, Clojure and Common Lisp!
+We want as many polyglot programmers as possible. Currently, we have solutions in Python, C, C++, Go, Haskell, Elixir, Lua, Clojure, and Common Lisp!
 
-You love math? We love too! Actually we focusing on [Project Euler](https://www.github.com/DestructHub/ProjectEuler) since the creation! We have almost 100 solutions (counting the alternative solutions on all programming languages)!
+You love math? We love it too! Currently, we have been focusing on [Project Euler](https://www.github.com/DestructHub/ProjectEuler) since its creation! We have almost 100 solutions (counting the alternative solutions on all programming languages)!
 
-Join to us and enters on the sea of destruction!
+Join us and enter the sea of destruction!

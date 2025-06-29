@@ -3,7 +3,7 @@ layout: post
 title:  "I'm so tired... it's all a conspiracy!"
 post: true
 date:   2016-04-29
-excerpt: "It's dangerous create a description for this."
+excerpt: "It's dangerous to create a description for this."
 lang: en
 tag:
 - anime
@@ -14,18 +14,18 @@ category: personal
 
 ![the-life](https://68.media.tumblr.com/tumblr_m3e46kxM6H1qlcutao1_500.gif)
 
-## The life for now
+## Life for Now
 
 
-    The life passing so fast, but sometimes, so slow. All the days is the same thing.
+    The life passes so fast, but sometimes, so slowly. All the days is the same thing.
 
 ![loop-infinite](https://68.media.tumblr.com/d5a7e8ff619286fd89ab267cd198dc00/tumblr_n4no77cKRl1qby49yo1_500.gif)
 
-I'm really tired. So tired that I really could sleep for a month and nothing would change. Wake up. ~~Suffering~~ Code something. Sleep.
+I'm really tired. So tired that I could really sleep for a month and nothing would change. Wake up. ~~Suffering~~ Code something. Sleep.
 
-In the last two days, I have been watching an anime called [`Welcome to the NHK`](http://myanimelist.net/anime/1210/NHK_ni_Youkoso). It tell a history about a schizophrenic guy with 22 years old (my actual age) with extremely social anxiety and your ~~mis~~ adventures with the life. **Why all sucks so hard?** Because the society rejection and the depression of itself , Satou (the main character) after your first period at Tokyo University he turned a Hikikomori  — a person whose live isolated in your room and recuse with all efforts to go out of your home — and he are living that way for the last three years.
+In the last two days, I have been watching an anime called [`Welcome to the NHK`](http://myanimelist.net/anime/1210/NHK_ni_Youkoso). It tells a story about a 22-year-old schizophrenic guy (my current age) with extreme social anxiety and his ~~mis~~adventures in life. **Why does everything suck so hard?** Because of societal rejection and his own depression, Satou (the main character) became a Hikikomori after his first period at Tokyo University. A Hikikomori is a person who lives isolated in their room and resists all efforts to leave their home. He has been living this way for the last three years.
 
-The anime talk about themes like social isolation, hikikomori, otaku, depression, suicide, drugs, games and programming (in some moment). Is a heavy mixture of reality, [**sadness**](https://www.youtube.com/watch?v=_Ei2izPLpHc) and [**comedy**](https://www.youtube.com/watch?v=bkz6504BKng). Actually, is a really a wonderful adventure and the anime is really funny in general. However, if you have a similar life of Satou, can be really painful sometimes. Or can be your savior too. Anyway, worthwhile watching `Welcome to NHK`.
+The anime talks about themes like social isolation, hikikomori, otaku, depression, suicide, drugs, games, and programming (at some points). It's a heavy mixture of reality, [**sadness**](https://www.youtube.com/watch?v=_Ei2izPLpHc) and [**comedy**](https://www.youtube.com/watch?v=bkz6504BKng). Actually, it's a truly wonderful adventure, and the anime is generally very funny. However, if you have a life similar to Satou's, it can be really painful sometimes. Or it can be your savior too. Anyway, `Welcome to NHK` is worth watching.
 
 ## Afinities with `Welcome to the NHK`
 
@@ -33,8 +33,6 @@ But... In determined moment during the adventure of watching this... I really ha
 
 During the debugging of my jobs or my other painfull software activities, I have a deep feel to break all. Really this, with a hammer. But I cannot.
 I'm living yet because of my computer.
-
-![satou-breaking-all](http://stream1.gifsoup.com/view4/3641092/welcome-to-the-nhk-o.gif)
 
 
 The biggest afinity was when Satou said that sequence of phrases:
@@ -59,5 +57,3 @@ Always when Satou had a psychotic break he blamed that is a conspiracy behind of
 
 
     The biggest question whose comes to us sometime in a long sequence of conspiracy
-
-![the-question-of-the-life-and-death](http://medias.gifboom.com/medias/t_b3cbceb06b9c01328ba0723c91561e03.jpg)

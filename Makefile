@@ -1,4 +1,5 @@
 DOCKER_IMG = ryukinix/blog
+MOUNT = -v "$(PWD)/_posts:/app/_posts" -v "$(PWD)/assets:/app/assets"
 
 all: run
 
@@ -9,7 +10,7 @@ install-local:
 	fi
 
 run: build
-	docker run -it --rm --network=host $(DOCKER_IMG)
+	docker run $(MOUNT) -it --rm --network=host $(DOCKER_IMG)
 
 build:
 	docker build -t $(DOCKER_IMG) .

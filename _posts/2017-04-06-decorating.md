@@ -3,7 +3,7 @@ layout: post
 title:  "decorating: Literally decorating your terminal with decorators"
 project: true
 date:   2017-04-06
-excerpt: "A Meta Repo To Decorators"
+excerpt: "A Meta-Repository for Decorators"
 lang: en
 tag:
 - programming
@@ -21,7 +21,7 @@ categories: programming
 
 ## Description
 
-[decorating](https://github.com/ryukinix/decorating) encourages an exploration into the limits of decorators in `Python`. While decorators might by new to beginners, they are an extremely useful feature of the language. They can be similar to Lisp Macros, but without changes to the AST, actually only work like "Wrapper Macros". Great decorator examples are `@animated` and `@writing` on this project. This repository is made from scratch, just using Python's Standard Library, so then no any dependency!
+[decorating](https://github.com/ryukinix/decorating) encourages an exploration into the limits of decorators in Python. While decorators might be new to beginners, they are an extremely useful feature of the language. They can be similar to Lisp Macros, but without changes to the AST, they actually only work like "Wrapper Macros". Great decorator examples are `@animated` and `@writing` on this project. This repository is made from scratch, using only Python's Standard Library, so there are no dependencies!
 
 
 
@@ -61,7 +61,7 @@ print("Result: {}".format(fib(3)))
 
 ### decorating.cache
 
-Memoize the function decorated based on their arguments.
+Memoizes the decorated function based on its arguments.
 
 ```python
 import decorating
@@ -102,13 +102,13 @@ print("Result: {}".format(fib(30)))
 # Result: 832040
 ```
 
-Nicely! We write a awful `O(2^n)` function that takes `O(n)` on time and space! Beautiful.
+Nicely! We wrote an awful `O(2^n)` function that takes `O(n)` in time and space! Beautiful.
 
 ### decorating.counter
 
-Return as side-effect a print on stdout about the time of calls of a function. On terminal this is overwritten
+Return as side-effect a print on stdout about the time of calls of a function. On the terminal this is overwritten
 
-using a `\r` carriage character. Sometimes is usefull to see a high frequent function is used on some algorithm.
+using a `\r` carriage return character. Sometimes is usefull to see a high frequent function is used on some algorithm.
 
 ```python
 import decorating
