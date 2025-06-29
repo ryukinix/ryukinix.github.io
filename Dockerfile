@@ -20,8 +20,10 @@ RUN gem install bundler
 WORKDIR /app
 COPY Gemfile .
 COPY Gemfile.lock .
-RUN bundle install --path vendor/bundle
+RUN bundle config set path 'vendor/bundle'
+RUN bundle install
 COPY . .
+RUN bundle exec jekyll build
 EXPOSE 4000
-
-ENTRYPOINT ["bundle", "exec", "jekyll", "serve"]
+CMD ["serve"]
+ENTRYPOINT ["bundle", "exec", "jekyll"]
