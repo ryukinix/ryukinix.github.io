@@ -5,7 +5,7 @@ description:        "That place is where I talk about my projects and my life."
 reading_time:       true
 words_per_minute:   100
 logo:               'assets/img/avatar.jpg'
-background:         'assets/img/placeholder-big.jpg'
+background:         'assets/img/placeholder-big.webp'
 locale:             pt_BR
 url:                https://lerax.me
 
