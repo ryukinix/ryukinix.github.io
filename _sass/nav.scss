@@ -278,9 +278,9 @@ All this is done for any sub-level being entered.
 	}
 }
 .dl-menuwrapper > .dl-submenu.dl-animate-out {
-	-webkit-animation: SubMenuAnimOut 0.4s ease;
-	-moz-animation: SubMenuAnimOut 0.4s ease;
-	animation: SubMenuAnimOut 0.4s ease;
+	-webkit-animation: SubMenuAnimOut 0.1s ease;
+	-moz-animation: SubMenuAnimOut 0.1s ease;
+	animation: SubMenuAnimOut 0.1s ease;
 }
 @-webkit-keyframes SubMenuAnimOut {
 	0% {
