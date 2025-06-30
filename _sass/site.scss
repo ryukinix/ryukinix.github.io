@@ -80,7 +80,7 @@ body {
 	z-index: 1;
 	border-radius: 3px;
 	box-shadow: 0 0 10px 0 rgba($color_shark,0.3);
-	@include transition(.5s);
+	@include transition(.2s);
 	@media #{$small} {
 		width: 100%;
 	    box-shadow: none;
@@ -109,7 +109,7 @@ body {
 	padding: 2em;
 	border-radius: 3px;
 	box-shadow: 0 0 10px 0 rgba($color_shark,0.3);
-	@include transition(.5s);
+	@include transition(.2s);
 	@media #{$small} {
 		width: 90%;
 		padding: 2em 0;
@@ -125,7 +125,7 @@ body {
 	padding: 2em;
 	border-radius: 3px;
 	box-shadow: 0 0 10px 0 rgba($color_shark,0.3);
-	@include transition(.5s);
+	@include transition(.2s);
 	@media #{$small} {
 		width: 90%;
 		padding: 2em 0;
@@ -153,7 +153,7 @@ body {
         text-decoration: none;
         background-color: $white;
         color: $color_tuatara;
-        @include transition(.75s);
+        @include transition(.1s);
         margin: 2px 5px;
 		span {
 			float: left;

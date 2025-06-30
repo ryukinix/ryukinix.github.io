@@ -316,7 +316,7 @@ As propriedades definidas para a convolução são:
 
 #+NAME: exemplo:convolucao
 #+CAPTION: Exemplo de convolução contínua no tempo entre uma função exponencial descrescente e a função degrau.
-[[file:res/convolucao.png]]
+[[file:/assets/posts/pds/convolucao.png]]
 
 No final geralmente temos um PG para se calcular. Onde pode ser uma PG
 infinita convergente, ou uma PG simples finita. Para as duas as

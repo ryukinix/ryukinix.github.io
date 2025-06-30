@@ -25,5 +25,6 @@ RUN bundle install
 COPY . .
 RUN bundle exec jekyll build --trace
 EXPOSE 4000
-CMD ["serve"]
+CMD ["serve", "--host", "0.0.0.0"]
+RUN sed -i "s|https://lerax.me|https://test.manoel.dev|g" _config.yml
 ENTRYPOINT ["bundle", "exec", "jekyll"]
