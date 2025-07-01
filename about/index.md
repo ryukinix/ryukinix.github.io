@@ -6,30 +6,18 @@ date: 2016-04-23
 ---
 
 ## About Me
-I have a deep passion for Mathematics and the sciences that build upon it. While I believe all knowledge is valuable, I'm most captivated by the intersection of mathematics and computer science. You can find my resume here: https://resume.lerax.me
+I have a deep passion for Mathematics and the sciences that build upon it. While I believe all knowledge is valuable, I'm most captivated by the intersection of mathematics and computer science. You can find my resume [here](https://resume.lerax.me).
 
 ## Programming Languages
 
-I enjoy programming in several languages, with a preference for Python, Lisp, and C. I also have experience with Haskell, Rust, Go, and F#. While I'm familiar with C++, Java, and C#, I don't use them as frequently. Here's a self-assessment of my skills and interest in various languages:
-
-``` markdown
-Python     ★ ★ ★ ★ ★
-C          ★ ★ ★ ★ ★
-Lisp       ★ ★ ★ ★ ★
-Rust       ★ ★ ★ ★
-Go         ★ ★ ★ ★
-Haskell    ★ ★ ★ ★
-F#         ★ ★ ★
-C++        ★ ★ ★
-Java       ★ ★
-C#         ★ ★
-JavaScript ★ ★
-```
-
+I enjoy programming in several languages, with a preference for
+Python, Lisp, and C. I also have experience with Haskell, Rust, Go,
+and F#. While I'm familiar with C++, Java, and C#, I don't use them as
+frequently.
 
 ## Current Life
 
-Manoel Vilela Machado Neto has been a Computer Engineering student since 2014. He began his studies at the Federal University of Pará (UFPA) and transferred to the Federal University of Ceará (UFC) in 2016, where he is currently enrolled. His primary interests are in computational intelligence and operating systems. He has been focusing on Natural Language Processing since 2015 and has also developed a recent interest in Digital Signal Processing (2017).
+I began my Computer Engineering studies in 2014 at the Federal University of Pará (UFPA) and transferred to the Federal University of Ceará (UFC) in 2016. I graduated from UFC in 2024. Since 2023, I have been pursuing my master's degree at ITA, with a focus on machine learning. My research in this area builds upon projects like [EGSIS](https://github.com/ryukinix/egsis), where I explored graph-based algorithms for semi-supervised image segmentation.
 
 In my free time, I enjoy exploring the connections between pure Mathematics, applied Computer Science, and Music. For example, I find the idea of using mathematical and computer engineering techniques to synthesize music to be fascinating.
 
