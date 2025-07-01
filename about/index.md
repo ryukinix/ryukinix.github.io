@@ -5,63 +5,46 @@ tags: [about, bio]
 date: 2016-04-23
 ---
 
-## Tag of life
-I love Mathematics - then the subsequent science falls like a glove
-upon that passion. All knowledge is valid, but IT is the merger that
-captivates me more. You can find me resume here: https://resume.lerax.me
+## About Me
+I have a deep passion for Mathematics and the sciences that build upon
+it. While I believe all knowledge is valuable, I'm most captivated by
+the intersection of mathematics and computer science. You can find my
+resume [here](http://resume.lerax.me).
 
 ## Programming Languages
 
-In general I like programming mostly in Python, Lisp and C. Sometimes
-I try to code in other languages like Haskell, Rust, Go and F#.
-Although I know about C++, Java and C, I do not use these languages
-everyday. In general my knowledge about programming languages ranked
-in five stars scale as maximum confidence and interest as well knowledge are
-sorted as:
+I enjoy programming in several languages, with a preference for
+Python, Lisp, and C. I also have experience with Haskell, Rust, Go,
+and F#. While I'm familiar with C++, Java, and C#, I don't use them as
+frequently.
 
-``` markdown
-Python     ★ ★ ★ ★ ★
-C          ★ ★ ★ ★ ★
-Lisp       ★ ★ ★ ★ ★
-Rust       ★ ★ ★ ★
-Go         ★ ★ ★ ★
-Haskell    ★ ★ ★ ★
-F#         ★ ★ ★
-C++        ★ ★ ★
-Java       ★ ★
-C#         ★ ★
-JavaScript ★ ★
-```
+## Current Life
 
+I began my Computer Engineering studies in 2014 at the Federal
+University of Pará (UFPA) and transferred to the Federal University of
+Ceará (UFC) in 2016. I graduated from UFC in 2024. Since 2023, I have
+been pursuing my master's degree at ITA, with a focus on machine
+learning. My research in this area builds upon projects like
+[EGSIS](https://github.com/ryukinix/egsis), where I explored
+graph-based algorithms for semi-supervised image segmentation.
 
-## Current life
-
-Manoel Vilela Machado Neto is a student of Computer Engineering
-since 2014. Started on the Federal University of Pará (UFPA) and
-migrated to Federal University of Ceará (UFC) in 2016, which currently
-studies. He have interests mainly in the area of computational
-intelligence and operating systems. The main topics focused currently
-is inside of Natural Language Processing (2015) as well a recent interest was
-discovered in Digital Signal Processing (2017).
-
-As my hobbies, I have a lot of interests in the way that the
-pure Mathematics can relates with applied Computer Science topics and
-Music as well. As I can speak, using mathematics and computer engineering
-techniques for synthesizing music would not be awesome?
+In my free time, I enjoy exploring the connections between pure
+Mathematics, applied Computer Science, and Music. For example, I find
+the idea of using mathematical and computer engineering techniques to
+synthesize music to be fascinating.
 
 
-## Why Ryukinix and Lerax nicknames?
+## The Nicknames: Ryukinix and Lerax
 
-Ryukinix it's come from 2009: my char's name of the game Ragnarok, private
-server *Odin-br*. Was my archer char. I was thinking a good original
-name... And that random name comes to my mind. No especial reason. By
-the way, good time.
+**Ryukinix** comes from 2009; it was the name of my archer character
+in the Ragnarok private server *Odin-br*. I was looking for an
+original name, and it just came to me. No special reason, but those
+were good times.
 
-Lerax it's come from 2013: a random name that I choose for the
-character of my WarFace account, a FPS game written on top of the
-CryEngine.
+**Lerax** comes from 2013; it was a random name I chose for my
+character in WarFace, an FPS game built on the CryEngine.
 
-Since these days, I've using the both nicknames on different situations.
+Since then, I've used both nicknames in different situations.
 
 
 ## Status of the last month

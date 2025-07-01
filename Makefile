@@ -4,7 +4,8 @@ MOUNT = \
 	-v "$(PWD)/assets:/app/assets" \
 	-v "$(PWD)/_sass:/app/_sass" \
 	-v "$(PWD)/_includes:/app/_includes" \
-	-v "$(PWD)/_layouts:/app/_layouts"
+	-v "$(PWD)/_layouts:/app/_layouts" \
+	-v "$(PWD)/about:/app/about"
 
 all: run
 
