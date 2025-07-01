@@ -9,7 +9,7 @@ date: 2016-04-23
 I have a deep passion for Mathematics and the sciences that build upon
 it. While I believe all knowledge is valuable, I'm most captivated by
 the intersection of mathematics and computer science. You can find my
-resume [here](https://resume.lerax.me).
+resume [here](http://resume.lerax.me).
 
 ## Programming Languages
 
