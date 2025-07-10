@@ -30,7 +30,7 @@ run-local: install-local
 clean-local:
 	rm -rfv _site vendor
 
-deploy-test: publish
+deploy-test: build publish
 	ssh starfox bash /home/lerax/Deploy/blog.sh
 
 publish:
