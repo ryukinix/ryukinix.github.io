@@ -1,0 +1,123 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:t toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2025-07-09 qua 22:26
+#+TITLE: Lisp Inference
+#+DESCRIPTION: A Truth Table Generator written in Common Lisp
+#+TAGS: programming mathematics
+#+LANG: en
+#+CATEGORIES: programming
+#+PROJECT: true
+
+* Lisp Inference
+
+I've been working on this since 2017. The current web application version is
+possible to access through [[https://logic.manoel.dev][logic.manoel.dev]]. The main page looks like
+this:
+
+[[img:lisp-inference/lisp-inference.png]]
+
+It's a application written in Common Lisp that is capable to generate
+a truth table for logical expressions. The source can be found in my
+github profile [[https://github.com/ryukinix/lisp-inference/][ryukinix/lisp-inference]]. It contains as well a *share*
+button so the users can share expressions with its truth table, some
+known tautologies are provided as hyperlinks as well.
+
+* Prologue
+
+The initial system was designed to be a propositional calculus
+checker, in the sense of:
+
+#+begin_example
+Given a set of K premises, show how we can deduce this conclusion C.
+#+end_example
+
+This was requested as an engineering task in my computer engineering
+graduation in 2014, during the first period. Funny, what did the
+professor think when requesting something like this for the students
+in the first year? The outcome was not good, as anyone could probably
+imagine. The project was designed to be split in such a way that part
+of the classroom was doing X, Y, Z... and in the end, the small parts
+would be glued together to form a "Propositional Calculator."
+
+Well, this professor talked about Lisp to us, but what everyone had
+started to learn basically two months ago was programming in C. I'm
+not sure, but he really tried to convince us that a header called
+~<lisp.h>~ was real and we could use it to process lists using C, using
+functions like car and cdr.
+
+I'm not sure if the professor was going crazy or if it was just a lie,
+but this didn't exist. And most of the students were struggling to
+just implement linked lists. The result was a complete disaster; most
+of the groups, which were split from A to F, failed completely.
+
+To this day, I think this impossible task was aimed at giving students
+a real feeling about how hard engineering is, because some weeks
+before this, the same professor was teaching us digital electronics,
+and after other hard courses (like calculus and physics), someone
+said, "Hey, this is easy." I think he took this personally, I'm not
+sure. Besides this, he was a great professor teaching digital
+electronics.
+
+Anyway, since this failure, I had already read about Common Lisp
+because of Serial Experiments Lain a year ago (2013). Then, my
+interest in this increased even more because Lisp seemed like such an
+ALIEN technology, which was fascinating to me.
+
+* Common Lisp? Why?
+
+Well, most part of the literature I've found abouth proof checkers,
+propositional logic and in the classic sense was written in
+Lisp. Curiously, most part of the books the professor shared was
+doctor thesis or really old books (from 197X).
+
+To accomplish the initial task, that actually to see this happening, I
+decided to learn Common Lisp properly. Between 2015-2016 I was only
+looking superfially how Lisp works, how Emacs works... But not having
+much time to get into it. In 2017, however, I got a deep dive on it.
+
+I started to read /Structured and Interpretation of Computer
+Programmings/ (SICP), watched all the youtube course of [[https://www.youtube.com/watch?v=2Op3QLzMgSY&list=PLE18841CABEA24090][MIT 6.001 of
+1986]] and read from start to end the book [[http://landoflisp.com/][Land of Lisp]] (very fun to
+read, btw). All my notes about this journey of learning is scattered
+in some small code and notes in this repository called [[https://github.com/ryukinix/lisp-insights][lisp-insights]].
+
+After thoroughly reading a lot about this and learning Common Lisp
+more profoundly, I decided to apply my recently acquired
+knowledge. The first project was actually [[https://lerax.me/programming/lisp-chat/][Lisp Chat]], a fun experience
+of managing a chat using raw TCP sockets and being capable of using
+even netcat as a client.
+
+It's still 2017, three years since 2014, when my previous professor
+showed the nightmare of dealing with propositional calculus. In that
+year, I started lisp-inference and got some stuff working on
+generating truth tables, although this was not exactly the initial
+request.
+
+To create a real logical proposition checker, I had to implement the
+[[https://coursys.sfu.ca/2018sp-cmpt-384-d1/pages/Wang][Wang's Algorithm]], which was, at that moment, beyond my comprehension
+of how I'd deal with it. I even tried to start, dealing with
+expression transformation, like simplification, double negation,
+equivalences, etc. An automation of human deduction of logical proofs.
+
+Since then, I have worked on this project, improving it little by
+little each year. It's almost my personal laboratory for Common Lisp.
+
+* Refactor of Lisp Inference in 2025
+
+I worked on revitilization of this application due being a important
+project for me, even without any practical usage. Some things was
+really important to deal with, including:
+
+- [[https://github.com/ryukinix/lisp-inference/pull/31][implementing a pratt parser;]]
+- [[https://github.com/ryukinix/lisp-inference/pull/35][implement a share button to share truth tables]];
+- [[https://github.com/ryukinix/lisp-inference/pull/33][change deprecated web framework weblocks to reblocks;]]
+- [[https://github.com/ryukinix/lisp-inference/pull/30/files][restylize web application;]]
+- changed testing framework prove to rove;
+- add input validator:
+  - error handling of invalid expressions;
+  - [[https://github.com/ryukinix/lisp-inference/pull/42][reject expressions with more than 10 premisses]];
+- [[https://github.com/ryukinix/lisp-inference/pull/42][improve dockerfile build time from 8min to 1min]]
+- [[https://github.com/ryukinix/lisp-inference/pull/34][ci/cd with new scheme of tests / deploy]]
