@@ -1,0 +1,149 @@
+---
+date: 2025-07-20 01:11
+author: Manoel Vilela
+layout: post
+title: Common Lisp Brasil
+excerpt: Gerenciando a comunidade de Common Lisp desde 2018
+tags: 
+- programming
+- lisp
+categories: 
+- programming
+project: true
+---
+
+<div id="outline-container-org23929a5" class="outline-2">
+<h2 id="org23929a5">O início de tudo</h2>
+<div class="outline-text-2" id="text-org23929a5">
+<p>
+Este post deve contar parte da história sobre o <a href="https://lisp.com.br">https://lisp.com.br</a>,
+conhecido também como a comunidade de Common Lisp do Brasil, por assim
+dizer. Eu já deveria ter escrito sobre isso há algunos anos, mas
+sempre ficava adiando. Vamos lá! Talvez a primeira versão desse post
+fique incompleta.
+</p>
+
+<p>
+Esse projeto começou em 2018 após uma conversa informal no grupo do
+Telegram <a href="https://t.me/rustlangbr/46741">Rust Brasil</a> <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>, em que trocando ideias sobre o quão o
+macro <a href="https://lispcookbook.github.io/cl-cookbook/iteration.html#the-loop-macro-built-in">LOOP</a> de CL era <a href="https://gist.github.com/ryukinix/6823eb9219a7f240588cadf41457b521">maluco</a>, eu cheguei a mencionar que entendia a
+maioria das coisas do macro loop entre outras coisas, e citei o livro
+<a href="http://landoflisp.com/">Land of Lisp</a> onde aprendi boa parte das coisas há um ano
+(2017). Eventualmente conversamos sobre como a Naughty Dog inseriu um
+compilador de Lisp chamado <a href="https://all-things-andy-gavin.com/2011/02/02/making-crash-bandicoot-part-1/">GOAL</a> (que eles mesmo inventaram) em jogos
+como Crash Bandicoot.
+</p>
+
+<p>
+Essa pessoa com quem conversava era <a href="https://luksamuk.codes/">Lucas Vieira</a> e aquela breve conversa
+fez nos aproximar e conversar sobre o quão difícil era encontrar
+pessoas que também estavam interessadas em Lisp, ou Common Lisp em
+especial.
+</p>
+
+<p>
+A partir daí&#x2026; existem alguns detalhes, mas resumidamente, decidimos
+criar um grupo no Telegram pra concentrar essa interação nova que
+estavamos propondo: um lugar especial pra falar sobre Lisp! Dessa
+maneira, eu e o Lucas somos os criadores da comunidade de CL no
+Brasil, e obviamente muitas pessoas ao longo do tempo fizeram
+contribuições e ajudaram nesse processo, que levaria um tempo para
+citar todos aqui.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge25bda0" class="outline-2">
+<h2 id="orge25bda0">Site: commonlispbr.github.io =&gt; lisp.com.br</h2>
+<div class="outline-text-2" id="text-orge25bda0">
+<p>
+Eventualmente, escrevemos o site usando org-mode para termos uma
+página principal da comunidade, que é literalmente toda escrita em org
+e usa o emacs pra compilar pra html.
+</p>
+
+<p>
+Eventualmente, um membro do grupo novo que era fã de Lisp há
+décadas, chamado Hélio Cordeiro, se ofereceu para conceder o domínio
+<a href="https://lisp.com.br">https://lisp.com.br</a> para nós, que ele havia comprado há muitos anos e mantinha
+ele esperando algo grande acontecer.
+</p>
+
+<p>
+Desde então, mantemos esse domínio memorável como nosso principal
+ponto de contato.
+</p>
+
+<p>
+Fomos ao ar pela primeira vez num sábado, 02 de fevereiro de 2018.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org33691ee" class="outline-2">
+<h2 id="org33691ee">Projetos</h2>
+<div class="outline-text-2" id="text-org33691ee">
+<p>
+Somos uma comunidade com picos de atividade muito sazonais, mas também
+sofremos hiatos de tempos em tempos também. Entre os projetos que
+atualmente temos, iniciamos ou mantemos, obviamente o site principal é
+um deles, mas também havíamos iniciado a tradução do cl-cookbook pra
+português, que está acessível via <a href="https://lisp.com.br/cl-cookbook">https://lisp.com.br/cl-cookbook</a>
+entre nossos projetos, mas está incompleto. Entre projetos de software, temos alguns:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/commonlispbr/quicksys">quicksys</a> <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>- um projeto para facilitar o gerenciamento de pacotes com
+múltiplas distribuições quicklisp (como ultralisp, borodust,
+shirakumo etc);</li>
+<li><a href="https://github.com/commonlispbr/docker-roswell">docker-roswell</a> - imagem docker com roswell instalado;</li>
+<li><a href="https://github.com/commonlispbr/docker-reblocks">docker-reblocks</a> - imagem com o framework reblocks + roswell para
+desenvolvimento de aplicações web, como <a href="https://logic.manoel.dev">https://logic.manoel.dev</a>;</li>
+<li><a href="https://github.com/commonlispbr/stickers">stickers</a> - um repositório com stickers personalizados sobre Lisp que usamos no
+telegram;</li>
+<li><a href="https://github.com/commonlispbr/troll-shield">troll-shield</a> - um mecanismo de defesa criado em 2020 para impedir
+que os trolls destruíssem nossa comunidade (um bot expulsador de
+gente escrito em Go);</li>
+<li><a href="https://github.com/commonlispbr/starwar">starwar</a> - um port/fork de um joginho de dominação de planetas escrito em
+Common Lisp que particularmente sempre gostei muito.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org089d0bd" class="outline-2">
+<h2 id="org089d0bd">Pandemia: a guerra contra os trolls do Império de C++</h2>
+<div class="outline-text-2" id="text-org089d0bd">
+<p>
+Aqui&#x2026; essa parte vou omitir por enquanto, que está parcialmente
+descrita em <a href="https://lisp.com.br/rules.html">https://lisp.com.br/rules.html</a>. Em outro momento entro
+em detalhes.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+a propósito, Rust não é uma das minhas linguagens favoritas
+não, estudei Rust em 2017 criando o toy project <a href="https://github.com/ryukinix/conway-rs">conway-rs</a>, mas perdi o
+interesse com o tempo por motivos que esse espaço de nota de rodapé é
+muito pequeno pra conter.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Então, até tentamos inserir o quicksys no quicklisp, mas acabou
+virando um grande problema pois não era possível criar pacotes no
+quicklisp que dependiam do quicklisp. Na verdade, o projeto se chamava
+inicialmente de quicklisp-meta e foi solicitado o renomeamento pelo
+criador do quicklisp para não haver confusão de que fosse algo que
+eles mantesse&#x2026; Situação um tanto lamentável, fizemos o renomeamento
+atoa, já que nem se quer foi aceito no quicklisp (é possível de ser
+instalado via ultralisp ou diretamente via roswell). Detalhes em
+<a href="https://github.com/quicklisp/quicklisp-projects/issues/1654">quicklisp-projects#1654</a>
+</p></div></div>
+
+
+</div>
+</div>
