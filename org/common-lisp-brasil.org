@@ -1,0 +1,104 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:t toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2025-07-20 dom 01:11
+#+TITLE: Common Lisp Brasil
+#+DESCRIPTION: Gerenciando a comunidade de Common Lisp desde 2018
+#+TAGS: programming lisp
+#+CATEGORIES: programming
+#+PROJECT: true
+
+* O início de tudo
+
+Este post deve contar parte da história sobre o <https://lisp.com.br>,
+conhecido também como a comunidade de Common Lisp do Brasil, por assim
+dizer. Eu já deveria ter escrito sobre isso há algunos anos, mas
+sempre ficava adiando. Vamos lá! Talvez a primeira versão desse post
+fique incompleta.
+
+Esse projeto começou em 2018 após uma conversa informal no grupo do
+Telegram [[https://t.me/rustlangbr/46741][Rust Brasil]] [fn:1], em que trocando ideias sobre o quão o
+macro [[https://lispcookbook.github.io/cl-cookbook/iteration.html#the-loop-macro-built-in][LOOP]] de CL era [[https://gist.github.com/ryukinix/6823eb9219a7f240588cadf41457b521][maluco]], eu cheguei a mencionar que entendia a
+maioria das coisas do macro loop entre outras coisas, e citei o livro
+[[http://landoflisp.com/][Land of Lisp]] onde aprendi boa parte das coisas há um ano
+(2017). Eventualmente conversamos sobre como a Naughty Dog inseriu um
+compilador de Lisp chamado [[https://all-things-andy-gavin.com/2011/02/02/making-crash-bandicoot-part-1/][GOAL]] (que eles mesmo inventaram) em jogos
+como Crash Bandicoot.
+
+Essa pessoa com quem conversava era [[https://luksamuk.codes/][Lucas Vieira]] e aquela breve conversa
+fez nos aproximar e conversar sobre o quão difícil era encontrar
+pessoas que também estavam interessadas em Lisp, ou Common Lisp em
+especial.
+
+A partir daí... existem alguns detalhes, mas resumidamente, decidimos
+criar um grupo no Telegram pra concentrar essa interação nova que
+estavamos propondo: um lugar especial pra falar sobre Lisp! Dessa
+maneira, eu e o Lucas somos os criadores da comunidade de CL no
+Brasil, e obviamente muitas pessoas ao longo do tempo fizeram
+contribuições e ajudaram nesse processo, que levaria um tempo para
+citar todos aqui.
+
+* lisp.com.br
+
+Eventualmente, escrevemos o site usando org-mode para termos uma
+página principal da comunidade, que é literalmente toda escrita em org
+e usa o emacs pra compilar pra HTML.
+
+Em determinado momento, um membro do grupo novo que era fã de Lisp há
+décadas chamado Hélio Cordeiro se ofereceu para conceder o domínio
+<https://lisp.com.br> para nós. Ele havia comprado há muitos anos esse
+dominio e o mantinha esperando algo grande acontecer.
+
+Desde então, mantemos esse domínio memorável como nosso principal
+ponto de contato.
+
+Fomos ao ar pela primeira vez num sábado, 02 de fevereiro de 2018.
+
+
+* Projetos
+
+Somos uma comunidade com picos de atividade muito sazonais, mas também
+sofremos hiatos de tempos em tempos também. Entre os projetos que
+temos, eis uma lista não-exaustiva:
+
++ [[https://github.com/commonlispbr/quicksys][quicksys]] [fn:2]- um projeto para facilitar o gerenciamento de pacotes com
+  múltiplas distribuições quicklisp (como ultralisp, borodust,
+  shirakumo etc);
++ [[https://github.com/commonlispbr/docker-roswell][docker-roswell]] - imagem docker com roswell instalado;
++ [[https://github.com/commonlispbr/docker-reblocks][docker-reblocks]] - imagem com o framework reblocks + roswell para
+  desenvolvimento de aplicações web, como <https://logic.manoel.dev>;
++ [[https://github.com/commonlispbr/stickers][stickers]] - um repositório com stickers personalizados sobre Lisp que usamos no
+  telegram;
++ [[https://github.com/commonlispbr/troll-shield][troll-shield]] - um mecanismo de defesa criado em 2020 para impedir
+  que os trolls destruíssem nossa comunidade (um bot expulsador de
+  gente escrito em Go);
++ [[https://github.com/commonlispbr/starwar][starwar]] - um port/fork de um joginho de dominação de planetas escrito em
+  Common Lisp que particularmente sempre gostei muito;
++ [[https://lisp.com.br/cl-cookbook][lisp.com.br/cl-cookbook]] - a tradução do cl-cookbook pra português,
+  mas está boa parte incompleto.
+
+* Pandemia: a guerra contra os trolls do Império de C++
+
+Aqui... essa parte vou omitir por enquanto, que está parcialmente
+descrita em <https://lisp.com.br/rules.html>. Em outro momento entro
+em detalhes.
+
+* Footnotes
+
+
+[fn:1] a propósito, Rust não é uma das minhas linguagens favoritas
+não, estudei Rust em 2017 criando o toy project [[https://github.com/ryukinix/conway-rs][conway-rs]], mas perdi o
+interesse com o tempo por motivos que esse espaço de nota de rodapé é
+muito pequeno pra conter.
+
+[fn:2] Então, até tentamos inserir o quicksys no quicklisp, mas acabou
+virando um grande problema pois não era possível criar pacotes no
+quicklisp que dependiam do quicklisp. Na verdade, o projeto se chamava
+inicialmente de quicklisp-meta e foi solicitado o renomeamento pelo
+criador do quicklisp para não haver confusão de que fosse algo que
+eles mantesse... Situação um tanto lamentável, fizemos o renomeamento
+atoa, já que nem se quer foi aceito no quicklisp (é possível de ser
+instalado via ultralisp ou diretamente via roswell). Detalhes em
+[[https://github.com/quicklisp/quicklisp-projects/issues/1654][quicklisp-projects#1654]]

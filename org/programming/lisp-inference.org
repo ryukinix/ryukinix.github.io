@@ -6,7 +6,7 @@
 #+DATE: 2025-07-09 qua 22:26
 #+TITLE: Lisp Inference
 #+DESCRIPTION: A Truth Table Generator written in Common Lisp
-#+TAGS: programming mathematics
+#+TAGS: programming mathematics lisp
 #+LANG: en
 #+CATEGORIES: programming
 #+PROJECT: true
