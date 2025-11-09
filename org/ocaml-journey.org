@@ -87,15 +87,25 @@ ferramentas que mesmo sem o uso de LSP possui praticamente tudo que
 preciso: goto-definition, auto-complete e type signature lookup.
 
 Há algumas ferramentas em particular que encontrei que ajudam bastante
-adescoberta de funções e depuração, como:
+adescoberta de funções e depuração. Em seguida vou citar três em
+particular que achei bastante interessante.
 
-- [[https://opam.ocaml.org/blog/about-utop/][utop]]: um repl cheio de firulas que melhora a interação com OCaml
-  interativamente (não saquei muito o motivo do nome)
-- [[https://www.typerex.org/ocp-index.html][ocp-index]]: motor de busca local de funções, docs e autocomplete, tem
-  um browser legal com fuzzy search também muito bom (ocp-browser).
-- [[https://doc.sherlocode.com][sherlocode]]: um sistema web indexador de funções e documentações de
+[[https://opam.ocaml.org/blog/about-utop/][utop]]: um repl cheio de firulas que melhora a interação com OCaml
+interativamente (não saquei muito o motivo do nome).
+
+[[img:ocaml-journey/utop.gif]]
+
+[[https://www.typerex.org/ocp-index.html][ocp-index]]: motor de busca local de funções, docs e autocomplete, tem
+um browser legal com fuzzy search também muito bom (ocp-browser).
+
+[[img:ocaml-journey/ocp-browser.gif]]
+
+[[https://doc.sherlocode.com][sherlocode]]: um sistema web indexador de funções e documentações de
   vários pacotes, com fuzzy search e type signature search, similar ao
   [[https://hoogle.haskell.org/][Hoogle]] -- que de longe era uma das melhores coisas do tooling de Haskell.
+
+[[img:ocaml-journey/sherlocode.png]]
+
 
 * Exemplos em OCaml
 

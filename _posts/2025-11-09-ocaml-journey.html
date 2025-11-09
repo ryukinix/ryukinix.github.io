@@ -4,9 +4,9 @@ author: Manoel Vilela
 layout: post
 title: OCaml Journey
 excerpt: OCaml - uma jornada na programação funcional pragmática
-tags:
+tags: 
 - programming
-categories:
+categories: 
 - programming
 ---
 <link rel="stylesheet"
@@ -109,18 +109,37 @@ preciso: goto-definition, auto-complete e type signature lookup.
 
 <p>
 Há algumas ferramentas em particular que encontrei que ajudam bastante
-adescoberta de funções e depuração, como:
+adescoberta de funções e depuração. Em seguida vou citar três em
+particular que achei bastante interessante.
 </p>
 
-<ul class="org-ul">
-<li><a href="https://opam.ocaml.org/blog/about-utop/">utop</a>: um repl cheio de firulas que melhora a interação com OCaml
-interativamente (não saquei muito o motivo do nome)</li>
-<li><a href="https://www.typerex.org/ocp-index.html">ocp-index</a>: motor de busca local de funções, docs e autocomplete, tem
-um browser legal com fuzzy search também muito bom (ocp-browser).</li>
-<li><a href="https://doc.sherlocode.com">sherlocode</a>: um sistema web indexador de funções e documentações de
-vários pacotes, com fuzzy search e type signature search, similar ao
-<a href="https://hoogle.haskell.org/">Hoogle</a> &#x2013; que de longe era uma das melhores coisas do tooling de Haskell.</li>
-</ul>
+<p>
+<a href="https://opam.ocaml.org/blog/about-utop/">utop</a>: um repl cheio de firulas que melhora a interação com OCaml
+interativamente (não saquei muito o motivo do nome).
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/utop.gif" alt="nil"/>
+</p>
+
+<p>
+<a href="https://www.typerex.org/ocp-index.html">ocp-index</a>: motor de busca local de funções, docs e autocomplete, tem
+um browser legal com fuzzy search também muito bom (ocp-browser).
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/ocp-browser.gif" alt="nil"/>
+</p>
+
+<p>
+<a href="https://doc.sherlocode.com">sherlocode</a>: um sistema web indexador de funções e documentações de
+  vários pacotes, com fuzzy search e type signature search, similar ao
+  <a href="https://hoogle.haskell.org/">Hoogle</a> &#x2013; que de longe era uma das melhores coisas do tooling de Haskell.
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/sherlocode.png" alt="nil"/>
+</p>
 </div>
 </div>
 <div id="outline-container-orgf0588de" class="outline-2">
@@ -167,8 +186,8 @@ categorias baseado na soma de seus divisores (excluindo ele mesmo):
 
 <div class="org-src-container">
 <pre class="src src-ocaml"><span style="color: #1e90ff;">let</span> <span style="color: #1e90ff;">rec</span> <span style="color: #dddddd;">range</span> <span style="color: #dddddd;">a</span> <span style="color: #dddddd;">b</span> =
-  <span style="color: #1e90ff;">if</span> a &gt; b <span style="color: #1e90ff;">then</span> <span style="color: #dddddd;">[]</span>
-  <span style="color: #1e90ff;">else</span> a <span style="color: #dddddd;">::</span> range (a + 1) b
+  <span style="color: #1e90ff;">if</span> a &gt; b <span style="color: #1e90ff;">then</span> <span style="color: #acacac;">[]</span>
+  <span style="color: #1e90ff;">else</span> a <span style="color: #acacac;">::</span> range (a + 1) b
 
 <span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">divisors</span> <span style="color: #dddddd;">n</span> =
   range 1 (truncate (sqrt (float n)))
@@ -186,9 +205,9 @@ categorias baseado na soma de seus divisores (excluindo ele mesmo):
 
 <span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">classify</span> <span style="color: #dddddd;">n</span> =
   <span style="color: #1e90ff;">if</span> n &gt; 0 <span style="color: #1e90ff;">then</span>
-    (<span style="color: #dddddd;">Ok</span> (number_class n))
+    (<span style="color: #acacac;">Ok</span> (number_class n))
   <span style="color: #1e90ff;">else</span>
-    (<span style="color: #dddddd;">Error</span> <span style="color: #acacac;">"Classification is only possible for positive integers."</span>)
+    (<span style="color: #acacac;">Error</span> <span style="color: #acacac;">"Classification is only possible for positive integers."</span>)
 </pre>
 </div>
 
