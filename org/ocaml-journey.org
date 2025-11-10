@@ -5,7 +5,7 @@
 #+AUTHOR: Manoel Vilela
 #+DATE: 2025-11-09 dom 16:18
 #+TITLE: OCaml Journey
-#+DESCRIPTION: OCaml - uma jornada na programação funcional pragmática
+#+DESCRIPTION: Programação funcional pragmática
 #+TAGS: programming
 #+CATEGORIES: programming
 
