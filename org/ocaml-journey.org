@@ -1,0 +1,173 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:t toc:nil timestamps:t
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2025-11-09 dom 16:18
+#+TITLE: OCaml Journey
+#+DESCRIPTION: Programação funcional pragmática
+#+TAGS: programming
+#+CATEGORIES: programming
+
+#+BEGIN_EXPORT html
+<link rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"/>
+#+END_EXPORT
+
+
+* Introdução
+
+Em novembro de 2025 comecei a estudar OCaml, uma das últimas
+linguagens de programação funcional que ainda não havia tocado a
+mão. Em anos anteriores, já havia programado em Haskell, Common Lisp,
+Scheme, Racket, um pouco de Clojure, F#, Scala entre outras. Mas OCaml
+nunca tinha me chamado tanto atenção, por um lado por achar que
+Haskell deveria ser superior por ser uma linguagem de programação
+pura, mas talvez nunca dei moral por conta que nunca gostei do nome da
+linguagem... é, talvez tenha sido uma coisa estúpida como essa...
+
+Depois de muita conversa com colegas sobre como OCaml era usado em
+[[https://www.janestreet.com/join-jane-street/open-roles/?type=experienced-candidates&location=new-york][Jane Street]], uma empresa famosa no mundo de trade de alta frequência
+em NYC, comecei a olhar com certa cautela sobre a linguagem... Eles
+mantém um compilador particular de OCaml com extensões próprias, não é
+interessante? Há muitas histórias também de compiladores inicialmente
+escritos em OCaml, o próprio [[https://github.com/rust-lang/rust/tree/ef75860a0a72f79f97216f8aaa5b388d98da6480/src/boot][compilador de Rust]] em suas primeiras
+versões era escrito em OCaml. Não que eu me importe tanto com Rust,
+mas é um achievement interessante a linguagem ter esse tipo de
+sucesso. Curtia muito também um leitor de PDF ultra rápido chamado
+[[https://github.com/criticic/llpp][llpp]], que era escrito em OCaml também.
+
+Pra isso, resolvi me embarcar numa nova jornada de aprendizado com
+OCaml através da plataforma de exercícios de programação [[https://exercism.org/tracks/ocaml][exercism.org]].
+
+* Inevitável comparar com Haskell
+
+Eu tive muitas infelicidades pra tentar fazer coisas mais práticas com
+Haskell ao depender de cabal e stack. Quem mexeu com Haskell e não
+passou por [[https://well-typed.com/blog/2014/09/how-we-might-abolish-cabal-hell-part-1/][cabal hell]] não mexeu com Haskell tempo o suficiente. Era um
+verdadeiro inferno... Tive duas rodadas de programação com Haskell no
+geral, em 2014 e outra em 2017. Aprendi vários conceitos
+interessantes, mas sempre me bati muito sobre como gerenciar uma
+aplicação prática que possui dependências e irá entregar uma aplicação
+útil no final. Percebi também que o gerenciamento monâdico obrigatório
+pra IO e todos os efeitos colaterais era pra mim um verdadeiro pé no
+saco, onde linguagens como Scala, F# e Common Lisp me davam muito mais
+liberdade pra escolher bem onde era melhor fazer algo procedural ou
+funcional. Eu sempre gostei de liberdade e poder escolher as melhores
+ferramentas pra'quele problema invés de ser algo disciplinar, como
+acontece com Haskell e também Rust (por outros motivos que não é
+programação funcional pura).
+
+* Tooling
+
+Acredito que antes de entrar em todos os detalhes sobre as
+particularidades da linguagem, algo me chamou atenção em relação a
+outras linguagens de programação funcional, principalmente em
+comparação a Haskell. OCaml tem um tooling muito melhor e mais coeso
+em amplo sentido.
+
+Por outro lado, OCaml se resolve com dois pilares de ferramentas:
+
+- [[https://opam.ocaml.org/blog/about-utop/][opam]]: package manager
+- [[https://github.com/ocaml/dune][dune]]: build system (que usa s-exp para configs, achei ótimo)
+
+Isso já me trouxe um certo frescor inicial em ter que pensar que não
+iria passar novamente pelo terror que foi com Haskell.
+
+Meu editor principal é o emacs, e aparentemente há muitos
+programadores de OCaml que também o usa, então fiquei contente por
+pensar que teria uma vida facilitada com isso... Haskell já tinha um
+suporte bom no emacs também. Aparentemente bons programadores
+escolherem emacs não é uma grande surpresa também.
+
+Ao utilizar como base a configuração do prelude, o módulo
+[[https://github.com/bbatsov/prelude/blob/master/modules/prelude-ocaml.el][prelude-ocaml]], o modo tuareg-mode está configurado com um conjunto de
+ferramentas que mesmo sem o uso de LSP possui praticamente tudo que
+preciso: goto-definition, auto-complete e type signature lookup.
+
+Há algumas ferramentas em particular que encontrei que ajudam bastante
+adescoberta de funções e depuração. Em seguida vou citar três em
+particular que achei bastante interessante.
+
+[[https://opam.ocaml.org/blog/about-utop/][utop]]: um repl cheio de firulas que melhora a interação com OCaml
+interativamente (não saquei muito o motivo do nome).
+
+[[img:ocaml-journey/utop.gif]]
+
+[[https://www.typerex.org/ocp-index.html][ocp-index]]: motor de busca local de funções, docs e autocomplete, tem
+um browser legal com fuzzy search também muito bom (ocp-browser).
+
+[[img:ocaml-journey/ocp-browser.gif]]
+
+[[https://doc.sherlocode.com][sherlocode]]: um sistema web indexador de funções e documentações de
+  vários pacotes, com fuzzy search e type signature search, similar ao
+  [[https://hoogle.haskell.org/][Hoogle]] -- que de longe era uma das melhores coisas do tooling de Haskell.
+
+[[img:ocaml-journey/sherlocode.png]]
+
+
+* Exemplos em OCaml
+
+
+** Darts
+
+Essa é a solução do problema [[https://exercism.org/tracks/ocaml/exercises/darts][Darts]], bem no início da track de OCaml exercism, que podemos
+explorar de forma bem pragmática de um uso de [[https://ocaml.org/docs/basic-data-types][pattern matching]]:
+
+#+begin_src ocaml
+  let radius (x: float) (y: float): float = sqrt (x *. x +. y *. y)
+
+  let score (x: float) (y: float): int =
+    match radius x y with
+    | r when r <= 1.0 -> 10
+    | r when r <= 5.0 -> 5
+    | r when r <= 10.0 -> 1
+    | _ -> 0
+#+end_src
+
+** perfect numbers
+
+Esse é outro exemplo, [[https://exercism.org/tracks/ocaml/exercises/perfect-numbers][detecção de números perfeitos]]. É exemplo um
+pouco mais rebuscado que o anterior, para realizar a classificação de
+Nicomachus que categoriza um número em relação a soma dos seus
+divisores. Um número qualquer pode ser classificados em três
+categorias baseado na soma de seus divisores (excluindo ele mesmo):
+
+- perfect: soma dos divisores igual ao próprio número
+- abundant: soma dos divisores maior que o próprio número
+- diefficient: soma dos divisores menor que o próprio número
+
+#+begin_src ocaml
+  let rec range a b =
+    if a > b then []
+    else a :: range (a + 1) b
+
+  let divisors n =
+    range 1 (truncate (sqrt (float n)))
+    |> List.filter (fun d -> n mod d = 0)
+    |> List.map (fun x -> [x; n / x])
+    |> List.flatten
+    |> List.filter (fun x -> x != n)
+    |> List.sort_uniq compare
+
+  let sum l = List.fold_left (+) 0 l
+  let number_class n = match sum (divisors n) with
+    | k when k < n -> "deficient"
+    | k when k > n -> "abundant"
+    | _ -> "perfect"
+
+  let classify n =
+    if n > 0 then
+      (Ok (number_class n))
+    else
+      (Error "Classification is only possible for positive integers.")
+#+end_src
+
+Nesse exemplo já é possível observar aplicações de outros conceitos e
+funcionalidades, como o uso do operador ~|>~ pipeline e também operações
+com listas. Para minha surpresa, não encontrei em OCaml uma função
+genérica para gerar um range de inteiros ~[a, b)~. Nesse exemplo
+particular, implemento um gerador de range de inteiros fechado nas
+duas pontas ~[a ,b]~ de forma relativamente simples. Sum também não
+tinha definido, mas é um caso trivial como pode ser visto acima.

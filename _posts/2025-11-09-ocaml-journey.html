@@ -1,0 +1,225 @@
+---
+date: 2025-11-09 16:18
+author: Manoel Vilela
+layout: post
+title: OCaml Journey
+excerpt: Programação funcional pragmática
+tags: 
+- programming
+categories: 
+- programming
+---
+<link rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"/>
+<div id="outline-container-orge1c2165" class="outline-2">
+<h2 id="orge1c2165">Introdução</h2>
+<div class="outline-text-2" id="text-orge1c2165">
+<p>
+Em novembro de 2025 comecei a estudar OCaml, uma das últimas
+linguagens de programação funcional que ainda não havia tocado a
+mão. Em anos anteriores, já havia programado em Haskell, Common Lisp,
+Scheme, Racket, um pouco de Clojure, F#, Scala entre outras. Mas OCaml
+nunca tinha me chamado tanto atenção, por um lado por achar que
+Haskell deveria ser superior por ser uma linguagem de programação
+pura, mas talvez nunca dei moral por conta que nunca gostei do nome da
+linguagem&#x2026; é, talvez tenha sido uma coisa estúpida como essa&#x2026;
+</p>
+
+<p>
+Depois de muita conversa com colegas sobre como OCaml era usado em
+<a href="https://www.janestreet.com/join-jane-street/open-roles/?type=experienced-candidates&amp;location=new-york">Jane Street</a>, uma empresa famosa no mundo de trade de alta frequência
+em NYC, comecei a olhar com certa cautela sobre a linguagem&#x2026; Eles
+mantém um compilador particular de OCaml com extensões próprias, não é
+interessante? Há muitas histórias também de compiladores inicialmente
+escritos em OCaml, o próprio <a href="https://github.com/rust-lang/rust/tree/ef75860a0a72f79f97216f8aaa5b388d98da6480/src/boot">compilador de Rust</a> em suas primeiras
+versões era escrito em OCaml. Não que eu me importe tanto com Rust,
+mas é um achievement interessante a linguagem ter esse tipo de
+sucesso. Curtia muito também um leitor de PDF ultra rápido chamado
+<a href="https://github.com/criticic/llpp">llpp</a>, que era escrito em OCaml também.
+</p>
+
+<p>
+Pra isso, resolvi me embarcar numa nova jornada de aprendizado com
+OCaml através da plataforma de exercícios de programação <a href="https://exercism.org/tracks/ocaml">exercism.org</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org168a644" class="outline-2">
+<h2 id="org168a644">Inevitável comparar com Haskell</h2>
+<div class="outline-text-2" id="text-org168a644">
+<p>
+Eu tive muitas infelicidades pra tentar fazer coisas mais práticas com
+Haskell ao depender de cabal e stack. Quem mexeu com Haskell e não
+passou por <a href="https://well-typed.com/blog/2014/09/how-we-might-abolish-cabal-hell-part-1/">cabal hell</a> não mexeu com Haskell tempo o suficiente. Era um
+verdadeiro inferno&#x2026; Tive duas rodadas de programação com Haskell no
+geral, em 2014 e outra em 2017. Aprendi vários conceitos
+interessantes, mas sempre me bati muito sobre como gerenciar uma
+aplicação prática que possui dependências e irá entregar uma aplicação
+útil no final. Percebi também que o gerenciamento monâdico obrigatório
+pra IO e todos os efeitos colaterais era pra mim um verdadeiro pé no
+saco, onde linguagens como Scala, F# e Common Lisp me davam muito mais
+liberdade pra escolher bem onde era melhor fazer algo procedural ou
+funcional. Eu sempre gostei de liberdade e poder escolher as melhores
+ferramentas pra'quele problema invés de ser algo disciplinar, como
+acontece com Haskell e também Rust (por outros motivos que não é
+programação funcional pura).
+</p>
+</div>
+</div>
+<div id="outline-container-org4f79e33" class="outline-2">
+<h2 id="org4f79e33">Tooling</h2>
+<div class="outline-text-2" id="text-org4f79e33">
+<p>
+Acredito que antes de entrar em todos os detalhes sobre as
+particularidades da linguagem, algo me chamou atenção em relação a
+outras linguagens de programação funcional, principalmente em
+comparação a Haskell. OCaml tem um tooling muito melhor e mais coeso
+em amplo sentido.
+</p>
+
+<p>
+Por outro lado, OCaml se resolve com dois pilares de ferramentas:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://opam.ocaml.org/blog/about-utop/">opam</a>: package manager</li>
+<li><a href="https://github.com/ocaml/dune">dune</a>: build system (que usa s-exp para configs, achei ótimo)</li>
+</ul>
+
+<p>
+Isso já me trouxe um certo frescor inicial em ter que pensar que não
+iria passar novamente pelo terror que foi com Haskell.
+</p>
+
+<p>
+Meu editor principal é o emacs, e aparentemente há muitos
+programadores de OCaml que também o usa, então fiquei contente por
+pensar que teria uma vida facilitada com isso&#x2026; Haskell já tinha um
+suporte bom no emacs também. Aparentemente bons programadores
+escolherem emacs não é uma grande surpresa também.
+</p>
+
+<p>
+Ao utilizar como base a configuração do prelude, o módulo
+<a href="https://github.com/bbatsov/prelude/blob/master/modules/prelude-ocaml.el">prelude-ocaml</a>, o modo tuareg-mode está configurado com um conjunto de
+ferramentas que mesmo sem o uso de LSP possui praticamente tudo que
+preciso: goto-definition, auto-complete e type signature lookup.
+</p>
+
+<p>
+Há algumas ferramentas em particular que encontrei que ajudam bastante
+adescoberta de funções e depuração. Em seguida vou citar três em
+particular que achei bastante interessante.
+</p>
+
+<p>
+<a href="https://opam.ocaml.org/blog/about-utop/">utop</a>: um repl cheio de firulas que melhora a interação com OCaml
+interativamente (não saquei muito o motivo do nome).
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/utop.gif" alt="nil"/>
+</p>
+
+<p>
+<a href="https://www.typerex.org/ocp-index.html">ocp-index</a>: motor de busca local de funções, docs e autocomplete, tem
+um browser legal com fuzzy search também muito bom (ocp-browser).
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/ocp-browser.gif" alt="nil"/>
+</p>
+
+<p>
+<a href="https://doc.sherlocode.com">sherlocode</a>: um sistema web indexador de funções e documentações de
+  vários pacotes, com fuzzy search e type signature search, similar ao
+  <a href="https://hoogle.haskell.org/">Hoogle</a> &#x2013; que de longe era uma das melhores coisas do tooling de Haskell.
+</p>
+
+<p>
+<img src="/assets/posts/ocaml-journey/sherlocode.png" alt="nil"/>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0588de" class="outline-2">
+<h2 id="orgf0588de">Exemplos em OCaml</h2>
+<div class="outline-text-2" id="text-orgf0588de">
+</div>
+<div id="outline-container-orgb05b58d" class="outline-3">
+<h3 id="orgb05b58d">Darts</h3>
+<div class="outline-text-3" id="text-orgb05b58d">
+<p>
+Essa é a solução do problema <a href="https://exercism.org/tracks/ocaml/exercises/darts">Darts</a>, bem no início da track de OCaml exercism, que podemos
+explorar de forma bem pragmática de um uso de <a href="https://ocaml.org/docs/basic-data-types">pattern matching</a>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ocaml"><span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">radius</span> (<span style="color: #dddddd;">x</span>:<span style="color: #acacac;"> float</span>) (<span style="color: #dddddd;">y</span>:<span style="color: #acacac;"> float</span>):<span style="color: #acacac;"> float </span>= sqrt (x *. x +. y *. y)
+
+<span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">score</span> (<span style="color: #dddddd;">x</span>:<span style="color: #acacac;"> float</span>) (<span style="color: #dddddd;">y</span>:<span style="color: #acacac;"> float</span>):<span style="color: #acacac;"> int </span>=
+  <span style="color: #1e90ff;">match</span> radius x y <span style="color: #1e90ff;">with</span>
+  | r <span style="color: #1e90ff;">when</span> r &lt;= 1.0 -&gt; 10
+  | r <span style="color: #1e90ff;">when</span> r &lt;= 5.0 -&gt; 5
+  | r <span style="color: #1e90ff;">when</span> r &lt;= 10.0 -&gt; 1
+  | _ -&gt; 0
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdbc57d2" class="outline-3">
+<h3 id="orgdbc57d2">perfect numbers</h3>
+<div class="outline-text-3" id="text-orgdbc57d2">
+<p>
+Esse é outro exemplo, <a href="https://exercism.org/tracks/ocaml/exercises/perfect-numbers">detecção de números perfeitos</a>. É exemplo um
+pouco mais rebuscado que o anterior, para realizar a classificação de
+Nicomachus que categoriza um número em relação a soma dos seus
+divisores. Um número qualquer pode ser classificados em três
+categorias baseado na soma de seus divisores (excluindo ele mesmo):
+</p>
+
+<ul class="org-ul">
+<li>perfect: soma dos divisores igual ao próprio número</li>
+<li>abundant: soma dos divisores maior que o próprio número</li>
+<li>diefficient: soma dos divisores menor que o próprio número</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-ocaml"><span style="color: #1e90ff;">let</span> <span style="color: #1e90ff;">rec</span> <span style="color: #dddddd;">range</span> <span style="color: #dddddd;">a</span> <span style="color: #dddddd;">b</span> =
+  <span style="color: #1e90ff;">if</span> a &gt; b <span style="color: #1e90ff;">then</span> <span style="color: #acacac;">[]</span>
+  <span style="color: #1e90ff;">else</span> a <span style="color: #acacac;">::</span> range (a + 1) b
+
+<span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">divisors</span> <span style="color: #dddddd;">n</span> =
+  range 1 (truncate (sqrt (float n)))
+  <span style="color: #1e90ff;">|&gt;</span> <span style="color: #acacac;">List.</span>filter (<span style="color: #1e90ff;">fun</span> <span style="color: #dddddd;">d</span> -&gt; n <span style="color: #1e90ff;">mod</span> d = 0)
+  <span style="color: #1e90ff;">|&gt;</span> <span style="color: #acacac;">List.</span>map (<span style="color: #1e90ff;">fun</span> <span style="color: #dddddd;">x</span> -&gt; [x; n / x])
+  <span style="color: #1e90ff;">|&gt;</span> <span style="color: #acacac;">List.</span>flatten
+  <span style="color: #1e90ff;">|&gt;</span> <span style="color: #acacac;">List.</span>filter (<span style="color: #1e90ff;">fun</span> <span style="color: #dddddd;">x</span> -&gt; x <span style="color: #1e90ff;">!=</span> n)
+  <span style="color: #1e90ff;">|&gt;</span> <span style="color: #acacac;">List.</span>sort_uniq compare
+
+<span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">sum</span> <span style="color: #dddddd;">l</span> = <span style="color: #acacac;">List.</span>fold_left (<span style="color: #dddddd;">+</span>) 0 l
+<span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">number_class</span> <span style="color: #dddddd;">n</span> = <span style="color: #1e90ff;">match</span> sum (divisors n) <span style="color: #1e90ff;">with</span>
+  | k <span style="color: #1e90ff;">when</span> k &lt; n -&gt; <span style="color: #acacac;">"deficient"</span>
+  | k <span style="color: #1e90ff;">when</span> k &gt; n -&gt; <span style="color: #acacac;">"abundant"</span>
+  | _ -&gt; <span style="color: #acacac;">"perfect"</span>
+
+<span style="color: #1e90ff;">let</span> <span style="color: #dddddd;">classify</span> <span style="color: #dddddd;">n</span> =
+  <span style="color: #1e90ff;">if</span> n &gt; 0 <span style="color: #1e90ff;">then</span>
+    (<span style="color: #acacac;">Ok</span> (number_class n))
+  <span style="color: #1e90ff;">else</span>
+    (<span style="color: #acacac;">Error</span> <span style="color: #acacac;">"Classification is only possible for positive integers."</span>)
+</pre>
+</div>
+
+<p>
+Nesse exemplo já é possível observar aplicações de outros conceitos e
+funcionalidades, como o uso do operador <code>|&gt;</code> pipeline e também operações
+com listas. Para minha surpresa, não encontrei em OCaml uma função
+genérica para gerar um range de inteiros <code>[a, b)</code>. Nesse exemplo
+particular, implemento um gerador de range de inteiros fechado nas
+duas pontas <code>[a ,b]</code> de forma relativamente simples. Sum também não
+tinha definido, mas é um caso trivial como pode ser visto acima.
+</p>
+</div>
+</div>
+</div>
